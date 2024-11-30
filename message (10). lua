@@ -7,24 +7,7 @@ local Players = game:GetService("Players")
 local localplayer = Players.LocalPlayer
 
 local Games = {
-    ["Eastern War"]         = 5753515186;
-    ["Scorched Earth"]      = 4785126950;
-    ["Frontlines"]          = 2132866904;
-    ["Games Unite"]         = 992334288;
-    ["State Of Anarchy"]    = 595270616;
-    ["Aftermath"]           = 5286749994;
-    ["Blackout"]            = 3326279937;
-    ["Criminality"]         = 1494262959;
-    ["Fallen"]              = 3747388906;
-    ["Blood and Iron"]      = 16876831;
-    ["Gunfight Arena"]      = 5012222382;
-    --["Apocalypse Rising 2"] = 358276974;
-    ["The Streets"]         = 174268353;
-    ["Counter Blox"]        = 115797356;
-    ["Arsenal"]             = 111958650;
-    ["Korrupt Zombies"]     = 3956073837;
-    ["Lone Survival"]       = 4712109542;
-    ["Combat Warriors"]     = 1390601379;
+
 };
 for Index, Value in next, Games do 
     if Value == GameId then 
