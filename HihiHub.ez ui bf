@@ -1,8 +1,8 @@
-print("ez bypass anti cheat ing HihiHub..)
-print("ez bypass anti cheat ing HihiHub...)
-print("ez bypass anti cheat ing HihiHub....)
-print("ez bypass anti cheat ing HihiHub....)
-print("ez bypass anti cheat ing HihiHub.........ok)
+print("ez bypass anti cheat ing HihiHub..")
+print("ez bypass anti cheat ing HihiHub...")
+print("ez bypass anti cheat ing HihiHub....")
+print("ez bypass anti cheat ing HihiHub....")
+print("ez bypass anti cheat ing HihiHub.........ok")
 local a = Instance.new("UIStroke");
 local a = Instance.new("UICorner");
 local a = game.Players.LocalPlayer;
