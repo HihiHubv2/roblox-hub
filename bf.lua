@@ -5866,7 +5866,7 @@ spawn(function()
                     game:GetService("StarterGui"):SetCore("SendNotification", {
                         Title = "Observation",
                         Text = "You Are Maxed Point",
-                        Icon = "",
+                        Icon = "rbxassetid://124030542360590",
                         Duration = 2.5
                     })
                     wait(2)
@@ -8272,7 +8272,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "",
+							Icon = "rbxassetid://124030542360590",
 							Duration = 2.5
 						})
 					end
@@ -8284,7 +8284,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "",
+							Icon = "rbxassetid://124030542360590",
 							Duration = 2.5
 						})
 					end
@@ -8296,7 +8296,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "",
+							Icon = "rbxassetid://124030542360590",
 							Duration = 2.5
 						})
 					end
@@ -8308,7 +8308,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "",
+							Icon = "rbxassetid://124030542360590",
 							Duration = 2.5
 						})
 					end
@@ -8318,7 +8318,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "",
+									Icon = "rbxassetid://124030542360590",
 									Duration = 2.5
 								})
 							else
@@ -8329,7 +8329,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "",
+							Icon = "rbxassetid://124030542360590",
 							Duration = 2.5
 						})
 					end
@@ -10004,7 +10004,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------Misc Tab
 
 Misc:Button("Fruit Rain [ Old ]", function()
-    for i, v in pairs(game:GetObjects("")[1]:GetChildren()) do
+    for i, v in pairs(game:GetObjects("rbxassetid://124030542360590")[1]:GetChildren()) do
         v.Parent = game.Workspace.Map
         v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
         if v.Fruit:FindFirstChild("AnimationController") then
@@ -10676,7 +10676,7 @@ wait(1)
 end)
 
 Misc:Button("Rain Fruit", function(value)
-    for i, v in pairs(game:GetObjects("")[1]:GetChildren()) do
+    for i, v in pairs(game:GetObjects("rbxassetid://124030542360590")[1]:GetChildren()) do
             v.Parent = game.Workspace.Map
             v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
             if v.Fruit:FindFirstChild("AnimationController") then
@@ -10823,7 +10823,7 @@ Misc:Button("Kaitun Cap", function(value)
 		for k,v in pairs(cac) do
 			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
 				local huhu = Instance.new("ImageLabel",MeleeG)
-				huhu.Image = ""
+				huhu.Image = "rbxassetid://124030542360590"
 				huhu.ImageRectSize = Vector2.new(100,100)
 				huhu.ImageRectOffset = ListHuhu[v]*100
 			end
@@ -12452,36 +12452,36 @@ end)
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "Script Loaded! ",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "discord.gg/nJaZ88C3zE",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "discord.gg/nJaZ88C3zE",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "discord.gg/nJaZ88C3zE",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "discord.gg/nJaZ88C3zE",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "HihiHub",
     Text = "discord.gg/nJaZ88C3zE",
-    Icon = "",
+    Icon = "rbxassetid://124030542360590",
     Duration = 1
 })
