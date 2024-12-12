@@ -1,8 +1,3 @@
-print("bypass anti cheat ing.")
-print("bypass anti cheat ing..")
-print("bypass anti cheat ing...")
-print("bypass anti cheat ing....")
-print("bypass anti cheat ing.....ok")
 repeat
     wait()
 until game.Players.LocalPlayer
@@ -10009,7 +10004,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------Misc Tab
 
 Misc:Button("Fruit Rain [ Old ]", function()
-    for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
+    for i, v in pairs(game:GetObjects("")[1]:GetChildren()) do
         v.Parent = game.Workspace.Map
         v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
         if v.Fruit:FindFirstChild("AnimationController") then
@@ -10681,7 +10676,7 @@ wait(1)
 end)
 
 Misc:Button("Rain Fruit", function(value)
-    for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
+    for i, v in pairs(game:GetObjects("")[1]:GetChildren()) do
             v.Parent = game.Workspace.Map
             v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
             if v.Fruit:FindFirstChild("AnimationController") then
@@ -10828,7 +10823,7 @@ Misc:Button("Kaitun Cap", function(value)
 		for k,v in pairs(cac) do
 			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
 				local huhu = Instance.new("ImageLabel",MeleeG)
-				huhu.Image = "rbxassetid://9945562382"
+				huhu.Image = ""
 				huhu.ImageRectSize = Vector2.new(100,100)
 				huhu.ImageRectOffset = ListHuhu[v]*100
 			end
@@ -11169,7 +11164,7 @@ Race:Button("Unlock Lever", function()
         tween:Play()
         local SoundSFX = Instance.new("Sound")
         SoundSFX.Parent = workspace
-        SoundSFX.SoundId = "rbxassetid://1904813041"
+        SoundSFX.SoundId = ""
         SoundSFX:Play()
         SoundSFX.Name = "POwfpxzxzfFfFF"
         game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt"):Remove()
