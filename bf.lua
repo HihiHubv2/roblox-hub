@@ -1,3 +1,8 @@
+print("bypass anti cheat ing.")
+print("bypass anti cheat ing..")
+print("bypass anti cheat ing...")
+print("bypass anti cheat ing....")
+print("bypass anti cheat ing.....ok")
 repeat
     wait()
 until game.Players.LocalPlayer
