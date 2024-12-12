@@ -12450,38 +12450,38 @@ task.spawn(function()
 end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub Blox Fruits",
     Text = "Script Loaded! ",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 2.5
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub BYPASS TP",
     Text = "discord.gg/nJaZ88C3zE",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 2.5
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub BYPASS FLY",
     Text = "discord.gg/nJaZ88C3zE",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 2.5
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub BYPASS Anti Cheat",
     Text = "discord.gg/nJaZ88C3zE",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 2.5
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub bypass anti kill play cheat ",
     Text = "discord.gg/nJaZ88C3zE",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 2.5
 })
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "HihiHub",
+    Title = "HihiHub anti AFK ALL ANTI IS BYPASS",
     Text = "discord.gg/nJaZ88C3zE",
     Icon = "rbxassetid://124030542360590",
-    Duration = 1
+    Duration = 3
 })
