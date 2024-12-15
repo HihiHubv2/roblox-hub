@@ -562,7 +562,7 @@ PCR_1.ResetOnSpawn = false
 MAIN.Name = "MAIN"
 MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
-MAIN.BackgroundColor3 = Color3.fromRGB(255, 85, 85) -- 鮮豔紅色
+MAIN.BackgroundColor3 = Color3.fromRGB(45, 64, 55) -- 柔和深綠色
 MAIN.BorderSizePixel = 0
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
 MAIN.Size = UDim2.new(0, 588, 0, 415)
@@ -571,7 +571,7 @@ MAIN.ZIndex = 2
 -- 內容區域
 BG.Name = "BG"
 BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(255, 255, 102) -- 鮮豔黃色
+BG.BackgroundColor3 = Color3.fromRGB(220, 225, 210) -- 柔和灰綠色
 BG.BorderSizePixel = 0
 BG.Position = UDim2.new(0, 0, 0.0615, 0)
 BG.Size = UDim2.new(0, 588, 0, 365)
@@ -587,7 +587,7 @@ Upper.ZIndex = 2
 -- 上方裝飾線
 linedecoupper.Name = "linedecoupper"
 linedecoupper.Parent = MAIN
-linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 170, 255) -- 鮮豔藍色
+linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 128, 105) -- 柔和青綠色
 linedecoupper.BorderSizePixel = 0
 linedecoupper.Position = UDim2.new(0, 0, 0.059, 0)
 linedecoupper.Size = UDim2.new(1, 0, 0, 1)
@@ -610,7 +610,7 @@ WEBSITE.Position = UDim2.new(0.18, 0, 0.5, 0)
 WEBSITE.Size = UDim2.new(0, 197, 0, 23)
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
-WEBSITE.TextColor3 = Color3.fromRGB(85, 255, 85) -- 鮮豔綠色
+WEBSITE.TextColor3 = Color3.fromRGB(102, 153, 102) -- 柔和自然綠色
 WEBSITE.TextSize = 14
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -623,14 +623,14 @@ LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0, 197, 0, 23)
 LABEL2.Font = Enum.Font.ArialBold
 LABEL2.Text = "Alpha build / ∞ days left"
-LABEL2.TextColor3 = Color3.fromRGB(255, 85, 255) -- 鮮豔粉色
+LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80) -- 柔和棕色
 LABEL2.TextSize = 14
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 底部裝飾線
 linedecoDOWNER.Name = "linedecoDOWNER"
 linedecoDOWNER.Parent = MAIN
-linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 170, 255) -- 鮮豔藍色
+linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105) -- 柔和青綠色
 linedecoDOWNER.BorderSizePixel = 0
 linedecoDOWNER.Position = UDim2.new(0, 0, 0.94, 0)
 linedecoDOWNER.Size = UDim2.new(1, 0, 0, 1)
@@ -645,7 +645,7 @@ UPPERLABEL.Position = UDim2.new(0.9, 0, 0.03, 0)
 UPPERLABEL.Size = UDim2.new(0, 84, 0, 23)
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
-UPPERLABEL.TextColor3 = Color3.fromRGB(255, 255, 102) -- 鮮豔黃色
+UPPERLABEL.TextColor3 = Color3.fromRGB(190, 183, 165) -- 柔和自然灰
 UPPERLABEL.TextSize = 17
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
@@ -656,7 +656,6 @@ limit1.BackgroundTransparency = 1.000
 limit1.Position = UDim2.new(0, 0, 0.0615, 0)
 limit1.Size = UDim2.new(0, 588, 0, 364)
 limit1.ZIndex = 5
-
 
 
 
