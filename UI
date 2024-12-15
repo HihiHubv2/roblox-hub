@@ -212,385 +212,365 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	local TEMPLATETITLE20202 = Instance.new("TextLabel")
 	local linedecoupper = Instance.new("Frame")
 	local RESETALL = Instance.new('ImageButton')
-	RESETALL.Name = "RESETALL"
-	RESETALL.Parent = S13
-	RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	RESETALL.BackgroundTransparency = 1.000
-	RESETALL.BorderSizePixel = 0
-	RESETALL.Position = UDim2.new(0.621510208, 0, 0.730036497, 0)
-	RESETALL.Size = UDim2.new(0, 15, 0, 15)
-	RESETALL.ZIndex = 23
-	RESETALL.Image = "rbxassetid://5640320478"
-
--- RESETALL 按鈕美化
+-- RESETALL 按鈕
+local RESETALL = Instance.new("ImageButton")
 RESETALL.Name = "RESETALL"
 RESETALL.Parent = S13
-RESETALL.BackgroundColor3 = Color3.fromRGB(255, 92, 92) -- 柔和紅色
-RESETALL.BackgroundTransparency = 0.2 -- 減少透明度，讓按鈕更醒目
-RESETALL.BorderSizePixel = 0
-RESETALL.Position = UDim2.new(0.621510208, 0, 0.730036497, 0)
-RESETALL.Size = UDim2.new(0, 20, 0, 20) -- 調整按鈕大小
+
+-- 基本外觀設定
+RESETALL.BackgroundTransparency = 1 -- 背景完全透明
+RESETALL.BorderSizePixel = 0        -- 移除邊框
+RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- 白色（可根據需求調整）
+
+-- 位置和大小
+RESETALL.Position = UDim2.new(0.6215, 0, 0.73, 0)  -- 縮短小數位，保持準確度
+RESETALL.Size = UDim2.new(0, 20, 0, 20)            -- 調整按鈕大小，使其更易於點擊
+
+-- 顯示的圖片
 RESETALL.ZIndex = 23
-RESETALL.Image = "rbxassetid://5640320478"
-local UICorner_Reset = Instance.new("UICorner", RESETALL)
-UICorner_Reset.CornerRadius = UDim.new(1, 0) -- 圓形按鈕
+RESETALL.Image = "rbxassetid://5640320478"         -- 圖片資源 ID
+RESETALL.ImageColor3 = Color3.fromRGB(200, 200, 200) -- 淡灰色圖片（可根據需求更改）
 
--- COLORPALLETE 主框架美化
-COLORPALLETE.Name = "COLORPALLETE"
-COLORPALLETE.Parent = PCR_1
-COLORPALLETE.AnchorPoint = Vector2.new(0.5, 0.5)
-COLORPALLETE.BackgroundColor3 = Color3.fromRGB(45, 45, 45) -- 深灰色背景
-COLORPALLETE.BackgroundTransparency = 0 -- 不再完全透明
-COLORPALLETE.BorderSizePixel = 0
-COLORPALLETE.ClipsDescendants = true
-COLORPALLETE.Position = UDim2.new(0.5, 0, 0.5, 0)
-COLORPALLETE.Size = UDim2.new(0, 300, 0, 180) -- 調整框架大小
-COLORPALLETE.ZIndex = 2
-COLORPALLETE.Visible = false
-local UICorner_Palette = Instance.new("UICorner", COLORPALLETE)
-UICorner_Palette.CornerRadius = UDim.new(0.1, 0) -- 添加圓角
+-- 添加圓角設計
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0.5, 0)           -- 圓形按鈕
+UICorner.Parent = RESETALL
 
--- ANIMATEFRAME01 美化
-ANIMATEFRAME01.Name = "ANIMATEFRAME01"
-ANIMATEFRAME01.Parent = COLORPALLETE
-ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(60, 60, 60) -- 更深的灰色
-ANIMATEFRAME01.Position = UDim2.new(-0.0257352963, 0, -0.00666669384, 0)
-ANIMATEFRAME01.Size = UDim2.new(0, 285, 0, 159)
-ANIMATEFRAME01.ZIndex = 99
-ANIMATEFRAME01.BorderSizePixel = 0
-local UICorner_Animate = Instance.new("UICorner", ANIMATEFRAME01)
-UICorner_Animate.CornerRadius = UDim.new(0.05, 0) -- 輕微圓角
+-- 添加滑鼠懸停效果
+local TweenService = game:GetService("TweenService")
 
--- Holder 框架
-Holder.Name = "Holder"
-Holder.Parent = COLORPALLETE
-Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Holder.BackgroundTransparency = 1.000
-Holder.BorderSizePixel = 0
-Holder.Size = UDim2.new(0, 283, 0, 157)
+-- 懸停動畫：變亮
+local hoverIn = TweenService:Create(RESETALL, TweenInfo.new(0.2), {
+    ImageColor3 = Color3.fromRGB(255, 255, 255) -- 懸停時變白
+})
 
--- BG 背景框架美化
-BG.Name = "BG"
-BG.Parent = Holder
-BG.BackgroundColor3 = Color3.fromRGB(25, 25, 25) -- 深灰色
-BG.BorderColor3 = Color3.fromRGB(91, 133, 197) -- 邊框顏色
-BG.BorderSizePixel = 0
-BG.Position = UDim2.new(0, 0, 0.157927245, 0)
-BG.Size = UDim2.new(0, 272, 0, 125)
+-- 離開動畫：回到原色
+local hoverOut = TweenService:Create(RESETALL, TweenInfo.new(0.2), {
+    ImageColor3 = Color3.fromRGB(200, 200, 200) -- 離開時淡灰色
+})
 
--- S12 框架美化
-S12.Name = "S12"
-S12.Parent = BG
-S12.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- 更深灰色
-S12.BorderSizePixel = 0
-S12.Position = UDim2.new(0, 16, 0, 7)
-S12.Size = UDim2.new(0, 156, 0, 107)
-S12.ZIndex = 23
-local UICorner_S12 = Instance.new("UICorner", S12)
-UICorner_S12.CornerRadius = UDim.new(0.05, 0) -- 添加圓角
+-- 綁定滑鼠事件
+RESETALL.MouseEnter:Connect(function()
+    hoverIn:Play()
+end)
 
--- ColourWheel 色輪美化
-ColourWheel.Name = "ColourWheel"
-ColourWheel.Parent = S12
-ColourWheel.Active = false
-ColourWheel.AnchorPoint = Vector2.new(0.5, 0.5)
-ColourWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ColourWheel.BackgroundTransparency = 1.000
-ColourWheel.BorderSizePixel = 0
-ColourWheel.Position = UDim2.new(0.418737918, 0, 0.491852999, 0)
-ColourWheel.Selectable = false
-ColourWheel.Size = UDim2.new(0.599832177, 0, 0.86683917, 0)
-ColourWheel.ZIndex = 25
-ColourWheel.Image = "http://www.roblox.com/asset/?id=6020299385"
-local UICorner_ColourWheel = Instance.new("UICorner", ColourWheel)
-UICorner_ColourWheel.CornerRadius = UDim.new(0.05, 0) -- 添加圓角
+RESETALL.MouseLeave:Connect(function()
+    hoverOut:Play()
+end)
 
--- Picker 美化
-Picker.Name = "Picker"
-Picker.Parent = ColourWheel
-Picker.AnchorPoint = Vector2.new(0.5, 0.5)
-Picker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Picker.BackgroundTransparency = 1.000
-Picker.BorderSizePixel = 0
-Picker.Position = UDim2.new(0.5, 0, 0.5, 0)
-Picker.Size = UDim2.new(0.0900257826, 0, 0.0900257975, 0)
-Picker.Image = "http://www.roblox.com/asset/?id=3678860011"
+	COLORPALLETE.Name = "COLORPALLETE"
+	COLORPALLETE.Parent = PCR_1
+	COLORPALLETE.AnchorPoint = Vector2.new(0.5, 0.5)
+	COLORPALLETE.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	COLORPALLETE.BackgroundTransparency = 1.000
+	COLORPALLETE.BorderSizePixel = 0
+	COLORPALLETE.ClipsDescendants = true
+	COLORPALLETE.Position = UDim2.new(0.5, 0, 0.5, 0)
+	COLORPALLETE.Size = UDim2.new(0, 272, 0, 150)
+	COLORPALLETE.ZIndex = 2
+	COLORPALLETE.Visible = false
 
--- S523 美化
-S523.Name = "S523"
-S523.Parent = S12
+	ANIMATEFRAME01.Name = "ANIMATEFRAME01"
+	ANIMATEFRAME01.Parent = COLORPALLETE
+	ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ANIMATEFRAME01.Position = UDim2.new(-0.0257352963, 0, -0.00666669384, 0)
+	ANIMATEFRAME01.Size = UDim2.new(0, 285, 0, 159)
+	ANIMATEFRAME01.ZIndex = 99
+	ANIMATEFRAME01.BorderSizePixel = 0;
 
--- DarknessPicker 美化
-DarknessPicker.Name = "DarknessPicker"
-DarknessPicker.Parent = S12
-DarknessPicker.Active = false
-DarknessPicker.AnchorPoint = Vector2.new(0.5, 0.5)
-DarknessPicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-DarknessPicker.BackgroundTransparency = 1.000
-DarknessPicker.BorderSizePixel = 0
-DarknessPicker.Position = UDim2.new(0.854536772, 0, 0.554580271, 0)
-DarknessPicker.Selectable = false
-DarknessPicker.Size = UDim2.new(0.0943329856, 0, 0.88014394, 0)
-DarknessPicker.ZIndex = 25
-DarknessPicker.Image = "rbxassetid://3570695787"
-DarknessPicker.ScaleType = Enum.ScaleType.Slice
-DarknessPicker.SliceCenter = Rect.new(100, 100, 100, 100)
-DarknessPicker.SliceScale = 0.120
-local Gradient = Instance.new("UIGradient", DarknessPicker)
-Gradient.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-}
-Gradient.Rotation = 90
+	Holder.Name = "Holder"
+	Holder.Parent = COLORPALLETE
+	Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Holder.BackgroundTransparency = 1.000
+	Holder.BorderSizePixel = 0
+	Holder.Size = UDim2.new(0, 283, 0, 157)
 
--- Slider 美化
-Slider.Name = "Slider"
-Slider.Parent = DarknessPicker
-Slider.AnchorPoint = Vector2.new(0.5, 0.5)
-Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Slider.BackgroundTransparency = 1.000
-Slider.BorderSizePixel = 0
-Slider.Position = UDim2.new(0.491197795, 0, 0.0733607039, 0)
-Slider.Size = UDim2.new(1.28656352, 0, 0.0265010502, 0)
-Slider.ZIndex = 2
-Slider.Image = "rbxassetid://3570695787"
-Slider.ImageColor3 = Color3.fromRGB(200, 74, 74) -- 柔和紅色
-Slider.ScaleType = Enum.ScaleType.Slice
-Slider.SliceCenter = Rect.new(100, 100, 100, 100)
-Slider.SliceScale = 0.120
+	BG.Name = "BG"
+	BG.Parent = Holder
+	BG.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	BG.BorderSizePixel = 0
+	BG.Position = UDim2.new(0, 0, 0.157927245, 0)
+	BG.Size = UDim2.new(0, 272, 0, 125)
 
--- UIAspectRatioConstraint_2 美化
-UIAspectRatioConstraint_2.Parent = DarknessPicker
-UIAspectRatioConstraint_2.AspectRatio = 0.157
+	S12.Name = "S12"
+	S12.Parent = BG
+	S12.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+	S12.BorderSizePixel = 0
+	S12.Position = UDim2.new(0, 16, 0, 7)
+	S12.Size = UDim2.new(0, 156, 0, 107)
+	S12.ZIndex = 23
 
--- S13 框架美化
-S13.Name = "S13"
-S13.Parent = BG
-S13.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- 深灰色提升質感
-S13.BorderSizePixel = 0
-S13.Position = UDim2.new(0, 182, 0, 7)
-S13.Size = UDim2.new(0, 79, 0, 109)
-S13.ZIndex = 23
-local UICorner_S13 = Instance.new("UICorner", S13)
-UICorner_S13.CornerRadius = UDim.new(0.05, 0) -- 添加輕微圓角
+	ColourWheel.Name = "ColourWheel"
+	ColourWheel.Parent = S12
+	ColourWheel.Active = false
+	ColourWheel.AnchorPoint = Vector2.new(0.5, 0.5)
+	ColourWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ColourWheel.BackgroundTransparency = 1.000
+	ColourWheel.BorderSizePixel = 0
+	ColourWheel.Position = UDim2.new(0.418737918, 0, 0.491852999, 0)
+	ColourWheel.Selectable = false
+	ColourWheel.Size = UDim2.new(0.599832177, 0, 0.86683917, 0)
+	ColourWheel.ZIndex = 25
+	ColourWheel.Image = "http://www.roblox.com/asset/?id=6020299385"
 
--- SDFH 框架裝飾
-SDFH.Name = "SDFH"
-SDFH.Parent = S13
-SDFH.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- 與 S13 形成層次對比
-SDFH.BackgroundTransparency = 0.5 -- 半透明背景
-SDFH.BorderSizePixel = 0
-SDFH.Size = UDim2.new(1, 0, 1, 0)
+	UIAspectRatioConstraint.Parent = ColourWheel
+	UIAspectRatioConstraint.AspectRatio = 1.000
 
--- ColourDisplayBIG 顏色顯示框美化
-ColourDisplayBIG.Name = "ColourDisplayBIG"
-ColourDisplayBIG.Parent = S13
-ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- 保留白色背景
-ColourDisplayBIG.BackgroundTransparency = 0.8 -- 添加透明效果
-ColourDisplayBIG.BorderSizePixel = 0
-ColourDisplayBIG.Position = UDim2.new(0.255401969, 0, 0.159329623, 0)
-ColourDisplayBIG.Size = UDim2.new(0.473250836, 0, 0.530204058, 0)
-ColourDisplayBIG.ZIndex = 25
-ColourDisplayBIG.Image = "rbxassetid://3570695787"
-ColourDisplayBIG.ScaleType = Enum.ScaleType.Slice
-ColourDisplayBIG.SliceCenter = Rect.new(100, 100, 100, 100)
-ColourDisplayBIG.SliceScale = 0.120
-local UICorner_DisplayBIG = Instance.new("UICorner", ColourDisplayBIG)
-UICorner_DisplayBIG.CornerRadius = UDim.new(0.1, 0) -- 輕微圓角
+	Picker.Name = "Picker"
+	Picker.Parent = ColourWheel
+	Picker.AnchorPoint = Vector2.new(0.5, 0.5)
+	Picker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Picker.BackgroundTransparency = 1.000
+	Picker.BorderSizePixel = 0
+	Picker.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Picker.Size = UDim2.new(0.0900257826, 0, 0.0900257975, 0)
+	Picker.Image = "http://www.roblox.com/asset/?id=3678860011"
 
--- UIAspectRatioConstraint 美化
-UIAspectRatioConstraint_3.Parent = ColourDisplayBIG
-UIAspectRatioConstraint_3.AspectRatio = 1.5 -- 調整顯示框的比例
+	S523.Name = "S523"
+	S523.Parent = S12
 
--- SETCOLOR 按鈕美化
-SETCOLOR.Name = "SETCOLOR"
-SETCOLOR.Parent = S13
-SETCOLOR.BackgroundColor3 = Color3.fromRGB(70, 130, 180) -- 藍色按鈕，與背景形成對比
-SETCOLOR.BackgroundTransparency = 0 -- 去除透明
-SETCOLOR.BorderSizePixel = 0
-SETCOLOR.Position = UDim2.new(0.231911927, 0, 0.730036736, 0)
-SETCOLOR.Size = UDim2.new(0, 20, 0, 20) -- 按鈕稍大，易於點擊
-SETCOLOR.ZIndex = 23
-SETCOLOR.Image = "rbxassetid://1489284025"
-local UICorner_SetColor = Instance.new("UICorner", SETCOLOR)
-UICorner_SetColor.CornerRadius = UDim.new(1, 0) -- 圓形按鈕
+	DarknessPicker.Name = "DarknessPicker"
+	DarknessPicker.Parent = S12
+	DarknessPicker.Active = false
+	DarknessPicker.AnchorPoint = Vector2.new(0.5, 0.5)
+	DarknessPicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DarknessPicker.BackgroundTransparency = 1.000
+	DarknessPicker.BorderSizePixel = 0
+	DarknessPicker.Position = UDim2.new(0.854536772, 0, 0.554580271, 0)
+	DarknessPicker.Selectable = false
+	DarknessPicker.Size = UDim2.new(0.0943329856, 0, 0.88014394, 0)
+	DarknessPicker.ZIndex = 25
+	DarknessPicker.Image = "rbxassetid://3570695787"
+	DarknessPicker.ScaleType = Enum.ScaleType.Slice
+	DarknessPicker.SliceCenter = Rect.new(100, 100, 100, 100)
+	DarknessPicker.SliceScale = 0.120
 
--- Upper 框架美化
-Upper.Name = "Upper"
-Upper.Parent = Holder
-Upper.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- 深灰色背景，突出標題部分
-Upper.BackgroundTransparency = 0 -- 去除透明
-Upper.BorderColor3 = Color3.fromRGB(91, 133, 197) -- 保留邊框顏色
-Upper.BorderSizePixel = 1 -- 增加邊框大小
-Upper.Position = UDim2.new(1.07835966e-07, 0, 0, 0)
-Upper.Size = UDim2.new(0, 271, 0, 23)
-Upper.ZIndex = 2
-local UICorner_Upper = Instance.new("UICorner", Upper)
-UICorner_Upper.CornerRadius = UDim.new(0.05, 0) -- 添加輕微圓角
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+	UIGradient.Rotation = 90
+	UIGradient.Parent = DarknessPicker
 
--- TEMPLATETITLE20202 標題美化
-TEMPLATETITLE20202.Name = "TEMPLATETITLE20202"
-TEMPLATETITLE20202.Parent = Upper
-TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- 保留白色背景
-TEMPLATETITLE20202.BackgroundTransparency = 1.000 -- 全透明，僅顯示文字
-TEMPLATETITLE20202.BorderSizePixel = 0
-TEMPLATETITLE20202.Position = UDim2.new(0.00999999978, 0, 0.217391297, 0)
-TEMPLATETITLE20202.Size = UDim2.new(0, 258, 0, 13)
-TEMPLATETITLE20202.ZIndex = 3
-TEMPLATETITLE20202.Font = Enum.Font.GothamBold -- 更換字體為 GothamBold，增強專業感
-TEMPLATETITLE20202.Text = text -- 動態設置文本
-TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(197, 197, 197) -- 柔和的灰色文字
-TEMPLATETITLE20202.TextSize = 16.000
-TEMPLATETITLE20202.TextXAlignment = Enum.TextXAlignment.Left -- 保持左對齊
+	Slider.Name = "Slider"
+	Slider.Parent = DarknessPicker
+	Slider.AnchorPoint = Vector2.new(0.5, 0.5)
+	Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Slider.BackgroundTransparency = 1.000
+	Slider.BorderSizePixel = 0
+	Slider.Position = UDim2.new(0.491197795, 0, 0.0733607039, 0)
+	Slider.Size = UDim2.new(1.28656352, 0, 0.0265010502, 0)
+	Slider.ZIndex = 2
+	Slider.Image = "rbxassetid://3570695787"
+	Slider.ImageColor3 = Color3.fromRGB(255, 74, 74)
+	Slider.ScaleType = Enum.ScaleType.Slice
+	Slider.SliceCenter = Rect.new(100, 100, 100, 100)
+	Slider.SliceScale = 0.120
+
+	UIAspectRatioConstraint_2.Parent = DarknessPicker
+	UIAspectRatioConstraint_2.AspectRatio = 0.157
+
+	S13.Name = "S13"
+	S13.Parent = BG
+	S13.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+	S13.BorderSizePixel = 0
+	S13.Position = UDim2.new(0, 182, 0, 7)
+	S13.Size = UDim2.new(0, 79, 0, 109)
+	S13.ZIndex = 23
+
+	SDFH.Name = "SDFH"
+	SDFH.Parent = S13
+
+	ColourDisplayBIG.Name = "ColourDisplayBIG"
+	ColourDisplayBIG.Parent = S13
+	ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ColourDisplayBIG.BackgroundTransparency = 1.000
+	ColourDisplayBIG.BorderSizePixel = 0
+	ColourDisplayBIG.Position = UDim2.new(0.255401969, 0, 0.159329623, 0)
+	ColourDisplayBIG.Size = UDim2.new(0.473250836, 0, 0.530204058, 0)
+	ColourDisplayBIG.ZIndex = 25
+	ColourDisplayBIG.Image = "rbxassetid://3570695787"
+	ColourDisplayBIG.ScaleType = Enum.ScaleType.Slice
+	ColourDisplayBIG.SliceCenter = Rect.new(100, 100, 100, 100)
+	ColourDisplayBIG.SliceScale = 0.120
+
+	UIAspectRatioConstraint_3.Parent = ColourDisplayBIG
 
 
--- Line Decoration Upper
-linedecoupper.Name = "linedecoupper"
-linedecoupper.Parent = Holder
-linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197) -- 淡藍色裝飾線
-linedecoupper.BorderColor3 = Color3.fromRGB(91, 133, 197)
-linedecoupper.BorderSizePixel = 0
-linedecoupper.Position = UDim2.new(0, 0, 0.150589287, 0)
-linedecoupper.Size = UDim2.new(0.961130738, 0, 0, 1) -- 高度為 1 的線條
-linedecoupper.ZIndex = 3
+	SETCOLOR.Name = "SETCOLOR"
+	SETCOLOR.Parent = S13
+	SETCOLOR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SETCOLOR.BackgroundTransparency = 1.000
+	SETCOLOR.BorderSizePixel = 0
+	SETCOLOR.Position = UDim2.new(0.231911927, 0, 0.730036736, 0)
+	SETCOLOR.Size = UDim2.new(0, 15, 0, 15)
+	SETCOLOR.ZIndex = 23
+	SETCOLOR.Image = "rbxassetid://1489284025"
 
--- 初始狀態與動畫設置
-if COLORPALLETE.Visible == true then
-    ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    COLORPALLETE.BackgroundTransparency = 1
-    Holder.Visible = false
-    ANIMATEFRAME01:TweenPosition(UDim2.new(1.077, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    COLORPALLETE.Visible = false
-    ANIMATEFRAME01.Visible = false
+	Upper.Name = "Upper"
+	Upper.Parent = Holder
+	Upper.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Upper.BackgroundTransparency = 1.000
+	Upper.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	Upper.BorderSizePixel = 0
+	Upper.Position = UDim2.new(1.07835966e-07, 0, 0, 0)
+	Upper.Size = UDim2.new(0, 271, 0, 23)
+	Upper.ZIndex = 2
+
+	TEMPLATETITLE20202.Name = "TEMPLATETITLE20202"
+	TEMPLATETITLE20202.Parent = Upper
+	TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TEMPLATETITLE20202.BackgroundTransparency = 1.000
+	TEMPLATETITLE20202.BorderSizePixel = 0
+	TEMPLATETITLE20202.Position = UDim2.new(0.00999999978, 0, 0.217391297, 0)
+	TEMPLATETITLE20202.Size = UDim2.new(0, 258, 0, 13)
+	TEMPLATETITLE20202.ZIndex = 3
+	TEMPLATETITLE20202.Font = Enum.Font.SourceSansSemibold
+	TEMPLATETITLE20202.Text = text
+	TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(197, 197, 197)
+	TEMPLATETITLE20202.TextSize = 16.000
+	TEMPLATETITLE20202.TextXAlignment = Enum.TextXAlignment.Left
+
+	linedecoupper.Name = "linedecoupper"
+	linedecoupper.Parent = Holder
+	linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
+	linedecoupper.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	linedecoupper.BorderSizePixel = 0
+	linedecoupper.Position = UDim2.new(0, 0, 0.150589287, 0)
+	linedecoupper.Size = UDim2.new(0.961130738, 0, 0, 1)
+	linedecoupper.ZIndex = 3
+	if COLORPALLETE.Visible == true then
+		ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		COLORPALLETE.BackgroundTransparency = 1;
+		Holder.Visible = false
+		ANIMATEFRAME01:TweenPosition(UDim2.new(1.077,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		COLORPALLETE.Visible = false
+		ANIMATEFRAME01.Visible = false
+	end
+	local uis = game:GetService("UserInputService")
+	ANIMATEFRAME01.Visible =true
+	COLORPALLETE.Visible = true
+	ANIMATEFRAME01.Position = UDim2.new(-1.085,0,-0.013,0)
+	Holder.Visible = false
+
+	ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026,0,-0.007,0),'Out','Quint',0.2,true);
+	wait(.2)
+	COLORPALLETE.Visible = true
+	COLORPALLETE.BackgroundTransparency = 0;
+	Holder.Visible = true
+	ANIMATEFRAME01:TweenPosition(UDim2.new(1.077,0,-0.007,0),'Out','Quint',0.2,true);
+	wait(.2)
+	ANIMATEFRAME01.Position = UDim2.new(-1.085,0,-0.013,0)
+	local hsv;
+
+	SETCOLOR.MouseButton1Click:Connect(function()
+		ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		COLORPALLETE.BackgroundTransparency = 1;
+		Holder.Visible = false
+		ANIMATEFRAME01:TweenPosition(UDim2.new(1.077,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		ANIMATEFRAME01.Visible = false
+		ColourDisplay.ImageColor3 = ColourDisplayBIG.ImageColor3
+		COLORPALLETE.Visible = false
+
+		pcall(function()
+            Action( Color3.fromRGB(ColourDisplayBIG.ImageColor3.R * 200 ,ColourDisplayBIG.ImageColor3.G * 200 ,ColourDisplayBIG.ImageColor3.B* 200) )
+        end)
+
+	end)
+
+	RESETALL.MouseButton1Click:Connect(function()
+		ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		COLORPALLETE.BackgroundTransparency = 1;
+		Holder.Visible = false
+		ANIMATEFRAME01:TweenPosition(UDim2.new(1.077,0,-0.007,0),'Out','Quint',0.2,true);
+		wait(.2)
+		COLORPALLETE.Visible = false
+
+		ANIMATEFRAME01.Visible = false
+
+	end)
+	local buttonDown = false
+	local movingSlider = false
+
+
+	local function updateColour(centreOfWheel)
+
+		local colourPickerCentre = Vector2.new(
+			Picker.AbsolutePosition.X + (Picker.AbsoluteSize.X/2),
+			Picker.AbsolutePosition.Y + (Picker.AbsoluteSize.Y/2)
+		)
+		local h = (math.pi - math.atan2(colourPickerCentre.Y - centreOfWheel.Y, colourPickerCentre.X - centreOfWheel.X)) / (math.pi * 2)
+
+		local s = (centreOfWheel - colourPickerCentre).Magnitude / (ColourWheel.AbsoluteSize.X/2)
+
+		local v = math.abs((Slider.AbsolutePosition.Y - DarknessPicker.AbsolutePosition.Y) / DarknessPicker.AbsoluteSize.Y - 1)
+
+
+		hsv = Color3.fromHSV(math.clamp(h, 0, 1), math.clamp(s, 0, 1), math.clamp(v, 0, 1))
+
+
+		ColourDisplayBIG.ImageColor3 = hsv
+		UIGradient.Color = ColorSequence.new{
+			ColorSequenceKeypoint.new(0, hsv), 
+			ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+		}
+
+	end
+
+
+	ColourWheel.MouseButton1Down:Connect(function()
+		buttonDown = true
+	end)
+
+	DarknessPicker.MouseButton1Down:Connect(function()
+		movingSlider = true
+	end)
+
+
+	uis.InputEnded:Connect(function(input)
+
+		if input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
+
+		buttonDown = false
+		movingSlider = false
+	end)
+
+
+	uis.InputChanged:Connect(function(input)
+
+		if input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
+
+
+		local mousePos = uis:GetMouseLocation() - Vector2.new(0, game:GetService("GuiService"):GetGuiInset().Y)
+
+		local centreOfWheel = Vector2.new(ColourWheel.AbsolutePosition.X + (ColourWheel.AbsoluteSize.X/2), ColourWheel.AbsolutePosition.Y + (ColourWheel.AbsoluteSize.Y/2))
+
+		local distanceFromWheel = (mousePos - centreOfWheel).Magnitude
+
+
+		if distanceFromWheel <= ColourWheel.AbsoluteSize.X/2 and buttonDown then
+
+			Picker.Position = UDim2.new(0, mousePos.X - ColourWheel.AbsolutePosition.X, 0, mousePos.Y - ColourWheel.AbsolutePosition.Y)
+
+
+		elseif movingSlider then
+
+			Slider.Position = UDim2.new(Slider.Position.X.Scale, 0, 0, 
+				math.clamp(
+					mousePos.Y - DarknessPicker.AbsolutePosition.Y, 
+					0, 
+					DarknessPicker.AbsoluteSize.Y)
+			)	
+		end
+
+		updateColour(centreOfWheel)
+
+	end)
+	draggable(COLORPALLETE)
 end
-
--- 取得用戶輸入服務
-local uis = game:GetService("UserInputService")
-
--- 動畫顯示與初始位置設置
-ANIMATEFRAME01.Visible = true
-COLORPALLETE.Visible = true
-ANIMATEFRAME01.Position = UDim2.new(-1.085, 0, -0.013, 0)
-Holder.Visible = false
-
--- 動畫效果
-ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-wait(0.2)
-COLORPALLETE.Visible = true
-COLORPALLETE.BackgroundTransparency = 0
-Holder.Visible = true
-ANIMATEFRAME01:TweenPosition(UDim2.new(1.077, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-wait(0.2)
-ANIMATEFRAME01.Position = UDim2.new(-1.085, 0, -0.013, 0)
-
--- 定義 hsv
-local hsv
-
--- SETCOLOR 按鈕點擊事件
-SETCOLOR.MouseButton1Click:Connect(function()
-    ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    COLORPALLETE.BackgroundTransparency = 1
-    Holder.Visible = false
-    ANIMATEFRAME01:TweenPosition(UDim2.new(1.077, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    ANIMATEFRAME01.Visible = false
-    ColourDisplay.ImageColor3 = ColourDisplayBIG.ImageColor3
-    COLORPALLETE.Visible = false
-
-    -- 執行傳遞顏色
-    pcall(function()
-        Action(Color3.fromRGB(
-            ColourDisplayBIG.ImageColor3.R * 200,
-            ColourDisplayBIG.ImageColor3.G * 200,
-            ColourDisplayBIG.ImageColor3.B * 200
-        ))
-    end)
-end)
-
--- RESETALL 按鈕點擊事件
-RESETALL.MouseButton1Click:Connect(function()
-    ANIMATEFRAME01:TweenPosition(UDim2.new(-0.026, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    COLORPALLETE.BackgroundTransparency = 1
-    Holder.Visible = false
-    ANIMATEFRAME01:TweenPosition(UDim2.new(1.077, 0, -0.007, 0), 'Out', 'Quint', 0.2, true)
-    wait(0.2)
-    COLORPALLETE.Visible = false
-    ANIMATEFRAME01.Visible = false
-end)
-
--- 用戶交互變數
-local buttonDown = false
-local movingSlider = false
-
--- 更新顏色函數
-local function updateColour(centreOfWheel)
-    local colourPickerCentre = Vector2.new(
-        Picker.AbsolutePosition.X + (Picker.AbsoluteSize.X / 2),
-        Picker.AbsolutePosition.Y + (Picker.AbsoluteSize.Y / 2)
-    )
-    local h = (math.pi - math.atan2(colourPickerCentre.Y - centreOfWheel.Y, colourPickerCentre.X - centreOfWheel.X)) / (math.pi * 2)
-    local s = (centreOfWheel - colourPickerCentre).Magnitude / (ColourWheel.AbsoluteSize.X / 2)
-    local v = math.abs((Slider.AbsolutePosition.Y - DarknessPicker.AbsolutePosition.Y) / DarknessPicker.AbsoluteSize.Y - 1)
-
-    hsv = Color3.fromHSV(math.clamp(h, 0, 1), math.clamp(s, 0, 1), math.clamp(v, 0, 1))
-    ColourDisplayBIG.ImageColor3 = hsv
-
-    UIGradient.Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, hsv),
-        ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
-    }
-end
-
--- ColourWheel 點擊事件
-ColourWheel.MouseButton1Down:Connect(function()
-    buttonDown = true
-end)
-
--- DarknessPicker 點擊事件
-DarknessPicker.MouseButton1Down:Connect(function()
-    movingSlider = true
-end)
-
--- 輸入結束事件
-uis.InputEnded:Connect(function(input)
-    if input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
-    buttonDown = false
-    movingSlider = false
-end)
-
--- 鼠標移動事件
-uis.InputChanged:Connect(function(input)
-    if input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
-
-    local mousePos = uis:GetMouseLocation() - Vector2.new(0, game:GetService("GuiService"):GetGuiInset().Y)
-    local centreOfWheel = Vector2.new(
-        ColourWheel.AbsolutePosition.X + (ColourWheel.AbsoluteSize.X / 2),
-        ColourWheel.AbsolutePosition.Y + (ColourWheel.AbsoluteSize.Y / 2)
-    )
-    local distanceFromWheel = (mousePos - centreOfWheel).Magnitude
-
-    if distanceFromWheel <= ColourWheel.AbsoluteSize.X / 2 and buttonDown then
-        Picker.Position = UDim2.new(0, mousePos.X - ColourWheel.AbsolutePosition.X, 0, mousePos.Y - ColourWheel.AbsolutePosition.Y)
-    elseif movingSlider then
-        Slider.Position = UDim2.new(Slider.Position.X.Scale, 0, 0, 
-            math.clamp(
-                mousePos.Y - DarknessPicker.AbsolutePosition.Y,
-                0,
-                DarknessPicker.AbsoluteSize.Y
-            )
-        )
-    end
-
-    updateColour(centreOfWheel)
-end)
-
--- 拖動函數
-draggable(COLORPALLETE)
-
 
 
 local MAIN = Instance.new("Frame")
@@ -607,74 +587,65 @@ local limit1 = Instance.new("Frame")
 
 
 
--- PCR_1 主框架
+--Properties:
+
 PCR_1.Name = "PCR_1"
 PCR_1.Parent = game:GetService("CoreGui")
 PCR_1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 PCR_1.ResetOnSpawn = false
 
--- MAIN 主 UI 框架
 MAIN.Name = "MAIN"
 MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
-MAIN.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- 更深的背景灰色
+MAIN.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 MAIN.BorderSizePixel = 0
 MAIN.Position = UDim2.new(0.285505116, 0, 0.649934769, 0)
 MAIN.Size = UDim2.new(0, 588, 0, 415)
 MAIN.ZIndex = 2
-local UICorner_MAIN = Instance.new("UICorner", MAIN)
-UICorner_MAIN.CornerRadius = UDim.new(0.05, 0) -- 添加輕微圓角
 
--- BG 內框
 BG.Name = "BG"
 BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(35, 35, 35) -- 深灰色背景
-BG.BorderColor3 = Color3.fromRGB(91, 133, 197) -- 淡藍色邊框
+BG.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
 BG.BorderSizePixel = 0
 BG.Position = UDim2.new(0, 0, 0.0615355708, 0)
 BG.Size = UDim2.new(0, 588, 0, 365)
 BG.ClipsDescendants = true
-local UICorner_BG = Instance.new("UICorner", BG)
-UICorner_BG.CornerRadius = UDim.new(0.03, 0)
 
--- Upper 頂部框架
 Upper.Name = "Upper"
 Upper.Parent = MAIN
-Upper.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- 深灰色區域
-Upper.BackgroundTransparency = 0
-Upper.BorderColor3 = Color3.fromRGB(91, 133, 197) -- 保持藍色邊框
-Upper.BorderSizePixel = 1
+Upper.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Upper.BackgroundTransparency = 1.000
+Upper.BorderColor3 = Color3.fromRGB(91, 133, 197)
+Upper.BorderSizePixel = 0
 Upper.Size = UDim2.new(0, 600, 0, 23)
 Upper.ZIndex = 2
 
--- UIListLayout (橫向佈局)
+
 UIListLayout.Parent = Upper
 UIListLayout.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
--- 頂部分割線
 linedecoupper.Name = "linedecoupper"
 linedecoupper.Parent = MAIN
-linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197) -- 淡藍色分隔線
+linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
 linedecoupper.BorderColor3 = Color3.fromRGB(91, 133, 197)
 linedecoupper.BorderSizePixel = 0
 linedecoupper.Position = UDim2.new(0, 0, 0.0591259636, 0)
 linedecoupper.Size = UDim2.new(1, 0, 0, 1)
 linedecoupper.ZIndex = 3
 
--- DOWNER 底部框架
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
-DOWNER.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- 深灰色背景
-DOWNER.BackgroundTransparency = 0.2 -- 輕微透明
-DOWNER.BorderColor3 = Color3.fromRGB(91, 133, 197) -- 藍色邊框
+DOWNER.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DOWNER.BackgroundTransparency = 1.000
+DOWNER.BorderColor3 = Color3.fromRGB(91, 133, 197)
 DOWNER.BorderSizePixel = 0
 DOWNER.Position = UDim2.new(0, 0, 0.943463266, 0)
 DOWNER.Size = UDim2.new(0, 600, 0, 23)
 DOWNER.ZIndex = 2
 
--- 網站文字
 WEBSITE.Name = "WEBSITE"
 WEBSITE.Parent = DOWNER
 WEBSITE.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -685,12 +656,11 @@ WEBSITE.Position = UDim2.new(0.177174687, 0, 0.499190629, 0)
 WEBSITE.Size = UDim2.new(0, 197, 0, 23)
 WEBSITE.ZIndex = 3
 WEBSITE.Font = Enum.Font.ArialBold
-WEBSITE.Text = "NerdsInc.gq" -- 顯示的網站文字
-WEBSITE.TextColor3 = Color3.fromRGB(199, 199, 199) -- 柔和的灰色
+WEBSITE.Text = "NerdsInc.gq" 
+WEBSITE.TextColor3 = Color3.fromRGB(199, 199, 199)
 WEBSITE.TextSize = 14.000
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
--- LABEL2 底部標籤
 LABEL2.Name = "LABEL2"
 LABEL2.Parent = DOWNER
 LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -701,22 +671,20 @@ LABEL2.Position = UDim2.new(0.795508027, 0, 0.455712378, 0)
 LABEL2.Size = UDim2.new(0, 197, 0, 23)
 LABEL2.ZIndex = 3
 LABEL2.Font = Enum.Font.ArialBold
-LABEL2.Text = "Alpha build / ∞ days left"
+LABEL2.Text = "Alpha build / âˆž days left"
 LABEL2.TextColor3 = Color3.fromRGB(199, 199, 199)
 LABEL2.TextSize = 14.000
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
--- 底部分隔線
 linedecoDOWNER.Name = "linedecoDOWNER"
 linedecoDOWNER.Parent = MAIN
-linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(91, 133, 197) -- 藍色分隔線
+linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
 linedecoDOWNER.BorderColor3 = Color3.fromRGB(91, 133, 197)
 linedecoDOWNER.BorderSizePixel = 0
 linedecoDOWNER.Position = UDim2.new(0, 0, 0.941053629, 0)
 linedecoDOWNER.Size = UDim2.new(1, 0, 0, 1)
 linedecoDOWNER.ZIndex = 10
 
--- 頂部標籤
 UPPERLABEL.Name = "UPPERLABEL"
 UPPERLABEL.Parent = MAIN
 UPPERLABEL.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -728,11 +696,10 @@ UPPERLABEL.Size = UDim2.new(0, 84, 0, 23)
 UPPERLABEL.ZIndex = 3
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "Not loaded."
-UPPERLABEL.TextColor3 = Color3.fromRGB(199, 199, 199) -- 柔和灰色文字
+UPPERLABEL.TextColor3 = Color3.fromRGB(199, 199, 199)
 UPPERLABEL.TextSize = 17.000
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
--- limit1 限制框架
 limit1.Name = "limit1"
 limit1.Parent = MAIN
 limit1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -743,24 +710,22 @@ limit1.Size = UDim2.new(0, 588, 0, 364)
 limit1.ZIndex = 5
 
 
-
 repeat wait() until game.Players.LocalPlayer
 
-local library = {}
-library.sections = {}
-local totalSections = 0
 
--- 修改網站文本
+
+
+local library = {};
+library.sections = {};
+local totalSections = 0;
+
 function library:ChangeWeb(site)
 	WEBSITE.Text = site
 end
-
--- 修改遊戲文本
 function library:ChangeGame(gamee)
 	LABEL2.Text = gamee
 end
 
--- Tween 動畫參數
 local tweenTime = 0.25
 local tweenInfo = TweenInfo.new(
 	tweenTime,
@@ -768,187 +733,247 @@ local tweenInfo = TweenInfo.new(
 	Enum.EasingDirection.Out
 )
 
--- 添加漣漪效果的函數
-function AddRipple(button, ael, ayo)
+
+function AddRipple(button,ael,ayo)
 	ayo = ayo or Color3.fromRGB(56, 56, 56)
 	button.ClipsDescendants = true
-
+	local obj = button
 	local function Ripple()
-		spawn(function()
-			local Mouse = game.Players.LocalPlayer:GetMouse()
-			local Circle = Instance.new("ImageLabel")
-			Circle.Name = "Circle"
-			Circle.Parent = button
-			Circle.BackgroundTransparency = 1
-			Circle.ZIndex = 10
-			Circle.Image = "rbxassetid://266543268"
-			Circle.ImageColor3 = Color3.fromRGB(211, 211, 211)
-			Circle.ImageTransparency = 0.6
-			local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
-			Circle.Position = UDim2.new(0, NewX, 0, NewY)
-			local size = math.max(button.AbsoluteSize.X, button.AbsoluteSize.Y) * 1.5
-			Circle:TweenSizeAndPosition(
-				UDim2.new(0, size, 0, size),
-				UDim2.new(0.5, -size / 2, 0.5, -size / 2),
-				Enum.EasingDirection.Out,
-				Enum.EasingStyle.Quad,
-				0.2,
-				false
-			)
-			for i = 1, 15 do
-				Circle.ImageTransparency = Circle.ImageTransparency + 0.05
-				wait()
+		spawn(
+			function()
+				local Mouse = game.Players.LocalPlayer:GetMouse()
+				local Circle = Instance.new("ImageLabel")
+				Circle.Name = "Circle"
+				Circle.Parent = obj
+				Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Circle.BackgroundTransparency = 1.000
+				Circle.ZIndex = 10
+				Circle.Image = "rbxassetid://266543268"
+				Circle.ImageColor3 = Color3.fromRGB(211, 211, 211)
+				Circle.ImageTransparency = 0.6
+				local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
+				Circle.Position = UDim2.new(0, NewX, 0, NewY)
+				local Size = 0
+				if obj.AbsoluteSize.X > obj.AbsoluteSize.Y then
+					Size = obj.AbsoluteSize.X * 1
+				elseif obj.AbsoluteSize.X < obj.AbsoluteSize.Y then
+					Size = obj.AbsoluteSize.Y * 1
+				elseif obj.AbsoluteSize.X == obj.AbsoluteSize.Y then
+					Size = obj.AbsoluteSize.X * 1
+				end
+				Circle:TweenSizeAndPosition(
+					UDim2.new(0, Size, 0, Size),
+					UDim2.new(0.5, -Size / 2, 0.5, -Size / 2),
+					"Out",
+					"Quad",
+					0.2,
+					false
+				)
+				for i = 1, 15 do
+					Circle.ImageTransparency = Circle.ImageTransparency + 0.05
+					wait()
+				end
+				Circle:Destroy()
 			end
-			Circle:Destroy()
-		end)
+		)
+	end
+	local Background = Instance.new("Frame")
+	local CornerRadius = Instance.new("UICorner")
+	Background.Name = "Background"
+	Background.Parent = button
+	Background.AnchorPoint = Vector2.new(0.5, 0.5)
+	Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Background.BackgroundTransparency = 1.000
+	Background.ClipsDescendants = true
+	Background.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Background.Size = UDim2.new(1, 0, 1, 0)
+	CornerRadius.CornerRadius = UDim.new(0, 4)
+	CornerRadius.Name = "CornerRadius"
+	CornerRadius.Parent = Background
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+
+	local background = button:WaitForChild("Background")
+
+	local active = false
+	local hovering = false
+
+	local function OnMouseButton1Down()
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 =  ayo})
+		backgroundFadeIn:Play()
 	end
 
-	-- 滑鼠互動效果
-	button.MouseButton1Click:Connect(Ripple)
-	button.MouseButton1Down:Connect(function()
-		TweenService:Create(ael, tweenInfo, { TextColor3 = ayo }):Play()
-	end)
-	button.MouseButton1Up:Connect(function()
-		TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) }):Play()
-	end)
-	button.MouseEnter:Connect(function()
-		TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(197, 197, 197) }):Play()
-	end)
-	button.MouseLeave:Connect(function()
-		TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) }):Play()
-	end)
-end
+	local function OnMouseButton1Up()
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+		backgroundFadeIn:Play()
+	end
 
--- 計算字符串的長度
+	local function OnMouseEnter()
+		hovering = true
+
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+
+		backgroundFadeIn:Play()
+
+		backgroundFadeIn.Completed:Wait()
+
+		local backgroundFadeOut = TweenService:Create(ael, tweenInfo, {TextColor3 = Color3.fromRGB(197, 197, 197)})
+
+		repeat wait() until not hovering
+
+		backgroundFadeOut:Play()
+	end
+
+
+	local function OnMouseLeave()
+		hovering = false
+		active = false
+	end
+	button.MouseButton1Down:Connect(OnMouseButton1Down)
+	button.MouseButton1Up:Connect(OnMouseButton1Up)
+	button.MouseEnter:Connect(OnMouseEnter)
+	button.MouseLeave:Connect(OnMouseLeave)
+	button.MouseButton1Click:Connect(Ripple)
+end
 local function getsize(frame)
-	local size = 0
-	for i = 1, #frame do
-		local s = frame:sub(i, i)
+	local size = 0;
+	for i=1,#frame do
+		local s = frame:sub(i,i)
 		if string.upper(s) == s then
-			size = size + (s == 'I' and 4 or 12)
+			if s == 'I' then
+				size+=4
+			else
+				size+=12;
+			end
 		else
-			size = size + (s == 'i' and 4 or 10)
+			if s == 'i' then
+				size+= 4
+			else
+				size += 10
+			end
 		end
 	end
 	return size
 end
-
--- FPS 與延遲監控
 library.fps = ''
-local success, errorMsg = pcall(function()
+
+local s,e = pcall(function()
 	local k = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
 end)
 
-if not success or errorMsg then
+if not s or e then
 	library.ms = 'err'
 else
 	spawn(function()
 		game:GetService("RunService").RenderStepped:Connect(function()
-			library.ms = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+			local plr = game:GetService('Players').LocalPlayer
+			library.ms =  game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
 		end)
 	end)
 end
 
--- 添加水印功能
+
+
 function library:AddWatermark(Text)
 	local intern = {}
-	local size = (#Text) * 7
+	local size
 
--- MAIN Frame
-local obj1 = Instance.new("Frame")
-obj1.AnchorPoint = Vector2.new(0, 0.5)
-obj1.BackgroundColor3 = Color3.fromRGB(22, 22, 22) -- 深灰色背景
-obj1.BorderSizePixel = 0
-obj1.Position = UDim2.new(0.0109301507, 0, 0.973039031, 0)
-obj1.Size = UDim2.new(0, size, 0, 28)
-obj1.ZIndex = 8
-obj1.Name = "MAIN"
-obj1.Visible = true
-obj1.ClipsDescendants = true
-obj1.Parent = PCR_1
+	size=(#Text) * 7
 
--- UIStroke for MAIN
-local obj2 = Instance.new("UIStroke", obj1)
-obj2.Color = Color3.fromRGB(79, 117, 172) -- 淡藍色邊框
-
--- Nested Frame in MAIN
-local obj3 = Instance.new("Frame", obj1)
-obj3.AnchorPoint = Vector2.new(0.5, 0.5)
-obj3.BackgroundColor3 = Color3.fromRGB(29, 29, 29) -- 更深的灰色內框
-obj3.BorderSizePixel = 0
-obj3.Position = UDim2.new(0.5, 0, 0.5, 0)
-obj3.Size = UDim2.new(1, -6, 1, -6)
-obj3.ZIndex = 7
-obj3.Name = "MAIN"
-
--- TextLabel in Nested Frame
-local obj4 = Instance.new("TextLabel", obj3)
-obj4.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- 保留白色背景
-obj4.BackgroundTransparency = 1 -- 全透明背景
-obj4.BorderSizePixel = 0
-obj4.Position = UDim2.new(0.0215827357, 0, 0, 0)
-obj4.Size = UDim2.new(0, 325, 0, 22)
-obj4.Font = Enum.Font.SourceSansSemibold
-obj4.Text = Text -- 動態文本
-obj4.TextColor3 = Color3.fromRGB(197, 197, 197) -- 柔和的灰色文字
-obj4.TextSize = 16
-obj4.TextXAlignment = Enum.TextXAlignment.Left
-
--- Intern Functions
-function intern:ChangeText(text)
-	local size = #text * 7 + 5 -- 計算文本大小動態調整框架寬度
-	obj4.Text = text
-	Text = text
+	--[MAIN]--
+	local obj1 = Instance.new("Frame")
+	obj1.AnchorPoint = Vector2.new(0, 0.5)
+	obj1.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+	obj1.BorderSizePixel = 0
+	obj1.Position = UDim2.new(0.0109301507, 0, 0.973039031, 0)
 	obj1.Size = UDim2.new(0, size, 0, 28)
-end
+	obj1.ZIndex = 8
+	obj1.Name = [[MAIN]]
+	obj1.Visible = true
+	obj1.ClipsDescendants = true
+	obj1.Parent = PCR_1
+	--[UIStroke]--
+	local obj2 = Instance.new("UIStroke", obj1)
+	obj2.Color = Color3.new(0.309804, 0.458824, 0.67451)
 
-local can = true
-function intern:Visible(val)
-	if val == nil then
-		return obj1.Visible
+	--[MAIN]--
+	local obj3 = Instance.new("Frame", obj1)
+	obj3.AnchorPoint = Vector2.new(0.5, 0.5)
+	obj3.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+	obj3.BorderSizePixel = 0
+	obj3.Position = UDim2.new(0.5, 0, 0.5, 0)
+	obj3.Size = UDim2.new(1, -6, 1, -6)
+	obj3.ZIndex = 7
+	obj3.Name = [[MAIN]]
+
+	--[TextLabel]--
+	local obj4 = Instance.new("TextLabel", obj3)
+	obj4.BackgroundColor3 = Color3.new(1, 1, 1)
+	obj4.BackgroundTransparency = 1
+	obj4.BorderSizePixel = 0
+	obj4.Position = UDim2.new(0.0215827357, 0, 0, 0)
+	obj4.Size = UDim2.new(0, 325, 0, 22)
+	obj4.Font = Enum.Font.SourceSansSemibold
+	obj4.Text = Text
+	obj4.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+	obj4.TextSize = 16
+	obj4.TextXAlignment = Enum.TextXAlignment.Left
+
+	function intern:ChangeText(text)
+		local size = #text * 7 + 5
+		obj4.Text = text;
+		Text = text
+		obj1.Size = UDim2.new(0, size, 0, 28)
 	end
-
-	if can then
-		val = not val
-		if not val then
-			can = not can
-			obj1.Visible = true
-			wait(0.5) -- 顯示動畫
-			can = not can
-		else
-			can = not can
-			obj1.Visible = false
-			wait(0.5) -- 隱藏動畫
-			can = not can
+	local can = true
+	function intern:Visible(val)
+		if val  == nil then
+			return obj1.Visible
 		end
-	end
-end
-
-return intern
-
--- Library Initialization
-function library:Init(name)
-	for _, v in pairs(Upper:GetChildren()) do
-		if v:IsA("TextButton") then
-			if v.Name == name then
-				TweenService:Create(v, TweenInfo.new(0.26, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { TextColor3 = Color3.fromRGB(210, 210, 210) }):Play()
+		if can then
+			val=not val
+			if not val then
+				can = not can
+				obj1.Visible = true
+				wait(.5)
+				can = not can
 			else
-				TweenService:Create(v, TweenInfo.new(0.26, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { TextColor3 = Color3.fromRGB(138, 138, 138) }):Play()
+				can = not can
+
+				obj1.Visible =false
+				wait(.5)
+				can = not can
 			end
 		end
-	end
 
-	for _, v in pairs(limit1:GetChildren()) do
-		if v:IsA("Frame") or v:IsA("ScrollingFrame") then
-			v.Visible = (v.Name == name)
-		end
 	end
+	return intern
 end
 
--- AddWindow Function
+function library:Init(name)
+    for i,v in pairs(Upper:GetChildren()) do
+        if v:IsA('TextButton') then
+            if v.Name == name then
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(210, 210, 210)}):Play()	
+            else
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(138, 138, 138)}):Play()	
+            end
+        end
+    end
+    for i,v in pairs(limit1:GetChildren()) do
+        if v:IsA('Frame') or v:IsA('ScrollingFrame') then
+            if v.Name == name then
+                v.Visible = true
+            else
+                v.Visible = false
+            end
+        end
+    end
+end
+
 function library:AddWindow(text)
 	local sec = {}
-	text = text or "Not Def" -- 預設標題文字
+	text=text or 'Not Def'
 
 	local HOLDER = Instance.new("ScrollingFrame")
 	local _LEFT = Instance.new("Frame")
