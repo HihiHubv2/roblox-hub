@@ -381,7 +381,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	TEMPLATETITLE20202.Name = "TEMPLATETITLE20202"
 	TEMPLATETITLE20202.Parent = Upper
-	TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TEMPLATETITLE20202.BackgroundTransparency = 1.000
 	TEMPLATETITLE20202.BorderSizePixel = 0
 	TEMPLATETITLE20202.Position = UDim2.new(0.00999999978, 0, 0.217391297, 0)
@@ -389,14 +389,14 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	TEMPLATETITLE20202.ZIndex = 3
 	TEMPLATETITLE20202.Font = Enum.Font.SourceSansSemibold
 	TEMPLATETITLE20202.Text = text
-	TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(126, 196, 143)
+	TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(197, 197, 197)
 	TEMPLATETITLE20202.TextSize = 16.000
 	TEMPLATETITLE20202.TextXAlignment = Enum.TextXAlignment.Left
 
 	linedecoupper.Name = "linedecoupper"
 	linedecoupper.Parent = Holder
-	linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 197, 100)
-	linedecoupper.BorderColor3 = Color3.fromRGB(91, 197, 105)
+	linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
+	linedecoupper.BorderColor3 = Color3.fromRGB(91, 133, 197)
 	linedecoupper.BorderSizePixel = 0
 	linedecoupper.Position = UDim2.new(0, 0, 0.150589287, 0)
 	linedecoupper.Size = UDim2.new(0.961130738, 0, 0, 1)
@@ -479,7 +479,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 		ColourDisplayBIG.ImageColor3 = hsv
 		UIGradient.Color = ColorSequence.new{
 			ColorSequenceKeypoint.new(0, hsv), 
-			ColorSequenceKeypoint.new(1, Color3.new(0.2, 0.28627450980392155, 0.26666666666666666))
+			ColorSequenceKeypoint.new(1, Color3.new(0.30980392156862746, 0.4392156862745098, 0.40784313725490196))
 		}
 
 	end
@@ -648,7 +648,7 @@ UPPERLABEL.BackgroundTransparency = 1.000
 UPPERLABEL.Size = UDim2.new(0, 120, 0, 30) -- 放大
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
-UPPERLABEL.TextColor3 = Color3.fromRGB(114, 106, 216)
+UPPERLABEL.TextColor3 = Color3.fromRGB(114, 106, 216)1)
 UPPERLABEL.TextSize = 18
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
