@@ -553,34 +553,61 @@ local limit1 = Instance.new("Frame")
 
 --Properties:
 
-local RunService = game:GetService("RunService")
-local TweenService = game:GetService("TweenService")
-
--- 主 UI 框架
-local PCR_1 = Instance.new("ScreenGui")
 PCR_1.Name = "PCR_1"
 PCR_1.Parent = game:GetService("CoreGui")
 PCR_1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 PCR_1.ResetOnSpawn = false
 
-local MAIN = Instance.new("Frame")
+-- 主框架
 MAIN.Name = "MAIN"
 MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
-MAIN.BackgroundColor3 = Color3.fromRGB(45, 64, 55)
+MAIN.BackgroundColor3 = Color3.fromRGB(45, 64, 55) -- 柔和深綠色
 MAIN.BorderSizePixel = 0
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
-MAIN.Size = UDim2.new(0, 800, 0, 600)
+MAIN.Size = UDim2.new(0, 800, 0, 600) -- 調整主框架大小
 MAIN.ZIndex = 2
 
--- 下方框架
-local DOWNER = Instance.new("Frame")
+-- 內容區域
+BG.Name = "BG"
+BG.Parent = MAIN
+BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220) -- 柔和灰綠色
+BG.BorderSizePixel = 0
+BG.Position = UDim2.new(0, 0, 0.12, 0) -- 調整內容區域的位置
+BG.Size = UDim2.new(1, 0, 0.75, 0) -- 更合適的內容區域大小
+BG.ClipsDescendants = true
+
+-- 頂部區域
+Upper.Name = "Upper"
+Upper.Parent = MAIN
+Upper.BackgroundTransparency = 1.000
+Upper.Size = UDim2.new(1, 0, 0, 40) -- 調整高度
+Upper.ZIndex = 2
+
+local UIListLayout_Upper = Instance.new("UIListLayout", Upper)
+UIListLayout_Upper.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_Upper.HorizontalAlignment = Enum.HorizontalAlignment.Left
+UIListLayout_Upper.Padding = UDim.new(0, 12) -- 增加間隔
+
+-- 上方裝飾線
+linedecoupper.Name = "linedecoupper"
+linedecoupper.Parent = MAIN
+linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
+linedecoupper.BorderSizePixel = 0
+linedecoupper.Position = UDim2.new(0, 0, 0.11, 0) -- 調整線條位置
+linedecoupper.Size = UDim2.new(1, 0, 0, 3) -- 加粗線條
+linedecoupper.ZIndex = 3
+
+-- 底部區域
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
 DOWNER.BackgroundTransparency = 1.000
 DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
-DOWNER.Size = UDim2.new(1, 0, 0, 40)
+DOWNER.Size = UDim2.new(1, 0, 0, 40) -- 調整高度
 DOWNER.ZIndex = 2
+
+
+local RunService = game:GetService("RunService")
 
 -- 左側標籤
 local WEBSITE = Instance.new("TextLabel")
@@ -632,48 +659,48 @@ end
 -- 啟動震動效果
 shakeElement(WEBSITE, amplitude)
 shakeElement(LABEL2, amplitude)
-shakeElement(DOWNER, amplitude)
+-- 底部裝飾線
+linedecoDOWNER.Name = "linedecoDOWNER"
+linedecoDOWNER.Parent = MAIN
+linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
+linedecoDOWNER.BorderSizePixel = 0
+linedecoDOWNER.Position = UDim2.new(0, 0, 0.98, 0)
+linedecoDOWNER.Size = UDim2.new(1, 0, 0, 3) -- 加粗線條
+linedecoDOWNER.ZIndex = 10
 
--- 額外：FPS 標籤使用 Tween 動畫
+local TweenService = game:GetService("TweenService")
+
+-- 右側標籤 (FPS)
 local UPPERLABEL = Instance.new("TextLabel")
 UPPERLABEL.Name = "UPPERLABEL"
-UPPERLABEL.Parent = MAIN
+UPPERLABEL.Parent = script.Parent -- 設定父級，根據你的設計替換
 UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
-UPPERLABEL.Position = UDim2.new(0.95, 0, 0.1, 0)
+UPPERLABEL.Position = UDim2.new(1, -10, 0.5, 0) -- 初始位置
 UPPERLABEL.BackgroundTransparency = 1.000
 UPPERLABEL.Size = UDim2.new(0, 140, 0, 30)
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
 UPPERLABEL.TextColor3 = Color3.fromRGB(121, 112, 241)
 UPPERLABEL.TextSize = 20
+UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
--- FPS 彈跳動畫
+-- TweenService 動畫函數
 local function createBounce(label)
     local tweenInfo = TweenInfo.new(
-        1, -- 動畫時長
-        Enum.EasingStyle.Sine,
-        Enum.EasingDirection.InOut,
+        1, -- 動畫時長 (1秒)
+        Enum.EasingStyle.Sine, -- 平滑動畫效果
+        Enum.EasingDirection.InOut, -- 從中心點進出
         -1, -- 無限循環
         true -- 自動反向播放
     )
-    local goal = {Position = UDim2.new(0.95, 0, 0.2, 0)} -- 動畫目標位置
+    local goal = {Position = UDim2.new(1, -10, 0.7, 0)} -- 目標位置 (往下移動)
+
     local bounceTween = TweenService:Create(label, tweenInfo, goal)
     bounceTween:Play()
 end
 
+-- 啟動彈跳動畫
 createBounce(UPPERLABEL)
-
--- library 方法
-local library = {}
-function library:ChangeWeb(newText)
-    WEBSITE.Text = newText
-    shakeElement(WEBSITE, amplitude)
-end
-
-function library:ChangeGame(newText)
-    LABEL2.Text = newText
-    shakeElement(LABEL2, amplitude)
-end
 -- 內容限制框
 limit1.Name = "limit1"
 limit1.Parent = MAIN
