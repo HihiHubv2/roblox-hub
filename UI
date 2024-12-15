@@ -212,51 +212,15 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	local TEMPLATETITLE20202 = Instance.new("TextLabel")
 	local linedecoupper = Instance.new("Frame")
 	local RESETALL = Instance.new('ImageButton')
--- RESETALL 按鈕
-local RESETALL = Instance.new("ImageButton")
-RESETALL.Name = "RESETALL"
-RESETALL.Parent = S13
-
--- 基本外觀設定
-RESETALL.BackgroundTransparency = 1 -- 背景完全透明
-RESETALL.BorderSizePixel = 0        -- 移除邊框
-RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- 白色（可根據需求調整）
-
--- 位置和大小
-RESETALL.Position = UDim2.new(0.6215, 0, 0.73, 0)  -- 縮短小數位，保持準確度
-RESETALL.Size = UDim2.new(0, 20, 0, 20)            -- 調整按鈕大小，使其更易於點擊
-
--- 顯示的圖片
-RESETALL.ZIndex = 23
-RESETALL.Image = "rbxassetid://5640320478"         -- 圖片資源 ID
-RESETALL.ImageColor3 = Color3.fromRGB(200, 200, 200) -- 淡灰色圖片（可根據需求更改）
-
--- 添加圓角設計
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0.5, 0)           -- 圓形按鈕
-UICorner.Parent = RESETALL
-
--- 添加滑鼠懸停效果
-local TweenService = game:GetService("TweenService")
-
--- 懸停動畫：變亮
-local hoverIn = TweenService:Create(RESETALL, TweenInfo.new(0.2), {
-    ImageColor3 = Color3.fromRGB(255, 255, 255) -- 懸停時變白
-})
-
--- 離開動畫：回到原色
-local hoverOut = TweenService:Create(RESETALL, TweenInfo.new(0.2), {
-    ImageColor3 = Color3.fromRGB(200, 200, 200) -- 離開時淡灰色
-})
-
--- 綁定滑鼠事件
-RESETALL.MouseEnter:Connect(function()
-    hoverIn:Play()
-end)
-
-RESETALL.MouseLeave:Connect(function()
-    hoverOut:Play()
-end)
+	RESETALL.Name = "RESETALL"
+	RESETALL.Parent = S13
+	RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	RESETALL.BackgroundTransparency = 1.000
+	RESETALL.BorderSizePixel = 0
+	RESETALL.Position = UDim2.new(0.621510208, 0, 0.730036497, 0)
+	RESETALL.Size = UDim2.new(0, 15, 0, 15)
+	RESETALL.ZIndex = 23
+	RESETALL.Image = "rbxassetid://5640320478"
 
 	COLORPALLETE.Name = "COLORPALLETE"
 	COLORPALLETE.Parent = PCR_1
