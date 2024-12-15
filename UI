@@ -214,7 +214,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	local RESETALL = Instance.new('ImageButton')
 	RESETALL.Name = "RESETALL"
 	RESETALL.Parent = S13
-	RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	RESETALL.BackgroundColor3 = Color3.fromRGB(129, 218, 107)
 	RESETALL.BackgroundTransparency = 1.000
 	RESETALL.BorderSizePixel = 0
 	RESETALL.Position = UDim2.new(0.621510208, 0, 0.730036497, 0)
@@ -236,7 +236,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	ANIMATEFRAME01.Name = "ANIMATEFRAME01"
 	ANIMATEFRAME01.Parent = COLORPALLETE
-	ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(102, 204, 102)
 	ANIMATEFRAME01.Position = UDim2.new(-0.0257352963, 0, -0.00666669384, 0)
 	ANIMATEFRAME01.Size = UDim2.new(0, 285, 0, 159)
 	ANIMATEFRAME01.ZIndex = 99
@@ -244,22 +244,22 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	Holder.Name = "Holder"
 	Holder.Parent = COLORPALLETE
-	Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Holder.BackgroundColor3 = Color3.fromRGB(102, 204, 102)
 	Holder.BackgroundTransparency = 1.000
 	Holder.BorderSizePixel = 0
 	Holder.Size = UDim2.new(0, 283, 0, 157)
 
 	BG.Name = "BG"
 	BG.Parent = Holder
-	BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220)
-	BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	BG.BackgroundColor3 = Color3.fromRGB(119, 248, 119)
+	BG.BorderColor3 = Color3.fromRGB(73, 156, 77)
 	BG.BorderSizePixel = 0
 	BG.Position = UDim2.new(0, 0, 0.157927245, 0)
 	BG.Size = UDim2.new(0, 272, 0, 125)
 
 	S12.Name = "S12"
 	S12.Parent = BG
-	S12.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+	S12.BackgroundColor3 = Color3.fromRGB(55, 83, 61)
 	S12.BorderSizePixel = 0
 	S12.Position = UDim2.new(0, 16, 0, 7)
 	S12.Size = UDim2.new(0, 156, 0, 107)
@@ -269,7 +269,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	ColourWheel.Parent = S12
 	ColourWheel.Active = false
 	ColourWheel.AnchorPoint = Vector2.new(0.5, 0.5)
-	ColourWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ColourWheel.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	ColourWheel.BackgroundTransparency = 1.000
 	ColourWheel.BorderSizePixel = 0
 	ColourWheel.Position = UDim2.new(0.418737918, 0, 0.491852999, 0)
@@ -284,7 +284,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	Picker.Name = "Picker"
 	Picker.Parent = ColourWheel
 	Picker.AnchorPoint = Vector2.new(0.5, 0.5)
-	Picker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Picker.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	Picker.BackgroundTransparency = 1.000
 	Picker.BorderSizePixel = 0
 	Picker.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -298,7 +298,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	DarknessPicker.Parent = S12
 	DarknessPicker.Active = false
 	DarknessPicker.AnchorPoint = Vector2.new(0.5, 0.5)
-	DarknessPicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DarknessPicker.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	DarknessPicker.BackgroundTransparency = 1.000
 	DarknessPicker.BorderSizePixel = 0
 	DarknessPicker.Position = UDim2.new(0.854536772, 0, 0.554580271, 0)
@@ -310,14 +310,14 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	DarknessPicker.SliceCenter = Rect.new(100, 100, 100, 100)
 	DarknessPicker.SliceScale = 0.120
 
-	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 128, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(58, 77, 65))}
 	UIGradient.Rotation = 90
 	UIGradient.Parent = DarknessPicker
 
 	Slider.Name = "Slider"
 	Slider.Parent = DarknessPicker
 	Slider.AnchorPoint = Vector2.new(0.5, 0.5)
-	Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Slider.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	Slider.BackgroundTransparency = 1.000
 	Slider.BorderSizePixel = 0
 	Slider.Position = UDim2.new(0.491197795, 0, 0.0733607039, 0)
@@ -345,7 +345,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	ColourDisplayBIG.Name = "ColourDisplayBIG"
 	ColourDisplayBIG.Parent = S13
-	ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	ColourDisplayBIG.BackgroundTransparency = 1.000
 	ColourDisplayBIG.BorderSizePixel = 0
 	ColourDisplayBIG.Position = UDim2.new(0.255401969, 0, 0.159329623, 0)
@@ -361,7 +361,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	SETCOLOR.Name = "SETCOLOR"
 	SETCOLOR.Parent = S13
-	SETCOLOR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SETCOLOR.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	SETCOLOR.BackgroundTransparency = 1.000
 	SETCOLOR.BorderSizePixel = 0
 	SETCOLOR.Position = UDim2.new(0.231911927, 0, 0.730036736, 0)
@@ -371,9 +371,9 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	Upper.Name = "Upper"
 	Upper.Parent = Holder
-	Upper.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Upper.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	Upper.BackgroundTransparency = 1.000
-	Upper.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	Upper.BorderColor3 = Color3.fromRGB(91, 197, 105)
 	Upper.BorderSizePixel = 0
 	Upper.Position = UDim2.new(1.07835966e-07, 0, 0, 0)
 	Upper.Size = UDim2.new(0, 271, 0, 23)
@@ -381,7 +381,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	TEMPLATETITLE20202.Name = "TEMPLATETITLE20202"
 	TEMPLATETITLE20202.Parent = Upper
-	TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TEMPLATETITLE20202.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
 	TEMPLATETITLE20202.BackgroundTransparency = 1.000
 	TEMPLATETITLE20202.BorderSizePixel = 0
 	TEMPLATETITLE20202.Position = UDim2.new(0.00999999978, 0, 0.217391297, 0)
@@ -389,14 +389,14 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	TEMPLATETITLE20202.ZIndex = 3
 	TEMPLATETITLE20202.Font = Enum.Font.SourceSansSemibold
 	TEMPLATETITLE20202.Text = text
-	TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(197, 197, 197)
+	TEMPLATETITLE20202.TextColor3 = Color3.fromRGB(126, 196, 143)
 	TEMPLATETITLE20202.TextSize = 16.000
 	TEMPLATETITLE20202.TextXAlignment = Enum.TextXAlignment.Left
 
 	linedecoupper.Name = "linedecoupper"
 	linedecoupper.Parent = Holder
-	linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
-	linedecoupper.BorderColor3 = Color3.fromRGB(91, 133, 197)
+	linedecoupper.BackgroundColor3 = Color3.fromRGB(91, 197, 100)
+	linedecoupper.BorderColor3 = Color3.fromRGB(91, 197, 105)
 	linedecoupper.BorderSizePixel = 0
 	linedecoupper.Position = UDim2.new(0, 0, 0.150589287, 0)
 	linedecoupper.Size = UDim2.new(0.961130738, 0, 0, 1)
@@ -479,7 +479,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 		ColourDisplayBIG.ImageColor3 = hsv
 		UIGradient.Color = ColorSequence.new{
 			ColorSequenceKeypoint.new(0, hsv), 
-			ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+			ColorSequenceKeypoint.new(1, Color3.new(0.2, 0.28627450980392155, 0.26666666666666666))
 		}
 
 	end
@@ -613,7 +613,7 @@ WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.BackgroundTransparency = 1.000
 WEBSITE.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤大小
 WEBSITE.Font = Enum.Font.ArialBold
-WEBSITE.Text = "NerdsInc.gq"
+WEBSITE.Text = "HihiHub"
 WEBSITE.TextColor3 = Color3.fromRGB(0, 128, 0)
 WEBSITE.TextSize = 18 -- 放大字體
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
@@ -626,7 +626,7 @@ LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤
 LABEL2.Font = Enum.Font.ArialBold
-LABEL2.Text = "Alpha build / ∞ days left"
+LABEL2.Text = "HihiHub"
 LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
 LABEL2.TextSize = 18 -- 放大字體
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
@@ -648,7 +648,7 @@ UPPERLABEL.BackgroundTransparency = 1.000
 UPPERLABEL.Size = UDim2.new(0, 120, 0, 30) -- 放大
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
-UPPERLABEL.TextColor3 = Color3.fromRGB(190, 183, 165)
+UPPERLABEL.TextColor3 = Color3.fromRGB(114, 106, 216)1)
 UPPERLABEL.TextSize = 18
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
@@ -734,7 +734,7 @@ function AddRipple(button,ael,ayo)
 	Background.Name = "Background"
 	Background.Parent = button
 	Background.AnchorPoint = Vector2.new(0.5, 0.5)
-	Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Background.BackgroundColor3 = Color3.fromRGB(76, 114, 85)
 	Background.BackgroundTransparency = 1.000
 	Background.ClipsDescendants = true
 	Background.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -944,7 +944,7 @@ function library:AddWindow(text)
 	TEMPLATE_TEXT.ZIndex = 3
 	TEMPLATE_TEXT.Font = Enum.Font.SourceSansSemibold
 	TEMPLATE_TEXT.Text = text
-	TEMPLATE_TEXT.TextColor3 = Color3.fromRGB(138, 138, 138)
+	TEMPLATE_TEXT.TextColor3 = Color3.fromRGB(70, 100, 76)
 	TEMPLATE_TEXT.TextSize = 16.000
 	TEMPLATE_TEXT.Size = UDim2.new(0,getsize(text),0,13)
 
