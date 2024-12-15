@@ -648,7 +648,7 @@ UPPERLABEL.BackgroundTransparency = 1.000
 UPPERLABEL.Size = UDim2.new(0, 120, 0, 30) -- 放大
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
-UPPERLABEL.TextColor3 = Color3.fromRGB(114, 106, 216)1)
+UPPERLABEL.TextColor3 = Color3.fromRGB(114, 106, 216)
 UPPERLABEL.TextSize = 18
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
