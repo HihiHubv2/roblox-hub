@@ -697,10 +697,11 @@ end
 -- 啟動震動效果
 shakeLabel(LABEL2)
 
--- 如果文字變更時重新啟動震動
-local function updateLabelText(newText)
-    LABEL2.Text = newText
-    shakeLabel(LABEL2) -- 重新啟動震動效果
+-- library 方法
+local library = {}
+function library:ChangeGame(newText)
+    LABEL2.Text = newText -- 修改文本
+    shakeLabel(LABEL2)    -- 再次啟動震動邏輯
 end
 
 local TweenService = game:GetService("TweenService")
