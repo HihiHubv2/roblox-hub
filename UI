@@ -609,6 +609,8 @@ DOWNER.ZIndex = 2
 
 local RunService = game:GetService("RunService")
 
+local RunService = game:GetService("RunService")
+
 -- 左側標籤
 local WEBSITE = Instance.new("TextLabel")
 WEBSITE.Name = "WEBSITE"
@@ -639,26 +641,46 @@ LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 隨機震動邏輯
 local amplitude = 5 -- 震動幅度 (像素)
-local activeShakeConnections = {} -- 管理多標籤震動連接
+local activeShakeConnections = {} -- 管理多元素的震動連接
 
 local function shakeElement(element, shakeAmplitude)
-    -- 停止舊震動
+    -- 停止舊震動邏輯，防止重複執行
     if activeShakeConnections[element] then
         activeShakeConnections[element]:Disconnect()
     end
 
-    -- 基礎位置
+    -- 保存初始位置
     local basePosition = element.Position
+
+    -- 每幀更新位置 (隨機震動)
     activeShakeConnections[element] = RunService.Heartbeat:Connect(function()
         local randomX = math.random(-shakeAmplitude, shakeAmplitude)
         local randomY = math.random(-shakeAmplitude, shakeAmplitude)
+
+        -- 更新元素的位置，基於初始位置偏移
         element.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
     end)
+end
+
+-- 優化：提供停止震動的函數
+local function stopShake(element)
+    if activeShakeConnections[element] then
+        activeShakeConnections[element]:Disconnect()
+        activeShakeConnections[element] = nil
+        -- 重置到初始位置
+        element.Position = element.Position
+    end
 end
 
 -- 啟動震動效果
 shakeElement(WEBSITE, amplitude)
 shakeElement(LABEL2, amplitude)
+
+-- 測試：在 5 秒後停止震動
+wait(5)
+stopShake(WEBSITE)
+stopShake(LABEL2)
+
 -- 底部裝飾線
 linedecoDOWNER.Name = "linedecoDOWNER"
 linedecoDOWNER.Parent = MAIN
