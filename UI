@@ -657,27 +657,51 @@ function library:ChangeGame(newText)
     shakeLabel(WEBSITE) -- 重新啟動震動邏輯
 end
 
+local RunService = game:GetService("RunService")
+
 -- 右側標籤
+local LABEL2 = Instance.new("TextLabel")
 LABEL2.Name = "LABEL2"
-LABEL2.Parent = DOWNER
+LABEL2.Parent = DOWNER -- 設置父級元件
 LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
 LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
-LABEL2.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤
+LABEL2.Size = UDim2.new(0, 250, 0, 30)
 LABEL2.Font = Enum.Font.ArialBold
-LABEL2.Text = "Alpha build / ∞ days left"
+LABEL2.Text = "HihiHub"
 LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
-LABEL2.TextSize = 20 -- 放大字體
+LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
--- 底部裝飾線
-linedecoDOWNER.Name = "linedecoDOWNER"
-linedecoDOWNER.Parent = MAIN
-linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
-linedecoDOWNER.BorderSizePixel = 0
-linedecoDOWNER.Position = UDim2.new(0, 0, 0.98, 0)
-linedecoDOWNER.Size = UDim2.new(1, 0, 0, 3) -- 加粗線條
-linedecoDOWNER.ZIndex = 10
+-- 隨機震動邏輯
+local amplitude = 3 -- 震動的幅度 (像素)
+local activeShakeConnection -- 儲存當前的 Heartbeat 連接
+
+local function shakeLabel(label)
+    -- 停止之前的震動邏輯，防止重複運行
+    if activeShakeConnection then
+        activeShakeConnection:Disconnect()
+    end
+
+    local basePosition = label.Position -- 保存初始位置
+    activeShakeConnection = RunService.Heartbeat:Connect(function()
+        -- 生成隨機偏移值
+        local randomX = math.random(-amplitude, amplitude)
+        local randomY = math.random(-amplitude, amplitude)
+
+        -- 應用偏移到標籤位置，但保留原始位置基礎
+        label.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
+    end)
+end
+
+-- 啟動震動效果
+shakeLabel(LABEL2)
+
+-- 如果文字變更時重新啟動震動
+local function updateLabelText(newText)
+    LABEL2.Text = newText
+    shakeLabel(LABEL2) -- 重新啟動震動效果
+end
 
 local TweenService = game:GetService("TweenService")
 
