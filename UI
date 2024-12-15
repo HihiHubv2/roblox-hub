@@ -556,15 +556,14 @@ local limit1 = Instance.new("Frame")
 local TweenService = game:GetService("TweenService")
 
 -- 主框架 ScreenGui
-local PCR_1 = Instance.new("ScreenGui")
 PCR_1.Name = "PCR_1"
 PCR_1.Parent = game:GetService("CoreGui")
 PCR_1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 PCR_1.ResetOnSpawn = false
 
 -- 主框架 UI (MAIN)
-local MAIN = Instance.new("Frame", PCR_1)
 MAIN.Name = "MAIN"
+MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
 MAIN.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 MAIN.BorderSizePixel = 0
@@ -581,15 +580,10 @@ Gradient_MAIN.Color = ColorSequence.new{
     ColorSequenceKeypoint.new(1, Color3.fromRGB(80, 60, 130))
 }
 Gradient_MAIN.Rotation = 90
-Gradient_MAIN.Offset = Vector2.new(0, 0)
-
--- 避免多次 Tween
-local tweenGradient = TweenService:Create(Gradient_MAIN, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true), {Offset = Vector2.new(1, 0)})
-tweenGradient:Play()
 
 -- 白色內容區域 (BG)
-local BG = Instance.new("Frame", MAIN)
 BG.Name = "BG"
+BG.Parent = MAIN
 BG.BackgroundColor3 = Color3.fromRGB(245, 245, 255)
 BG.Position = UDim2.new(0.05, 0, 0.1, 0)
 BG.Size = UDim2.new(0.9, 0, 0.75, 0)
@@ -602,8 +596,8 @@ UIStroke_BG.Color = Color3.fromRGB(200, 200, 230)
 UIStroke_BG.Thickness = 2
 
 -- FPS 顯示標籤
-local UPPERLABEL = Instance.new("TextLabel", MAIN)
 UPPERLABEL.Name = "UPPERLABEL"
+UPPERLABEL.Parent = MAIN
 UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
 UPPERLABEL.BackgroundColor3 = Color3.fromRGB(60, 40, 90)
 UPPERLABEL.Position = UDim2.new(0.95, 0, 0.05, 0)
@@ -618,8 +612,8 @@ local UICorner_FPS = Instance.new("UICorner", UPPERLABEL)
 UICorner_FPS.CornerRadius = UDim.new(0.3, 0)
 
 -- 底部區域 (DOWNER)
-local DOWNER = Instance.new("Frame", MAIN)
 DOWNER.Name = "DOWNER"
+DOWNER.Parent = MAIN
 DOWNER.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 DOWNER.BackgroundTransparency = 0.1
 DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
@@ -630,20 +624,22 @@ UICorner_DOWNER.CornerRadius = UDim.new(0.05, 0)
 
 -- 流光效果函數
 local function addGlowEffect(frame)
-    if not frame:FindFirstChild("UIGradient") then
-        local Gradient = Instance.new("UIGradient", frame)
-        Gradient.Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 100, 150)),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 150, 200))
-        }
-        Gradient.Offset = Vector2.new(0, 0)
+    local Gradient = Instance.new("UIGradient", frame)
+    Gradient.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 100, 150)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 150, 200))
+    }
+    -- 檢查物件是否在 GUI 中
+    if frame:IsDescendantOf(game:GetService("CoreGui")) then
         TweenService:Create(Gradient, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true), {Offset = Vector2.new(1, 0)}):Play()
+    else
+        warn("Glow effect cannot tween object not in CoreGui")
     end
 end
 
 -- 左側標籤 (WEBSITE)
-local WEBSITE = Instance.new("TextLabel", DOWNER)
 WEBSITE.Name = "WEBSITE"
+WEBSITE.Parent = DOWNER
 WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.Position = UDim2.new(0.03, 0, 0.5, 0)
 WEBSITE.Size = UDim2.new(0.4, 0, 0.6, 0)
@@ -659,8 +655,8 @@ local UICorner_WEBSITE = Instance.new("UICorner", WEBSITE)
 UICorner_WEBSITE.CornerRadius = UDim.new(0.4, 0)
 
 -- 右側標籤 (LABEL2)
-local LABEL2 = Instance.new("TextLabel", DOWNER)
 LABEL2.Name = "LABEL2"
+LABEL2.Parent = DOWNER
 LABEL2.AnchorPoint = Vector2.new(1, 0.5)
 LABEL2.Position = UDim2.new(0.97, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0.4, 0, 0.6, 0)
