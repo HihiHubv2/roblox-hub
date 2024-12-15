@@ -555,12 +555,14 @@ local limit1 = Instance.new("Frame")
 
 local RunService = game:GetService("RunService")
 
+-- 主框架設置
+local PCR_1 = Instance.new("ScreenGui")
 PCR_1.Name = "PCR_1"
 PCR_1.Parent = game:GetService("CoreGui")
 PCR_1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 PCR_1.ResetOnSpawn = false
 
--- 主框架
+local MAIN = Instance.new("Frame")
 MAIN.Name = "MAIN"
 MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -570,109 +572,54 @@ MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
 MAIN.Size = UDim2.new(0, 800, 0, 600) -- 調整主框架大小
 MAIN.ZIndex = 2
 
--- 內容區域
-BG.Name = "BG"
-BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220) -- 柔和灰綠色
-BG.BorderSizePixel = 0
-BG.Position = UDim2.new(0, 0, 0.12, 0)
-BG.Size = UDim2.new(1, 0, 0.75, 0)
-BG.ClipsDescendants = true
-
--- 頂部區域
-Upper.Name = "Upper"
-Upper.Parent = MAIN
-Upper.BackgroundTransparency = 1.000
-Upper.Size = UDim2.new(1, 0, 0, 40)
-
-local UIListLayout_Upper = Instance.new("UIListLayout", Upper)
-UIListLayout_Upper.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_Upper.HorizontalAlignment = Enum.HorizontalAlignment.Left
-UIListLayout_Upper.Padding = UDim.new(0, 12)
-
--- 上方裝飾線
-linedecoupper.Name = "linedecoupper"
-linedecoupper.Parent = MAIN
-linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
-linedecoupper.BorderSizePixel = 0
-linedecoupper.Position = UDim2.new(0, 0, 0.11, 0)
-linedecoupper.Size = UDim2.new(1, 0, 0, 3)
-
--- 底部區域
-DOWNER.Name = "DOWNER"
-DOWNER.Parent = MAIN
-DOWNER.BackgroundTransparency = 1.000
-DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
-DOWNER.Size = UDim2.new(1, 0, 0, 40)
-
--- 左側標籤
+-- 文字標籤：WEBSITE
+local WEBSITE = Instance.new("TextLabel")
 WEBSITE.Name = "WEBSITE"
-WEBSITE.Parent = Upper
-WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
-WEBSITE.BackgroundTransparency = 1.000
-WEBSITE.Size = UDim2.new(0, 250, 0, 30)
+WEBSITE.Parent = MAIN
+WEBSITE.AnchorPoint = Vector2.new(0.5, 0.5)
+WEBSITE.BackgroundTransparency = 1
+WEBSITE.Position = UDim2.new(0.1, 0, 0.2, 0) -- 初始位置
+WEBSITE.Size = UDim2.new(0, 200, 0, 50)
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
-WEBSITE.TextColor3 = Color3.fromRGB(0, 128, 0)
+WEBSITE.TextColor3 = Color3.fromRGB(0, 255, 0)
 WEBSITE.TextSize = 20
-WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
+WEBSITE.TextWrapped = true
 
--- 右側標籤 (FPS)
+-- 文字標籤：UPPERLABEL (FPS)
+local UPPERLABEL = Instance.new("TextLabel")
 UPPERLABEL.Name = "UPPERLABEL"
-UPPERLABEL.Parent = Upper
-UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
-UPPERLABEL.BackgroundTransparency = 1.000
-UPPERLABEL.Size = UDim2.new(0, 140, 0, 30)
-UPPERLABEL.Font = Enum.Font.SourceSansSemibold
+UPPERLABEL.Parent = MAIN
+UPPERLABEL.AnchorPoint = Vector2.new(0.5, 0.5)
+UPPERLABEL.BackgroundTransparency = 1
+UPPERLABEL.Position = UDim2.new(0.9, 0, 0.8, 0) -- 初始位置
+UPPERLABEL.Size = UDim2.new(0, 200, 0, 50)
+UPPERLABEL.Font = Enum.Font.ArialBold
 UPPERLABEL.Text = "FPS: 60"
 UPPERLABEL.TextColor3 = Color3.fromRGB(121, 112, 241)
 UPPERLABEL.TextSize = 20
-UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
+UPPERLABEL.TextWrapped = true
 
--- 右側標籤 (底部)
-LABEL2.Name = "LABEL2"
-LABEL2.Parent = DOWNER
-LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
-LABEL2.BackgroundTransparency = 1.000
-LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
-LABEL2.Size = UDim2.new(0, 250, 0, 30)
-LABEL2.Font = Enum.Font.ArialBold
-LABEL2.Text = "Alpha build / ∞ days left"
-LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
-LABEL2.TextSize = 20
-LABEL2.TextXAlignment = Enum.TextXAlignment.Right
-
--- 底部裝飾線
-linedecoDOWNER.Name = "linedecoDOWNER"
-linedecoDOWNER.Parent = MAIN
-linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
-linedecoDOWNER.BorderSizePixel = 0
-linedecoDOWNER.Position = UDim2.new(0, 0, 0.98, 0)
-linedecoDOWNER.Size = UDim2.new(1, 0, 0, 3)
-
--- 文字上下彈跳邏輯
+-- 創建彈跳邏輯的函數
 local function createBounceAnimation(label, speed)
-    local direction = 1 -- 移動方向
-    local topBound, bottomBound = 0.05, 0.95 -- 上下邊界
+    local direction = 1
+    local topBound, bottomBound = 0.1, 0.9 -- 定義上下邊界
 
-    spawn(function()
-        while true do
-            local dt = RunService.Heartbeat:Wait()
-            label.Position = label.Position + UDim2.new(0, 0, direction * speed * dt, 0)
+    RunService.Heartbeat:Connect(function(dt)
+        label.Position = label.Position + UDim2.new(0, 0, direction * speed * dt, 0)
 
-            -- 反轉方向邏輯
-            if label.Position.Y.Scale <= topBound then
-                direction = 1
-            elseif label.Position.Y.Scale >= bottomBound then
-                direction = -1
-            end
+        -- 邊界檢測，反轉方向
+        if label.Position.Y.Scale <= topBound then
+            direction = 1 -- 往下移動
+        elseif label.Position.Y.Scale >= bottomBound then
+            direction = -1 -- 往上移動
         end
     end)
 end
 
--- 啟用彈跳功能
-createBounceAnimation(WEBSITE, 80)     -- 左側標籤彈跳
-createBounceAnimation(UPPERLABEL, 100) -- FPS 標籤彈跳
+-- 啟動彈跳邏輯
+createBounceAnimation(WEBSITE, 0.3)     -- WEBSITE 彈跳速度
+createBounceAnimation(UPPERLABEL, 0.5) -- UPPERLABEL 彈跳速度
 
 
 
