@@ -606,17 +606,37 @@ DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
 DOWNER.Size = UDim2.new(1, 0, 0, 40) -- 調整高度
 DOWNER.ZIndex = 2
 
+local RunService = game:GetService("RunService")
+
 -- 左側標籤
 WEBSITE.Name = "WEBSITE"
 WEBSITE.Parent = Upper
 WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.BackgroundTransparency = 1.000
-WEBSITE.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤大小
+WEBSITE.Position = UDim2.new(0, 10, 0.5, 0) -- 初始位置
+WEBSITE.Size = UDim2.new(0, 250, 0, 30)
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
 WEBSITE.TextColor3 = Color3.fromRGB(0, 128, 0)
-WEBSITE.TextSize = 20 -- 放大字體
+WEBSITE.TextSize = 20
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
+
+-- 隨機震動邏輯
+local amplitude = 3 -- 震動幅度 (像素)
+local function shakeLabel(label)
+    local basePosition = label.Position -- 儲存初始位置
+    RunService.Heartbeat:Connect(function()
+        -- 生成隨機偏移值
+        local randomX = math.random(-amplitude, amplitude) -- X軸震動幅度
+        local randomY = math.random(-amplitude, amplitude) -- Y軸震動幅度
+
+        -- 應用新的隨機偏移位置
+        label.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
+    end)
+end
+
+-- 啟動震動效果
+shakeLabel(WEBSITE)
 
 local RunService = game:GetService("RunService")
 
