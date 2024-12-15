@@ -251,15 +251,15 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	BG.Name = "BG"
 	BG.Parent = Holder
-	BG.BackgroundColor3 = Color3.fromRGB(242, 95, 255)
-	BG.BorderColor3 = Color3.fromRGB(137, 111, 255)
+	BG.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
 	BG.BorderSizePixel = 0
 	BG.Position = UDim2.new(0, 0, 0.157927245, 0)
 	BG.Size = UDim2.new(0, 272, 0, 125)
 
 	S12.Name = "S12"
 	S12.Parent = BG
-	S12.BackgroundColor3 = Color3.fromRGB(147, 107, 255)
+	S12.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 	S12.BorderSizePixel = 0
 	S12.Position = UDim2.new(0, 16, 0, 7)
 	S12.Size = UDim2.new(0, 156, 0, 107)
@@ -269,7 +269,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	ColourWheel.Parent = S12
 	ColourWheel.Active = false
 	ColourWheel.AnchorPoint = Vector2.new(0.5, 0.5)
-	ColourWheel.BackgroundColor3 = Color3.fromRGB(97, 147, 255)
+	ColourWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ColourWheel.BackgroundTransparency = 1.000
 	ColourWheel.BorderSizePixel = 0
 	ColourWheel.Position = UDim2.new(0.418737918, 0, 0.491852999, 0)
@@ -284,7 +284,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	Picker.Name = "Picker"
 	Picker.Parent = ColourWheel
 	Picker.AnchorPoint = Vector2.new(0.5, 0.5)
-	Picker.BackgroundColor3 = Color3.fromRGB(121, 51, 51)
+	Picker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Picker.BackgroundTransparency = 1.000
 	Picker.BorderSizePixel = 0
 	Picker.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -553,6 +553,8 @@ local limit1 = Instance.new("Frame")
 
 --Properties:
 
+local TweenService = game:GetService("TweenService")
+
 -- 主框架 ScreenGui
 PCR_1.Name = "PCR_1"
 PCR_1.Parent = game:GetService("CoreGui")
@@ -563,100 +565,109 @@ PCR_1.ResetOnSpawn = false
 MAIN.Name = "MAIN"
 MAIN.Parent = PCR_1
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
-MAIN.BackgroundColor3 = Color3.fromRGB(50, 30, 100) -- 深紫色背景
+MAIN.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
 MAIN.BorderSizePixel = 0
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
-MAIN.Size = UDim2.new(0, 700, 0, 500) -- 放大尺寸
+MAIN.Size = UDim2.new(0, 700, 0, 500)
 
--- 添加漸層背景
+local UICorner_MAIN = Instance.new("UICorner", MAIN)
+UICorner_MAIN.CornerRadius = UDim.new(0.03, 0)
+
+-- 漸層背景效果
 local Gradient_MAIN = Instance.new("UIGradient", MAIN)
 Gradient_MAIN.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 20, 90)), 
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(70, 50, 130))
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(50, 30, 90)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(80, 60, 130))
 }
 Gradient_MAIN.Rotation = 90
 
--- 主框架圓角與陰影
-local UICorner_MAIN = Instance.new("UICorner", MAIN)
-UICorner_MAIN.CornerRadius = UDim.new(0.03, 0)
+local tweenGradient = TweenService:Create(Gradient_MAIN, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true), {Offset = Vector2.new(1, 0)})
+tweenGradient:Play()
 
 -- 白色內容區域 (BG)
 BG.Name = "BG"
 BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(245, 245, 255) -- 柔和白色
-BG.Position = UDim2.new(0.04, 0, 0.1, 0) -- 中央對齊
-BG.Size = UDim2.new(0.92, 0, 0.75, 0) -- 放大尺寸
-BG.BorderSizePixel = 0
+BG.BackgroundColor3 = Color3.fromRGB(245, 245, 255)
+BG.Position = UDim2.new(0.05, 0, 0.1, 0)
+BG.Size = UDim2.new(0.9, 0, 0.75, 0)
 
--- 白色區域圓角與邊框
 local UICorner_BG = Instance.new("UICorner", BG)
-UICorner_BG.CornerRadius = UDim.new(0.02, 0)
+UICorner_BG.CornerRadius = UDim.new(0.03, 0)
 
 local UIStroke_BG = Instance.new("UIStroke", BG)
 UIStroke_BG.Color = Color3.fromRGB(200, 200, 230)
-UIStroke_BG.Thickness = 1
+UIStroke_BG.Thickness = 2
+
+-- FPS 顯示標籤
+UPPERLABEL.Name = "UPPERLABEL"
+UPPERLABEL.Parent = MAIN
+UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
+UPPERLABEL.BackgroundColor3 = Color3.fromRGB(60, 40, 90)
+UPPERLABEL.Position = UDim2.new(0.95, 0, 0.05, 0)
+UPPERLABEL.Size = UDim2.new(0, 120, 0, 30)
+UPPERLABEL.Font = Enum.Font.SourceSansBold
+UPPERLABEL.Text = "158 FPS"
+UPPERLABEL.TextColor3 = Color3.fromRGB(255, 255, 255)
+UPPERLABEL.TextSize = 18
+UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Center
+
+local UICorner_FPS = Instance.new("UICorner", UPPERLABEL)
+UICorner_FPS.CornerRadius = UDim.new(0.3, 0)
 
 -- 底部區域 (DOWNER)
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
-DOWNER.BackgroundColor3 = Color3.fromRGB(40, 40, 60) -- 深灰紫色背景
-DOWNER.BackgroundTransparency = 0.15 -- 淺透明
+DOWNER.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
+DOWNER.BackgroundTransparency = 0.1
 DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
 DOWNER.Size = UDim2.new(1, 0, 0.1, 0)
 
 local UICorner_DOWNER = Instance.new("UICorner", DOWNER)
-UICorner_DOWNER.CornerRadius = UDim.new(0.02, 0)
+UICorner_DOWNER.CornerRadius = UDim.new(0.05, 0)
 
--- 底部標籤 - WEBSITE
+-- 流光效果函數
+local function addGlowEffect(frame)
+    local Gradient = Instance.new("UIGradient", frame)
+    Gradient.Color = ColorSequence.new{
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(100, 100, 150)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 150, 200))
+    }
+    TweenService:Create(Gradient, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true), {Offset = Vector2.new(1, 0)}):Play()
+end
+
+-- 左側標籤 (WEBSITE)
 WEBSITE.Name = "WEBSITE"
 WEBSITE.Parent = DOWNER
 WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.Position = UDim2.new(0.03, 0, 0.5, 0)
-WEBSITE.Size = UDim2.new(0.4, 0, 0.7, 0)
+WEBSITE.Size = UDim2.new(0.4, 0, 0.6, 0)
 WEBSITE.BackgroundColor3 = Color3.fromRGB(50, 50, 70)
-WEBSITE.BackgroundTransparency = 0.3
 WEBSITE.Font = Enum.Font.SourceSansBold
 WEBSITE.Text = "NerdsInc.gq"
 WEBSITE.TextColor3 = Color3.fromRGB(220, 220, 255)
 WEBSITE.TextSize = 16
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
+addGlowEffect(WEBSITE)
 
 local UICorner_WEBSITE = Instance.new("UICorner", WEBSITE)
-UICorner_WEBSITE.CornerRadius = UDim.new(0.2, 0)
+UICorner_WEBSITE.CornerRadius = UDim.new(0.4, 0)
 
--- 底部標籤 - LABEL2
+-- 右側標籤 (LABEL2)
 LABEL2.Name = "LABEL2"
 LABEL2.Parent = DOWNER
 LABEL2.AnchorPoint = Vector2.new(1, 0.5)
 LABEL2.Position = UDim2.new(0.97, 0, 0.5, 0)
-LABEL2.Size = UDim2.new(0.4, 0, 0.7, 0)
+LABEL2.Size = UDim2.new(0.4, 0, 0.6, 0)
 LABEL2.BackgroundColor3 = Color3.fromRGB(50, 50, 70)
-LABEL2.BackgroundTransparency = 0.3
 LABEL2.Font = Enum.Font.SourceSansBold
 LABEL2.Text = "Alpha build / ∞ days left"
 LABEL2.TextColor3 = Color3.fromRGB(220, 220, 255)
 LABEL2.TextSize = 16
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
+addGlowEffect(LABEL2)
 
 local UICorner_LABEL2 = Instance.new("UICorner", LABEL2)
-UICorner_LABEL2.CornerRadius = UDim.new(0.2, 0)
-
--- FPS 顯示標籤 (UPPERLABEL)
-UPPERLABEL.Name = "UPPERLABEL"
-UPPERLABEL.Parent = MAIN
-UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
-UPPERLABEL.BackgroundTransparency = 0.3
-UPPERLABEL.BackgroundColor3 = Color3.fromRGB(40, 40, 60)
-UPPERLABEL.Position = UDim2.new(0.95, 0, 0.05, 0)
-UPPERLABEL.Size = UDim2.new(0, 120, 0, 25) -- 放大 FPS 顯示區域
-UPPERLABEL.Font = Enum.Font.SourceSansBold
-UPPERLABEL.Text = "158 FPS"
-UPPERLABEL.TextColor3 = Color3.fromRGB(220, 220, 255)
-UPPERLABEL.TextSize = 18
-UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Center
-
-local UICorner_FPS = Instance.new("UICorner", UPPERLABEL)
-UICorner_FPS.CornerRadius = UDim.new(0.2, 0)
+UICorner_LABEL2.CornerRadius = UDim.new(0.4, 0)
 
 
 
