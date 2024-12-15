@@ -697,11 +697,11 @@ function AddRipple(button,ael,ayo)
 				local Circle = Instance.new("ImageLabel")
 				Circle.Name = "Circle"
 				Circle.Parent = obj
-				Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Circle.BackgroundColor3 = Color3.fromRGB(113, 218, 127)
 				Circle.BackgroundTransparency = 1.000
 				Circle.ZIndex = 10
 				Circle.Image = "rbxassetid://266543268"
-				Circle.ImageColor3 = Color3.fromRGB(211, 211, 211)
+				Circle.ImageColor3 = Color3.fromRGB(114, 221, 128)
 				Circle.ImageTransparency = 0.6
 				local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
 				Circle.Position = UDim2.new(0, NewX, 0, NewY)
@@ -756,20 +756,20 @@ function AddRipple(button,ael,ayo)
 	end
 
 	local function OnMouseButton1Up()
-		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(83, 141, 95) })
 		backgroundFadeIn:Play()
 	end
 
 	local function OnMouseEnter()
 		hovering = true
 
-		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(102, 150, 116) })
 
 		backgroundFadeIn:Play()
 
 		backgroundFadeIn.Completed:Wait()
 
-		local backgroundFadeOut = TweenService:Create(ael, tweenInfo, {TextColor3 = Color3.fromRGB(197, 197, 197)})
+		local backgroundFadeOut = TweenService:Create(ael, tweenInfo, {TextColor3 = Color3.fromRGB(124, 202, 134)})
 
 		repeat wait() until not hovering
 
@@ -835,7 +835,7 @@ function library:AddWatermark(Text)
 	--[MAIN]--
 	local obj1 = Instance.new("Frame")
 	obj1.AnchorPoint = Vector2.new(0, 0.5)
-	obj1.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+	obj1.BackgroundColor3 = Color3.new(0.317647, 0.411764, 0.317647)
 	obj1.BorderSizePixel = 0
 	obj1.Position = UDim2.new(0.0109301507, 0, 0.973039031, 0)
 	obj1.Size = UDim2.new(0, size, 0, 28)
@@ -846,12 +846,12 @@ function library:AddWatermark(Text)
 	obj1.Parent = PCR_1
 	--[UIStroke]--
 	local obj2 = Instance.new("UIStroke", obj1)
-	obj2.Color = Color3.new(0.309804, 0.458824, 0.67451)
+	obj2.Color = Color3.new(0.309803, 0.674509, 0.356862)
 
 	--[MAIN]--
 	local obj3 = Instance.new("Frame", obj1)
 	obj3.AnchorPoint = Vector2.new(0.5, 0.5)
-	obj3.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+	obj3.BackgroundColor3 = Color3.new(0.305882, 0.411764, 0.301960)
 	obj3.BorderSizePixel = 0
 	obj3.Position = UDim2.new(0.5, 0, 0.5, 0)
 	obj3.Size = UDim2.new(1, -6, 1, -6)
@@ -860,14 +860,14 @@ function library:AddWatermark(Text)
 
 	--[TextLabel]--
 	local obj4 = Instance.new("TextLabel", obj3)
-	obj4.BackgroundColor3 = Color3.new(1, 1, 1)
+	obj4.BackgroundColor3 = Color3.new(0.3803921568627451, 0.7725490196078432, 0.47843137254901963)
 	obj4.BackgroundTransparency = 1
 	obj4.BorderSizePixel = 0
 	obj4.Position = UDim2.new(0.0215827357, 0, 0, 0)
 	obj4.Size = UDim2.new(0, 325, 0, 22)
 	obj4.Font = Enum.Font.SourceSansSemibold
 	obj4.Text = Text
-	obj4.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+	obj4.TextColor3 = Color3.new(0.39215686274509803, 0.788235294117647, 0.4588235294117647)
 	obj4.TextSize = 16
 	obj4.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -906,9 +906,9 @@ function library:Init(name)
     for i,v in pairs(Upper:GetChildren()) do
         if v:IsA('TextButton') then
             if v.Name == name then
-                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(210, 210, 210)}):Play()	
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(117, 209, 109)}):Play()	
             else
-                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(138, 138, 138)}):Play()	
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(63, 116, 89)}):Play()	
             end
         end
     end
@@ -936,7 +936,7 @@ function library:AddWindow(text)
 
 	TEMPLATE_TEXT.Name = text
 	TEMPLATE_TEXT.Parent = Upper
-	TEMPLATE_TEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TEMPLATE_TEXT.BackgroundColor3 = Color3.fromRGB(102, 204, 107)
 	TEMPLATE_TEXT.BackgroundTransparency = 1.000
 	TEMPLATE_TEXT.BorderSizePixel = 0
 	TEMPLATE_TEXT.Position = UDim2.new(0, 0, 0.281214178, 0)
@@ -952,7 +952,7 @@ function library:AddWindow(text)
 	HOLDER.Name = text
 	HOLDER.Parent = limit1
 	HOLDER.Active = true
-	HOLDER.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	HOLDER.BackgroundColor3 = Color3.fromRGB(102, 204, 107)
 	HOLDER.BackgroundTransparency = 1.000
 	HOLDER.BorderSizePixel = 0
 	HOLDER.ClipsDescendants = false
@@ -967,7 +967,7 @@ function library:AddWindow(text)
 	_LEFT.Name = "_LEFT"
 	_LEFT.Parent = HOLDER
 	_LEFT.AnchorPoint = Vector2.new(0.5, 0.5)
-	_LEFT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_LEFT.BackgroundColor3 = Color3.fromRGB(102, 204, 107)
 	_LEFT.BackgroundTransparency = 1.000
 	_LEFT.BorderSizePixel = 0
 	_LEFT.Position = UDim2.new(0.249334633, 0, 0.508299172, 0)
@@ -984,7 +984,7 @@ function library:AddWindow(text)
 	_RIGHT.Name = "_RIGHT"
 	_RIGHT.Parent = HOLDER
 	_RIGHT.AnchorPoint = Vector2.new(0.5, 0.5)   
-	_RIGHT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_RIGHT.BackgroundColor3 = Color3.fromRGB(102, 204, 107)
 	_RIGHT.BackgroundTransparency = 1.000
 	_RIGHT.BorderSizePixel = 0
 	_RIGHT.Position = UDim2.new(0.749334514, 0, 0.508299172, 0)
@@ -1003,10 +1003,10 @@ function library:AddWindow(text)
 	TEMPLATE_TEXT.MouseButton1Click:Connect(function()
 		for i,v in pairs(Upper:GetChildren()) do
 			if v:IsA('TextButton') then
-				TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad    , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(138, 138, 138)}):Play()	
+				TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad    , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(92, 146, 104)}):Play()	
 			end
 		end
-		TweenService:Create(TEMPLATE_TEXT , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(210, 210, 210)}):Play()	
+		TweenService:Create(TEMPLATE_TEXT , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(88, 175, 85)}):Play()	
 		for i,v in pairs(limit1:GetChildren()) do
 			if v:IsA('Frame') or v:IsA('ScrollingFrame') then
 				v.Visible = false
@@ -1131,7 +1131,7 @@ function library:AddWindow(text)
 		us.Name = '_STROKE_'
 		SECTIONHOLDER.Name = Texto
 		SECTIONHOLDER.Parent = _PARENT
-		SECTIONHOLDER.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+		SECTIONHOLDER.BackgroundColor3 = Color3.fromRGB(72, 107, 74)
 		SECTIONHOLDER.BorderSizePixel = 0      
 		SECTIONHOLDER.Position = UDim2.new(0.0289115645, 0, -4.23979145e-08, 0)
 		SECTIONHOLDER.Size = UDim2.new(0, 275, 0, 138)
@@ -1147,7 +1147,7 @@ function library:AddWindow(text)
 		Section.Name = "Section"
 		Section.Parent = SECTIONHOLDER
 		Section.AnchorPoint = Vector2.new(0.5, 0.5)
-		Section.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+		Section.BackgroundColor3 = Color3.fromRGB(72, 105, 79)
 		Section.BorderSizePixel = 0
 		Section.ClipsDescendants = true
 		Section.Position = UDim2.new(0.498745143, 0, 0.502499998, 0)    
@@ -1157,7 +1157,7 @@ function library:AddWindow(text)
 		Z_Holder.Name = "Z_Holder"
 		Z_Holder.Parent = Section
 		Z_Holder.AnchorPoint = Vector2.new(0.5, 0.5)
-		Z_Holder.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+		Z_Holder.BackgroundColor3 = Color3.fromRGB(72, 109, 77)
 		Z_Holder.BorderSizePixel = 0
 		Z_Holder.Position = UDim2.new(2.44783831, 0, 3.13320923, 0)
 		Z_Holder.Size = UDim2.new(1, 0, 0.965465486, 0)
@@ -1165,7 +1165,7 @@ function library:AddWindow(text)
 
 		HOLDER_2.Name = "HOLDER"
 		HOLDER_2.Parent = Z_Holder
-		HOLDER_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		HOLDER_2.BackgroundColor3 = Color3.fromRGB(92, 182, 107)
 		HOLDER_2.BackgroundTransparency = 1.000
 		HOLDER_2.Position = UDim2.new(0, 4, 0, 5)
 		HOLDER_2.Size = UDim2.new(0.981999993, 0, 0.957000017, 0)   
@@ -1179,8 +1179,8 @@ function library:AddWindow(text)
 
 		F_line.Name = "F_line"
 		F_line.Parent = Section
-		F_line.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
-		F_line.BorderColor3 = Color3.fromRGB(91, 133, 197)
+		F_line.BackgroundColor3 = Color3.fromRGB(91, 197, 91)
+		F_line.BorderColor3 = Color3.fromRGB(91, 197, 139)
 		F_line.BorderSizePixel = 0
 		F_line.Position = UDim2.new(0, 0, 0.099530004, 0)
 		F_line.Size = UDim2.new(1, 0, 0, 1)
@@ -1189,7 +1189,7 @@ function library:AddWindow(text)
 		A_label.Name = "A_label"
 		A_label.Parent = Section
 		A_label.AnchorPoint = Vector2.new(0.5, 0.5)
-		A_label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
+		A_label.BackgroundColor3 = Color3.fromRGB(92, 189, 105)  
 		A_label.BackgroundTransparency = 1.000
 		A_label.BorderSizePixel = 0
 		A_label.Position = UDim2.new(0.512401581, 0, 0.0548184477, 0)
@@ -1197,7 +1197,7 @@ function library:AddWindow(text)
 		A_label.ZIndex = 3
 		A_label.Font = Enum.Font.SourceSansSemibold
 		A_label.Text = Texto
-		A_label.TextColor3 = Color3.fromRGB(221, 221, 221)
+		A_label.TextColor3 = Color3.fromRGB(97, 194, 118)
 		A_label.TextSize = 17.000
 		A_label.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1246,7 +1246,7 @@ function library:AddWindow(text)
 
 			--[TemplateTexstbox]--
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj1.BackgroundColor3 = Color3.new(0.345098, 0.705882, 0.392156)
 			obj1.BackgroundTransparency = 1
 			obj1.BorderSizePixel = 0
 			obj1.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1257,7 +1257,7 @@ function library:AddWindow(text)
 			--[color]--
 			local obj2 = Instance.new("Frame", obj1)   
 			obj2.AnchorPoint = Vector2.new(1, 0.5)
-			obj2.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj2.BackgroundColor3 = Color3.new(0.192156, 0.286274, 0.231372)
 			obj2.BorderSizePixel = 0
 			obj2.Position = UDim2.new(1.02739561, 0, 0.546084344, 0)
 			obj2.Size = UDim2.new(0, 70, 0, 16)
@@ -1266,15 +1266,15 @@ function library:AddWindow(text)
 
 			--[UIStroke]--
 			local obj3 = Instance.new("UIStroke", obj2)
-			obj3.Color = Color3.new(0.203922, 0.203922, 0.203922)
+			obj3.Color = Color3.new(0.329411, 0.419607, 0.305882)
 
 			--[UIGradient]--   
 			local obj4 = Instance.new("UIGradient", obj3)
-			obj4.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.705882, 0.705882, 0.705882))})
+			obj4.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.38823529411764707, 0.7725490196078432, 0.6274509803921569)), ColorSequenceKeypoint.new(1, Color3.new(0.458823, 0.647058, 0.443137))})
 
 			--[TextBox]--
 			local obj5 = Instance.new("TextBox", obj2)
-			obj5.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj5.BackgroundColor3 = Color3.new(0.40784313725490196, 0.8196078431372549, 0.5137254901960784)
 			obj5.BackgroundTransparency = 1
 			obj5.BorderSizePixel = 0
 			obj5.Size = UDim2.new(1, 0, 1, 0)
@@ -1284,9 +1284,9 @@ function library:AddWindow(text)
 			obj5.Font = Enum.Font.ArialBold
 			obj5.PlaceholderText = placeholder
 			obj5.Text = [[]]
-			obj5.TextColor3 = Color3.new(1, 1, 1)   
+			obj5.TextColor3 = Color3.new(0.5411764705882353, 0.8470588235294118, 0.4196078431372549)   
 			obj5.TextSize = 10
-			obj5.TextStrokeColor3 = Color3.new(0.639216, 0.639216, 0.639216)
+			obj5.TextStrokeColor3 = Color3.new(0.411764, 0.654901, 0.443137)
 
 			if #obj5.Text <= 5 then
 				obj2:TweenSize(UDim2.new(0,#obj5.PlaceholderText*6,0,16),'Out','Quint',0,true);
@@ -1296,7 +1296,7 @@ function library:AddWindow(text)
 			end
 			--[TextLabel]--
 			local obj6 = Instance.new("TextLabel", obj1)
-			obj6.BackgroundColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj6.BackgroundColor3 = Color3.new(0.474509, 0.772549, 0.513725)
 			obj6.BackgroundTransparency = 1
 			obj6.BorderSizePixel = 0
 			obj6.Position = UDim2.new(-0.00865958631, 0, 0.0133694736, 0)
@@ -1304,7 +1304,7 @@ function library:AddWindow(text)
 			obj6.ZIndex = 15
 			obj6.Font = Enum.Font.SourceSansBold
 			obj6.Text = Text
-			obj6.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj6.TextColor3 = Color3.new(0.458823, 0.721568, 0.501960)
 			obj6.TextSize = 14
 			obj6.TextXAlignment = Enum.TextXAlignment.Left  
 
@@ -1368,7 +1368,7 @@ function library:AddWindow(text)
 
 			--[Slider]--
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.113725)
+			obj1.BackgroundColor3 = Color3.new(0.309803, 0.458823, 0.333333)
 			obj1.BackgroundTransparency = 1
 			obj1.BorderSizePixel = 0
 			obj1.Position = UDim2.new(0.0435978472, 0, 0.255637407, 0)
@@ -1378,7 +1378,7 @@ function library:AddWindow(text)
 			obj1.Parent = HOLDER_2
 			--[TextLabel]--
 			local obj2 = Instance.new("TextLabel", obj1)
-			obj2.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj2.BackgroundColor3 = Color3.new(0.39215686274509803, 0.7686274509803922, 0.39215686274509803)
 			obj2.BackgroundTransparency = 1
 			obj2.BorderSizePixel = 0
 			obj2.Position = UDim2.new(0.00500635942, 0, 0.0442914963, 0)
@@ -1386,13 +1386,13 @@ function library:AddWindow(text)
 			obj2.ZIndex = 21
 			obj2.Font = Enum.Font.SourceSansSemibold
 			obj2.Text = Text
-			obj2.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj2.TextColor3 = Color3.new(0.533333, 0.780392, 0.509803)
 			obj2.TextSize = 16
 			obj2.TextXAlignment = Enum.TextXAlignment.Left
 
 			--[sbt]--
 			local obj3 = Instance.new("TextButton", obj1)
-			obj3.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj3.BackgroundColor3 = Color3.new(0.282352, 0.4, 0.317647)
 			obj3.BackgroundTransparency = 1
 			obj3.BorderSizePixel = 0
 			obj3.ClipsDescendants = true
@@ -1401,7 +1401,7 @@ function library:AddWindow(text)
 			obj3.ZIndex = 21
 			obj3.Font = Enum.Font.SourceSans
 			obj3.Text = [[]]
-			obj3.TextColor3 = Color3.new(0, 0, 0)
+			obj3.TextColor3 = Color3.new(0.2235294117647059, 0.3137254901960784, 0.25882352941176473)
 			obj3.TextSize = 1
 			obj3.AutoButtonColor = false
 			obj3.Name = [[sbt]]
@@ -1412,7 +1412,7 @@ function library:AddWindow(text)
 
 			obj4.Name = "pcntage"
 			obj4.Parent = obj1
-			obj4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			obj4.BackgroundColor3 = Color3.fromRGB(99, 196, 120)
 			obj4.BackgroundTransparency = 1.000
 			obj4.BorderSizePixel = 0
 			obj4.Position = UDim2.new(0.79838711, 0, 0, 0)
@@ -1420,15 +1420,15 @@ function library:AddWindow(text)
 			obj4.ZIndex = 23
 			obj4.ClearTextOnFocus = false
 			obj4.Font = Enum.Font.SourceSansBold
-			obj4.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+			obj4.PlaceholderColor3 = Color3.fromRGB(89, 151, 92)
 			obj4.Text = def
-			obj4.TextColor3 = Color3.fromRGB(90, 90, 90)
+			obj4.TextColor3 = Color3.fromRGB(64, 100, 73)
 			obj4.TextSize = 14.000
 			obj4.TextXAlignment = Enum.TextXAlignment.Right
 
 			--[HOLDER_3]--
 			local obj5 = Instance.new("Frame", obj1)
-			obj5.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj5.BackgroundColor3 = Color3.new(0.290196, 0.431372, 0.4)
 			obj5.BorderSizePixel = 0
 			obj5.Position = UDim2.new(-0.002,0,0.491,0)
 			obj5.Size = UDim2.new(0, 243, 0, 13)
@@ -1437,7 +1437,7 @@ function library:AddWindow(text)
 
 			--[SFrame]--
 			local obj6 = Instance.new("Frame", obj5)
-			obj6.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj6.BackgroundColor3 = Color3.new(0.403921568627451, 0.8, 0.4235294117647059)
 			obj6.BorderSizePixel = 0
 			obj6.Position = UDim2.new(-0.001646191, 0, 0, 0)
 			obj6.Size = UDim2.fromScale(DefaultScale,1)
@@ -1446,7 +1446,7 @@ function library:AddWindow(text)
 
 			--[UIGradient]--
 			local obj7 = Instance.new("UIGradient", obj6)
-			obj7.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.345098, 0.509804, 0.752941)), ColorSequenceKeypoint.new(1, Color3.new(0.270588, 0.4, 0.592157))})
+			obj7.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.345098, 0.752941, 0.513725)), ColorSequenceKeypoint.new(1, Color3.new(0.270588, 0.592156, 0.431372))})
 
 			--[UIStroke]--
 			local obj8 = Instance.new("UIStroke", obj5)
@@ -1454,7 +1454,7 @@ function library:AddWindow(text)
 
 			--[UIGradient]--
 			local obj9 = Instance.new("UIGradient", obj8)
-			obj9.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.533333, 0.533333, 0.533333))})
+			obj9.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.3411764705882353, 0.7254901960784313, 0.4588235294117647)), ColorSequenceKeypoint.new(1, Color3.new(0.533333, 0.533333, 0.533333))})
 
 			local st = def or Max/2
 			obj4.FocusLost:Connect(function(n)
@@ -1524,12 +1524,12 @@ function library:AddWindow(text)
 				end
 			end)
 			obj3.MouseButton1Down:Connect(function()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(115, 115, 115)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(87, 153, 91)}):Play()
 				obj4.TextXAlignment = Enum.TextXAlignment.Right
 
 				Value = ((((tonumber(Max) - tonumber(Min)) / 244) * obj6.AbsoluteSize.X) + tonumber(Min)) or 0
 				Value = (Value)
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(95, 190, 108)}):Play()
 
 				obj6.Size = UDim2.new(0, math.clamp(mouse.X - obj6.AbsolutePosition.X, 0, 244), 0, 13)
 				moveconnection = mouse.Move:Connect(function()
@@ -1557,12 +1557,12 @@ function library:AddWindow(text)
 			end)
 
 			obj3.MouseButton1Up:Connect(function()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(52, 52, 52)}):Play()
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(126, 126, 126)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(84, 116, 105)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(101, 167, 94)}):Play()
 			end)
 			obj3.MouseLeave:Connect(function()
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(126, 126, 126)}):Play()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(52, 52, 52)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(101, 167, 94)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(84, 116, 105)}):Play()
 			end)
 			SECTIONHOLDER.Size = UDim2.fromOffset(SECTIONHOLDER.AbsoluteSize.X,  SECTION2UILIB.AbsoluteContentSize.Y + 8) + UDim2.new(0,0,0,23)
 			_PARENT.Size = UDim2.new(_PARENT.Size.X.Scale, _PARENT.Size.X.Offset , 0 ,LIST.AbsoluteContentSize.Y + 15);
@@ -1580,7 +1580,7 @@ function library:AddWindow(text)
 			TextLabel.Parent = HOLDER_2
 			TextLabel.AutomaticSize =Enum.AutomaticSize.Y
 
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(102, 196, 130)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.0329693519, 0, 0, 0)
@@ -1588,7 +1588,7 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 15
 			TextLabel.Font = Enum.Font.SourceSansSemibold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+			TextLabel.TextColor3 = Color3.fromRGB(112, 150, 90)
 			TextLabel.TextSize = 18.000
 			TextLabel.TextWrapped = true
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -1640,19 +1640,19 @@ function library:AddWindow(text)
 			local UIStroke = Instance.new('UIStroke');
 
 			UIStroke.Parent= color;
-			UIStroke.Color = Color3.fromRGB(52,52,52);
+			UIStroke.Color = Color3.fromRGB(86, 114, 95);
 			UIStroke.LineJoinMode = Enum.LineJoinMode.Round;
 			UIStroke.Thickness = 1;
 			UIStroke.Transparency = 0;
 			UIStroke.Name = 'UIStroke';
 
-			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(180, 180, 180))}
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(122, 206, 101)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(101, 204, 115))}
 			UIGradient.Parent = UIStroke
 
 			local function Update()
 				if activated == false then
-					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(84, 122, 181)}):Play()
-					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) }):Play()
+					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(84, 181, 84)}):Play()
+					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(94, 189, 109) }):Play()
 					spawn(function()
 						pcall(function()
 							Callback(activated)
@@ -1660,8 +1660,8 @@ function library:AddWindow(text)
 					end)
 					activated = true
 				elseif activated == true then
-					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(25,25,25)}):Play()
-					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(84, 84, 84) }):Play()
+					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(84, 112, 110)}):Play()
+					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(83, 150, 130) }):Play()
 					spawn(function()
 						pcall(function()
 							Callback(activated)
