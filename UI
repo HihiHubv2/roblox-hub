@@ -609,15 +609,13 @@ DOWNER.ZIndex = 2
 
 local RunService = game:GetService("RunService")
 
-local RunService = game:GetService("RunService")
-
 -- 左側標籤
 local WEBSITE = Instance.new("TextLabel")
 WEBSITE.Name = "WEBSITE"
-WEBSITE.Parent = MAIN
+WEBSITE.Parent = Upper
 WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.BackgroundTransparency = 1.000
-WEBSITE.Position = UDim2.new(0, 10, 0.5, 0)
+WEBSITE.Position = UDim2.new(0, 10, 0.5, 0) -- 初始位置
 WEBSITE.Size = UDim2.new(0, 250, 0, 30)
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
@@ -628,10 +626,10 @@ WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 -- 右側標籤
 local LABEL2 = Instance.new("TextLabel")
 LABEL2.Name = "LABEL2"
-LABEL2.Parent = MAIN
-LABEL2.AnchorPoint = Vector2.new(1, 0.5)
+LABEL2.Parent = Upper -- 設置父級元件
+LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
 LABEL2.BackgroundTransparency = 1.000
-LABEL2.Position = UDim2.new(0.9, 0, 0.8, 0)
+LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0, 250, 0, 30)
 LABEL2.Font = Enum.Font.ArialBold
 LABEL2.Text = "HihiHub"
@@ -639,47 +637,43 @@ LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
 LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
--- 隨機震動邏輯
-local amplitude = 5 -- 震動幅度 (像素)
-local activeShakeConnections = {} -- 管理多元素的震動連接
+-- 多標籤共用的隨機震動邏輯
+local amplitude = 3 -- 震動的幅度 (像素)
+local activeShakeConnections = {} -- 儲存各標籤的連接
 
-local function shakeElement(element, shakeAmplitude)
-    -- 停止舊震動邏輯，防止重複執行
-    if activeShakeConnections[element] then
-        activeShakeConnections[element]:Disconnect()
+local function shakeLabel(label)
+    -- 停止該標籤的舊震動邏輯，防止重複運行
+    if activeShakeConnections[label] then
+        activeShakeConnections[label]:Disconnect()
     end
 
-    -- 保存初始位置
-    local basePosition = element.Position
+    local basePosition = label.Position -- 保存初始位置
+    activeShakeConnections[label] = RunService.Heartbeat:Connect(function()
+        -- 生成隨機偏移值
+        local randomX = math.random(-amplitude, amplitude)
+        local randomY = math.random(-amplitude, amplitude)
 
-    -- 每幀更新位置 (隨機震動)
-    activeShakeConnections[element] = RunService.Heartbeat:Connect(function()
-        local randomX = math.random(-shakeAmplitude, shakeAmplitude)
-        local randomY = math.random(-shakeAmplitude, shakeAmplitude)
-
-        -- 更新元素的位置，基於初始位置偏移
-        element.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
+        -- 應用偏移到標籤位置，但保留原始位置基礎
+        label.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
     end)
 end
 
--- 優化：提供停止震動的函數
-local function stopShake(element)
-    if activeShakeConnections[element] then
-        activeShakeConnections[element]:Disconnect()
-        activeShakeConnections[element] = nil
-        -- 重置到初始位置
-        element.Position = element.Position
-    end
+-- 啟動左側標籤和右側標籤的震動效果
+shakeLabel(WEBSITE)
+shakeLabel(LABEL2)
+
+-- library 物件：提供 ChangeWeb 和 ChangeGame 方法
+local library = {}
+
+function library:ChangeWeb(newText)
+    WEBSITE.Text = newText
+    shakeLabel(WEBSITE) -- 重新啟動 WEBSITE 的震動邏輯
 end
 
--- 啟動震動效果
-shakeElement(WEBSITE, amplitude)
-shakeElement(LABEL2, amplitude)
-
--- 測試：在 5 秒後停止震動
-wait(5)
-stopShake(WEBSITE)
-stopShake(LABEL2)
+function library:ChangeGame(newText)
+    LABEL2.Text = newText
+    shakeLabel(LABEL2) -- 重新啟動 LABEL2 的震動邏輯
+end
 
 -- 底部裝飾線
 linedecoDOWNER.Name = "linedecoDOWNER"
