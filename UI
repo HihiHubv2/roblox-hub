@@ -623,21 +623,39 @@ WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
 -- 隨機震動邏輯
 local amplitude = 3 -- 震動幅度 (像素)
+local activeShakeConnection
+
 local function shakeLabel(label)
-    local basePosition = label.Position -- 儲存初始位置
-    RunService.Heartbeat:Connect(function()
+    -- 停止之前的震動邏輯（如果有）
+    if activeShakeConnection then
+        activeShakeConnection:Disconnect()
+    end
+
+    local basePosition = label.Position -- 保存初始位置
+    activeShakeConnection = RunService.Heartbeat:Connect(function()
         -- 生成隨機偏移值
-        local randomX = math.random(-amplitude, amplitude) -- X軸震動幅度
-        local randomY = math.random(-amplitude, amplitude) -- Y軸震動幅度
+        local randomX = math.random(-amplitude, amplitude)
+        local randomY = math.random(-amplitude, amplitude)
 
         -- 應用新的隨機偏移位置
         label.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
     end)
 end
 
--- 啟動震動效果
+-- 初始啟動震動邏輯
 shakeLabel(WEBSITE)
 
+-- 模擬 library:ChangeWeb 函數的邏輯
+local library = {}
+function library:ChangeWeb(newText)
+    WEBSITE.Text = newText
+    shakeLabel(WEBSITE) -- 重新啟動震動邏輯
+end
+
+function library:ChangeGame(newText)
+    WEBSITE.Text = newText
+    shakeLabel(WEBSITE) -- 重新啟動震動邏輯
+end
 local RunService = game:GetService("RunService")
 
 -- 右側標籤
@@ -648,7 +666,7 @@ LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0, 250, 0, 30)
 LABEL2.Font = Enum.Font.ArialBold
-LABEL2.Text = "Alpha build / ∞ days left"
+LABEL2.Text = "HihiHub"
 LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
 LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
