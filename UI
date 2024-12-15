@@ -599,43 +599,38 @@ linedecoupper.Size = UDim2.new(1, 0, 0, 3) -- 加粗線條
 linedecoupper.ZIndex = 3
 
 local RunService = game:GetService("RunService")
-
 -- 底部區域
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
 DOWNER.BackgroundTransparency = 1.000
-DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
-DOWNER.Size = UDim2.new(1, 0, 0, 40) -- 調整高度
+DOWNER.Position = UDim2.new(0, 0, 0.9, 0) -- 初始位置
+DOWNER.Size = UDim2.new(1, 0, 0, 40)
 DOWNER.ZIndex = 2
 
 -- 隨機震動邏輯
 local amplitude = 3 -- 震動幅度 (像素)
-local activeShakeConnection
+local activeShakeConnection -- 保存 Heartbeat 的連接
 
 local function shakeFrame(frame)
-    -- 停止舊的震動邏輯，避免重複
+    -- 停止舊的震動邏輯，防止重複運行
     if activeShakeConnection then
         activeShakeConnection:Disconnect()
     end
 
-    local basePosition = frame.Position -- 保存初始位置
+    -- 保存初始位置
+    local basePosition = frame.Position
     activeShakeConnection = RunService.Heartbeat:Connect(function()
         -- 隨機生成 X 和 Y 軸偏移值
         local randomX = math.random(-amplitude, amplitude)
         local randomY = math.random(-amplitude, amplitude)
 
-        -- 應用偏移到整個 DOWNER 的位置
+        -- 更新位置，確保震動基於初始位置
         frame.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
     end)
 end
 
 -- 啟動 DOWNER 的震動效果
 shakeFrame(DOWNER)
-
-
-
-local RunService = game:GetService("RunService")
-
 -- 左側標籤
 local WEBSITE = Instance.new("TextLabel")
 WEBSITE.Name = "WEBSITE"
