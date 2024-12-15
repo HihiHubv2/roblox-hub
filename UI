@@ -618,18 +618,37 @@ WEBSITE.TextColor3 = Color3.fromRGB(0, 128, 0)
 WEBSITE.TextSize = 20 -- 放大字體
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
+local RunService = game:GetService("RunService")
+
 -- 右側標籤
 LABEL2.Name = "LABEL2"
-LABEL2.Parent = DOWNER
+LABEL2.Parent = DOWNER -- 設置父級元件
 LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
 LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
-LABEL2.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤
+LABEL2.Size = UDim2.new(0, 250, 0, 30)
 LABEL2.Font = Enum.Font.ArialBold
 LABEL2.Text = "Alpha build / ∞ days left"
 LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
-LABEL2.TextSize = 20 -- 放大字體
+LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
+
+-- 隨機震動邏輯
+local amplitude = 3 -- 震動的幅度 (像素)
+local function shakeLabel(label)
+    local basePosition = label.Position -- 保存初始位置
+    RunService.Heartbeat:Connect(function()
+        -- 生成隨機偏移值
+        local randomX = math.random(-amplitude, amplitude)
+        local randomY = math.random(-amplitude, amplitude)
+
+        -- 應用偏移到標籤位置
+        label.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
+    end)
+end
+
+-- 啟動震動效果
+shakeLabel(LABEL2)
 
 -- 底部裝飾線
 linedecoDOWNER.Name = "linedecoDOWNER"
