@@ -861,7 +861,7 @@ function library:AddWatermark(Text)
 
 	--[TextLabel]--
 	local obj4 = Instance.new("TextLabel", obj3)
-	obj4.BackgroundColor3 = Color3.new(0.42745098039215684, 0.6549019607843137, 1)
+	obj4.BackgroundColor3 = Color3.new(0.3254901960784314, 0.6941176470588235, 0.49019607843137253)
 	obj4.BackgroundTransparency = 1
 	obj4.BorderSizePixel = 0
 	obj4.Position = UDim2.new(0.0215827357, 0, 0, 0)
@@ -1180,8 +1180,8 @@ function library:AddWindow(text)
 
 		F_line.Name = "F_line"
 		F_line.Parent = Section
-		F_line.BackgroundColor3 = Color3.fromRGB(91, 133, 197)
-		F_line.BorderColor3 = Color3.fromRGB(91, 133, 197)
+		F_line.BackgroundColor3 = Color3.fromRGB(109, 76, 146)
+		F_line.BorderColor3 = Color3.fromRGB(125, 108, 223)
 		F_line.BorderSizePixel = 0
 		F_line.Position = UDim2.new(0, 0, 0.099530004, 0)
 		F_line.Size = UDim2.new(1, 0, 0, 1)
@@ -1247,7 +1247,7 @@ function library:AddWindow(text)
 
 			--[TemplateTexstbox]--
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj1.BackgroundColor3 = Color3.new(0.4117647058823529, 0.8392156862745098, 0.6274509803921569)
 			obj1.BackgroundTransparency = 1
 			obj1.BorderSizePixel = 0
 			obj1.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1258,7 +1258,7 @@ function library:AddWindow(text)
 			--[color]--
 			local obj2 = Instance.new("Frame", obj1)   
 			obj2.AnchorPoint = Vector2.new(1, 0.5)
-			obj2.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj2.BackgroundColor3 = Color3.new(0.380392, 0.811764, 0.756862)
 			obj2.BorderSizePixel = 0
 			obj2.Position = UDim2.new(1.02739561, 0, 0.546084344, 0)
 			obj2.Size = UDim2.new(0, 70, 0, 16)
@@ -1271,11 +1271,11 @@ function library:AddWindow(text)
 
 			--[UIGradient]--   
 			local obj4 = Instance.new("UIGradient", obj3)
-			obj4.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.705882, 0.705882, 0.705882))})
+			obj4.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.325490, 0.6, 0.576470)), ColorSequenceKeypoint.new(1, Color3.new(0.705882, 0.705882, 0.705882))})
 
 			--[TextBox]--
 			local obj5 = Instance.new("TextBox", obj2)
-			obj5.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj5.BackgroundColor3 = Color3.new(0.30980392156862746, 0.6078431372549019, 0.5333333333333333)
 			obj5.BackgroundTransparency = 1
 			obj5.BorderSizePixel = 0
 			obj5.Size = UDim2.new(1, 0, 1, 0)
@@ -1285,9 +1285,9 @@ function library:AddWindow(text)
 			obj5.Font = Enum.Font.ArialBold
 			obj5.PlaceholderText = placeholder
 			obj5.Text = [[]]
-			obj5.TextColor3 = Color3.new(1, 1, 1)   
+			obj5.TextColor3 = Color3.new(0.3333333333333333, 0.6862745098039216, 0.4666666666666667)   
 			obj5.TextSize = 10
-			obj5.TextStrokeColor3 = Color3.new(0.639216, 0.639216, 0.639216)
+			obj5.TextStrokeColor3 = Color3.new(0.329411, 0.639215, 0.458823)
 
 			if #obj5.Text <= 5 then
 				obj2:TweenSize(UDim2.new(0,#obj5.PlaceholderText*6,0,16),'Out','Quint',0,true);
@@ -1297,7 +1297,7 @@ function library:AddWindow(text)
 			end
 			--[TextLabel]--
 			local obj6 = Instance.new("TextLabel", obj1)
-			obj6.BackgroundColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj6.BackgroundColor3 = Color3.new(0.513725, 0.792156, 0.384313)
 			obj6.BackgroundTransparency = 1
 			obj6.BorderSizePixel = 0
 			obj6.Position = UDim2.new(-0.00865958631, 0, 0.0133694736, 0)
@@ -1305,7 +1305,7 @@ function library:AddWindow(text)
 			obj6.ZIndex = 15
 			obj6.Font = Enum.Font.SourceSansBold
 			obj6.Text = Text
-			obj6.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj6.TextColor3 = Color3.new(0.623529, 0.913725, 0.450980)
 			obj6.TextSize = 14
 			obj6.TextXAlignment = Enum.TextXAlignment.Left  
 
@@ -1369,7 +1369,7 @@ function library:AddWindow(text)
 
 			--[Slider]--
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.113725)
+			obj1.BackgroundColor3 = Color3.new(0.419607, 0.878431, 0.611764)
 			obj1.BackgroundTransparency = 1
 			obj1.BorderSizePixel = 0
 			obj1.Position = UDim2.new(0.0435978472, 0, 0.255637407, 0)
@@ -1379,7 +1379,7 @@ function library:AddWindow(text)
 			obj1.Parent = HOLDER_2
 			--[TextLabel]--
 			local obj2 = Instance.new("TextLabel", obj1)
-			obj2.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj2.BackgroundColor3 = Color3.new(0.6862745098039216, 0.44313725490196076, 1)
 			obj2.BackgroundTransparency = 1
 			obj2.BorderSizePixel = 0
 			obj2.Position = UDim2.new(0.00500635942, 0, 0.0442914963, 0)
@@ -1387,13 +1387,13 @@ function library:AddWindow(text)
 			obj2.ZIndex = 21
 			obj2.Font = Enum.Font.SourceSansSemibold
 			obj2.Text = Text
-			obj2.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+			obj2.TextColor3 = Color3.new(0.854901, 0.411764, 0.580392)
 			obj2.TextSize = 16
 			obj2.TextXAlignment = Enum.TextXAlignment.Left
 
 			--[sbt]--
 			local obj3 = Instance.new("TextButton", obj1)
-			obj3.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj3.BackgroundColor3 = Color3.new(0.854901, 0.427450, 0.894117)
 			obj3.BackgroundTransparency = 1
 			obj3.BorderSizePixel = 0
 			obj3.ClipsDescendants = true
@@ -1402,7 +1402,7 @@ function library:AddWindow(text)
 			obj3.ZIndex = 21
 			obj3.Font = Enum.Font.SourceSans
 			obj3.Text = [[]]
-			obj3.TextColor3 = Color3.new(0, 0, 0)
+			obj3.TextColor3 = Color3.new(0.5568627450980392, 0.4117647058823529, 0.8274509803921568)
 			obj3.TextSize = 1
 			obj3.AutoButtonColor = false
 			obj3.Name = [[sbt]]
@@ -1413,7 +1413,7 @@ function library:AddWindow(text)
 
 			obj4.Name = "pcntage"
 			obj4.Parent = obj1
-			obj4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			obj4.BackgroundColor3 = Color3.fromRGB(175, 231, 111)
 			obj4.BackgroundTransparency = 1.000
 			obj4.BorderSizePixel = 0
 			obj4.Position = UDim2.new(0.79838711, 0, 0, 0)
@@ -1421,15 +1421,15 @@ function library:AddWindow(text)
 			obj4.ZIndex = 23
 			obj4.ClearTextOnFocus = false
 			obj4.Font = Enum.Font.SourceSansBold
-			obj4.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+			obj4.PlaceholderColor3 = Color3.fromRGB(109, 228, 202)
 			obj4.Text = def
-			obj4.TextColor3 = Color3.fromRGB(90, 90, 90)
+			obj4.TextColor3 = Color3.fromRGB(113, 241, 199)
 			obj4.TextSize = 14.000
 			obj4.TextXAlignment = Enum.TextXAlignment.Right
 
 			--[HOLDER_3]--
 			local obj5 = Instance.new("Frame", obj1)
-			obj5.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+			obj5.BackgroundColor3 = Color3.new(0.360784, 0.733333, 0.392156)
 			obj5.BorderSizePixel = 0
 			obj5.Position = UDim2.new(-0.002,0,0.491,0)
 			obj5.Size = UDim2.new(0, 243, 0, 13)
@@ -1438,7 +1438,7 @@ function library:AddWindow(text)
 
 			--[SFrame]--
 			local obj6 = Instance.new("Frame", obj5)
-			obj6.BackgroundColor3 = Color3.new(1, 1, 1)
+			obj6.BackgroundColor3 = Color3.new(0.6235294117647059, 0.9254901960784314, 0.4470588235294118)
 			obj6.BorderSizePixel = 0
 			obj6.Position = UDim2.new(-0.001646191, 0, 0, 0)
 			obj6.Size = UDim2.fromScale(DefaultScale,1)
@@ -1447,15 +1447,15 @@ function library:AddWindow(text)
 
 			--[UIGradient]--
 			local obj7 = Instance.new("UIGradient", obj6)
-			obj7.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.345098, 0.509804, 0.752941)), ColorSequenceKeypoint.new(1, Color3.new(0.270588, 0.4, 0.592157))})
+			obj7.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.450980, 0.933333, 0.533333)), ColorSequenceKeypoint.new(1, Color3.new(0.462745, 0.913725, 0.596078))})
 
 			--[UIStroke]--
 			local obj8 = Instance.new("UIStroke", obj5)
-			obj8.Color = Color3.new(0.203922, 0.203922, 0.203922)
+			obj8.Color = Color3.new(0.560784, 0.901960, 0.427450)
 
 			--[UIGradient]--
 			local obj9 = Instance.new("UIGradient", obj8)
-			obj9.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.533333, 0.533333, 0.533333))})
+			obj9.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.43529411764705883, 0.9411764705882353, 0.6313725490196078)), ColorSequenceKeypoint.new(1, Color3.new(0.533333, 0.533333, 0.533333))})
 
 			local st = def or Max/2
 			obj4.FocusLost:Connect(function(n)
@@ -1525,12 +1525,12 @@ function library:AddWindow(text)
 				end
 			end)
 			obj3.MouseButton1Down:Connect(function()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(115, 115, 115)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(106, 217, 224)}):Play()
 				obj4.TextXAlignment = Enum.TextXAlignment.Right
 
 				Value = ((((tonumber(Max) - tonumber(Min)) / 244) * obj6.AbsoluteSize.X) + tonumber(Min)) or 0
 				Value = (Value)
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(116, 255, 128)}):Play()
 
 				obj6.Size = UDim2.new(0, math.clamp(mouse.X - obj6.AbsolutePosition.X, 0, 244), 0, 13)
 				moveconnection = mouse.Move:Connect(function()
@@ -1558,12 +1558,12 @@ function library:AddWindow(text)
 			end)
 
 			obj3.MouseButton1Up:Connect(function()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(52, 52, 52)}):Play()
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(126, 126, 126)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(99, 206, 131)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(120, 248, 237)}):Play()
 			end)
 			obj3.MouseLeave:Connect(function()
-				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(126, 126, 126)}):Play()
-				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(52, 52, 52)}):Play()
+				TweenService:Create(obj4, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(124, 223, 104)}):Play()
+				TweenService:Create(obj8 , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(86, 185, 152)}):Play()
 			end)
 			SECTIONHOLDER.Size = UDim2.fromOffset(SECTIONHOLDER.AbsoluteSize.X,  SECTION2UILIB.AbsoluteContentSize.Y + 8) + UDim2.new(0,0,0,23)
 			_PARENT.Size = UDim2.new(_PARENT.Size.X.Scale, _PARENT.Size.X.Offset , 0 ,LIST.AbsoluteContentSize.Y + 15);
@@ -1581,7 +1581,7 @@ function library:AddWindow(text)
 			TextLabel.Parent = HOLDER_2
 			TextLabel.AutomaticSize =Enum.AutomaticSize.Y
 
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(116, 247, 240)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.0329693519, 0, 0, 0)
@@ -1589,7 +1589,7 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 15
 			TextLabel.Font = Enum.Font.SourceSansSemibold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+			TextLabel.TextColor3 = Color3.fromRGB(106, 224, 165)
 			TextLabel.TextSize = 18.000
 			TextLabel.TextWrapped = true
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -1647,13 +1647,13 @@ function library:AddWindow(text)
 			UIStroke.Transparency = 0;
 			UIStroke.Name = 'UIStroke';
 
-			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(180, 180, 180))}
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(108, 231, 155)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(94, 201, 165))}
 			UIGradient.Parent = UIStroke
 
 			local function Update()
 				if activated == false then
-					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(84, 122, 181)}):Play()
-					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) }):Play()
+					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(107, 223, 136)}):Play()
+					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(87, 184, 147) }):Play()
 					spawn(function()
 						pcall(function()
 							Callback(activated)
@@ -1661,8 +1661,8 @@ function library:AddWindow(text)
 					end)
 					activated = true
 				elseif activated == true then
-					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(25,25,25)}):Play()
-					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(84, 84, 84) }):Play()
+					TweenService:Create(color , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(4, 221, 120)}):Play()
+					TweenService:Create(TextLabel, tweenInfo, { TextColor3 = Color3.fromRGB(91, 192, 129) }):Play()
 					spawn(function()
 						pcall(function()
 							Callback(activated)
@@ -1674,7 +1674,7 @@ function library:AddWindow(text)
 
 			TemplateToggle.Name = "TemplateToggle"
 			TemplateToggle.Parent = HOLDER_2
-			TemplateToggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TemplateToggle.BackgroundColor3 = Color3.fromRGB(99, 207, 141)
 			TemplateToggle.BackgroundTransparency = 1.000
 			TemplateToggle.BorderSizePixel = 0
 			TemplateToggle.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1682,7 +1682,7 @@ function library:AddWindow(text)
 			TemplateToggle.ZIndex = 14
 
 			TextLabel.Parent = TemplateToggle
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(98, 209, 145)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.0833906233, 0, 0.0133694736, 0)
@@ -1696,7 +1696,7 @@ function library:AddWindow(text)
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateToggle
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(86, 255, 218)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(-0.0240641702, 0, 0, 0)
@@ -1704,13 +1704,13 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(61, 129, 126)
 			Interactive.TextSize = 20.000
 
 			color.Name = "color"
 			color.Parent = TemplateToggle
 			color.AnchorPoint = Vector2.new(0.5, 0.5)
-			color.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			color.BackgroundColor3 = Color3.fromRGB(111, 241, 165)
 			color.BorderSizePixel = 0
 			color.Position = UDim2.new(0.0192536544, 0, 0.386994779, 0)
 			color.Size = UDim2.new(0, 15, 0, 15)
@@ -1723,7 +1723,7 @@ function library:AddWindow(text)
 			KeyButton.Name = "KeyButton"
 			KeyButton.Parent = TemplateToggle
 			KeyButton.AnchorPoint = Vector2.new(1, 0.5)
-			KeyButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			KeyButton.BackgroundColor3 = Color3.fromRGB(109, 219, 183)
 			KeyButton.BorderSizePixel = 0
 			KeyButton.ClipsDescendants = true
 			KeyButton.Position = UDim2.new(1.00271928, 0, 0.366679788, 0)
@@ -1736,9 +1736,9 @@ function library:AddWindow(text)
 			else
 				KeyButton.Text ='. . .'
 			end
-			KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			KeyButton.TextColor3 = Color3.fromRGB(111, 236, 118)
 			KeyButton.TextSize = 10.000
-			KeyButton.TextStrokeColor3 = Color3.fromRGB(45, 45, 45)
+			KeyButton.TextStrokeColor3 = Color3.fromRGB(103, 212, 167)
 
 			h5.CornerRadius = UDim.new(0, 3)
 			h5.Name = "h5"
@@ -1760,7 +1760,7 @@ function library:AddWindow(text)
 
 				KeyButton.MouseButton1Click:connect(function() 
 					game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+						BackgroundColor3 = Color3.fromRGB(114, 227, 235)
 					}):Play()
 					KeyButton.Text = ". . ."
 					KeyButton:TweenSize(UDim2.new(0,getsize(KeyButton.Text),0,13), "InOut", "Quint", 0.2, true)
@@ -1769,7 +1769,7 @@ function library:AddWindow(text)
 					if v1.KeyCode.Name ~= "Unknown" then
 						ischanging = true
 						game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-							BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+							BackgroundColor3 = Color3.fromRGB(107, 230, 117)
 						}):Play()
 						KeyButton:TweenSize(UDim2.new(0,getsize( v1.KeyCode.Name),0,13), "Out", "Quint", 0.3, true)
 						KeyButton.Text = v1.KeyCode.Name
@@ -1793,10 +1793,10 @@ function library:AddWindow(text)
 
 			Interactive.MouseButton1Click:Connect(Update)
 			Interactive.MouseEnter:Connect(function()
-				TweenService:Create(UIStroke , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(115, 115, 115)}):Play()
+				TweenService:Create(UIStroke , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(93, 165, 87)}):Play()
 			end)
 			Interactive.MouseLeave:Connect(function()
-				TweenService:Create(UIStroke , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(52, 52, 52)}):Play()
+				TweenService:Create(UIStroke , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {Color = Color3.fromRGB(103, 255, 154)}):Play()
 
 			end)
 			SECTIONHOLDER:TweenSize(UDim2.fromOffset(SECTIONHOLDER.AbsoluteSize.X,  SECTION2UILIB.AbsoluteContentSize.Y + 42),Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0, true) 
@@ -1808,7 +1808,7 @@ function library:AddWindow(text)
 		end
 		function inside:AddSeparateBar()
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+			obj1.BackgroundColor3 = Color3.new(0.435294, 0.913725, 0.690196)
 			obj1.Position = UDim2.new(0.0159928761, 0, 0.491355002, 0)
 			obj1.Size = UDim2.new(0, 258, 0, 3)
 			obj1.ZIndex = 22
@@ -1827,7 +1827,7 @@ function library:AddWindow(text)
 		end
 		function inside:AddColorPallete(Text,Color,Action)
 			Text = Text or 'Not defined'
-			Color = Color or Color3.fromRGB(255,255,255)
+			Color = Color or Color3.fromRGB(112, 206, 243)
 			Action = Action or function() end
 			local SECTIONCOLOUR = Instance.new("Frame")
 			local CCCC3 = Instance.new("UICorner")
@@ -1839,7 +1839,7 @@ function library:AddWindow(text)
 
 			SECTIONCOLOUR.Name = "SECTIONCOLOUR"
 			SECTIONCOLOUR.Parent = HOLDER_2
-			SECTIONCOLOUR.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			SECTIONCOLOUR.BackgroundColor3 = Color3.fromRGB(104, 115, 216)
 			SECTIONCOLOUR.BorderSizePixel = 0
 			SECTIONCOLOUR.ClipsDescendants = true
 			SECTIONCOLOUR.Position = UDim2.new(0.0251945332, 0, 0.517914712, 0)
@@ -1852,7 +1852,7 @@ function library:AddWindow(text)
 
 			OPENCLOSE.Name = "OPENCLOSE"
 			OPENCLOSE.Parent = SECTIONCOLOUR
-			OPENCLOSE.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			OPENCLOSE.BackgroundColor3 = Color3.fromRGB(103, 218, 212)
 			OPENCLOSE.BackgroundTransparency = 1.000
 			OPENCLOSE.BorderSizePixel = 0
 			OPENCLOSE.ClipsDescendants = true
@@ -1862,7 +1862,7 @@ function library:AddWindow(text)
 			OPENCLOSE.AutoButtonColor = false
 			OPENCLOSE.Font = Enum.Font.SourceSansSemibold
 			OPENCLOSE.Text = Text
-			OPENCLOSE.TextColor3 = Color3.fromRGB(255, 255, 255)
+			OPENCLOSE.TextColor3 = Color3.fromRGB(104, 223, 164)
 			OPENCLOSE.TextSize = 16.000
 			OPENCLOSE.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1908,7 +1908,7 @@ function library:AddWindow(text)
 
 			TemplateKBIND.Name = "TemplateKBIND"
 			TemplateKBIND.Parent = HOLDER_2
-			TemplateKBIND.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TemplateKBIND.BackgroundColor3 = Color3.fromRGB(96, 199, 105)
 			TemplateKBIND.BackgroundTransparency = 1.000
 			TemplateKBIND.BorderSizePixel = 0
 			TemplateKBIND.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1916,7 +1916,7 @@ function library:AddWindow(text)
 			TemplateKBIND.ZIndex = 14
 
 			TextLabel.Parent = TemplateKBIND
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(133, 189, 87)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(-0.0121270986, 0, 0.0133694736, 0)
@@ -1924,13 +1924,13 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 15
 			TextLabel.Font = Enum.Font.SourceSansBold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+			TextLabel.TextColor3 = Color3.fromRGB(78, 116, 158)
 			TextLabel.TextSize = 14.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateKBIND
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(79, 173, 137)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(-0.0240641963, 0, 0, 0)
@@ -1938,13 +1938,13 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(107, 224, 117)
 			Interactive.TextSize = 20.000
 
 			KeyButton.Name = "KeyButton"
 			KeyButton.Parent = TemplateKBIND
 			KeyButton.AnchorPoint = Vector2.new(1, 0.5)
-			KeyButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			KeyButton.BackgroundColor3 = Color3.fromRGB(119, 255, 191)
 			KeyButton.BorderSizePixel = 0
 			KeyButton.ClipsDescendants = true
 			KeyButton.Position = UDim2.new(1.00271928, 0, 0.366679788, 0)
@@ -1953,9 +1953,9 @@ function library:AddWindow(text)
 			KeyButton.AutoButtonColor = false
 			KeyButton.Font = Enum.Font.ArialBold
 			KeyButton.Text = KeyCode.Name
-			KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			KeyButton.TextColor3 = Color3.fromRGB(127, 206, 104)
 			KeyButton.TextSize = 10.000
-			KeyButton.TextStrokeColor3 = Color3.fromRGB(45, 45, 45)
+			KeyButton.TextStrokeColor3 = Color3.fromRGB(105, 209, 102)
 
 			h5.CornerRadius = UDim.new(0, 3)
 			h5.Name = "h5"
@@ -1975,7 +1975,7 @@ function library:AddWindow(text)
 
 			KeyButton.MouseButton1Click:connect(function() 
 				game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-					BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+					BackgroundColor3 = Color3.fromRGB(94, 192, 94)
 				}):Play()
 				KeyButton.Text = ". . ."
 				KeyButton:TweenSize(UDim2.new(0,getsize(KeyButton.Text),0,13), "InOut", "Quint", 0.2, true)
@@ -1984,7 +1984,7 @@ function library:AddWindow(text)
 				if v1.KeyCode.Name ~= "Unknown" then
 					ischanging = true
 					game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+						BackgroundColor3 = Color3.fromRGB(110, 255, 117)
 					}):Play()
 					KeyButton:TweenSize(UDim2.new(0,getsize( v1.KeyCode.Name),0,13), "Out", "Quint", 0.3, true)
 					KeyButton.Text = v1.KeyCode.Name
@@ -2024,7 +2024,7 @@ function library:AddWindow(text)
 
 			DRPDOWN.Name = "DRPDOWN"
 			DRPDOWN.Parent = HOLDER_2
-			DRPDOWN.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+			DRPDOWN.BackgroundColor3 = Color3.fromRGB(95, 184, 110)
 			DRPDOWN.BorderSizePixel = 0
 			DRPDOWN.ClipsDescendants = true
 			DRPDOWN.Position = UDim2.new(0.0362365209, 0, 0.69055295, 0)
@@ -2036,14 +2036,14 @@ function library:AddWindow(text)
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = DRPDOWN
-			Toggle.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Toggle.BackgroundColor3 = Color3.fromRGB(103, 207, 143)
 			Toggle.BorderSizePixel = 0
 			Toggle.ClipsDescendants = true
 			Toggle.Size = UDim2.new(0, 252, 0, 22)
 			Toggle.AutoButtonColor = false
 			Toggle.Font = Enum.Font.SourceSansSemibold
 			Toggle.Text = "  "
-			Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle.TextColor3 = Color3.fromRGB(110, 228, 222)
 			Toggle.TextSize = 16.000
 
 			_456fg.CornerRadius = UDim.new(0, 4)
@@ -2052,7 +2052,7 @@ function library:AddWindow(text)
 
 			TextLabel.Parent = Toggle
 			TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(97, 195, 202)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.44808808, 0, 0.454545468, 0)
@@ -2060,13 +2060,13 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 30
 			TextLabel.Font = Enum.Font.SourceSansSemibold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+			TextLabel.TextColor3 = Color3.fromRGB(86, 155, 149)
 			TextLabel.TextSize = 16.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 			TextLabel_2.Parent = Toggle
 			TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
-			TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel_2.BackgroundColor3 = Color3.fromRGB(105, 255, 150)
 			TextLabel_2.BackgroundTransparency = 1.000
 			TextLabel_2.BorderSizePixel = 0
 			TextLabel_2.Position = UDim2.new(0.91685158, 0, 0.550000012, 0)
@@ -2074,7 +2074,7 @@ function library:AddWindow(text)
 			TextLabel_2.ZIndex = 30
 			TextLabel_2.Font = Enum.Font.SourceSansSemibold
 			TextLabel_2.Text = "+"
-			TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel_2.TextColor3 = Color3.fromRGB(95, 230, 196)
 			TextLabel_2.TextSize = 16.000
 			TextLabel_2.TextXAlignment = Enum.TextXAlignment.Right
 
@@ -2089,7 +2089,7 @@ function library:AddWindow(text)
 				local TextLabel_3 = Instance.new("TextLabel")
 				OPTION.Name = "OPTION"
 				OPTION.Parent = DRPDOWN
-				OPTION.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+				OPTION.BackgroundColor3 = Color3.fromRGB(210, 255, 106)
 				OPTION.BorderSizePixel = 0
 				OPTION.ClipsDescendants = true
 				OPTION.Position = UDim2.new(0.055555556, 0, 0.378787875, 0)
@@ -2098,7 +2098,7 @@ function library:AddWindow(text)
 				OPTION.AutoButtonColor = false
 				OPTION.Font = Enum.Font.SourceSansSemibold
 				OPTION.Text = ''
-				OPTION.TextColor3 = Color3.fromRGB(255, 255, 255)
+				OPTION.TextColor3 = Color3.fromRGB(123, 255, 233)
 				OPTION.TextSize = 16.000
 
 				_456fg_2.CornerRadius = UDim.new(0, 4)
@@ -2107,14 +2107,14 @@ function library:AddWindow(text)
 
 				TextLabel_3.Parent = OPTION
 				TextLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
-				TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_3.BackgroundColor3 = Color3.fromRGB(110, 255, 166)
 				TextLabel_3.BackgroundTransparency = 1.000
 				TextLabel_3.BorderSizePixel = 0
 				TextLabel_3.Position = UDim2.new(0.501999259, 0, 0.441162109, 0)
 				TextLabel_3.Size = UDim2.new(0, 125, 0, 15)
 				TextLabel_3.Font = Enum.Font.SourceSansSemibold
 				TextLabel_3.Text = v
-				TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_3.TextColor3 = Color3.fromRGB(93, 255, 93)
 				TextLabel_3.TextSize = 15.000
 
 				if sel == v and v ~= Toggle.Text then
@@ -2168,7 +2168,7 @@ function library:AddWindow(text)
 
 
 
-			AddRipple(Toggle,TextLabel_2,Color3.fromRGB(180, 180, 180))
+			AddRipple(Toggle,TextLabel_2,Color3.fromRGB(72, 146, 96))
 			SECTIONHOLDER:TweenSize(UDim2.fromOffset(SECTIONHOLDER.AbsoluteSize.X,  SECTION2UILIB.AbsoluteContentSize.Y + 42),Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0, true) 
 			_PARENT:TweenSize(UDim2.fromOffset(_PARENT.AbsoluteSize.X,  LIST.AbsoluteContentSize.Y + 15),Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0, true) 
 
@@ -2187,14 +2187,14 @@ function library:AddWindow(text)
 
 			TemplateButton.Name = "TemplateButton"
 			TemplateButton.Parent = HOLDER_2
-			TemplateButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			TemplateButton.BackgroundColor3 = Color3.fromRGB(86, 172, 90)
 			TemplateButton.BorderSizePixel = 0
 			TemplateButton.Position = UDim2.new(0.0430313908, 0, 0, 0)
 			TemplateButton.Size = UDim2.new(0, 243, 0, 21)
 			TemplateButton.ZIndex = 14
 			TemplateButton.ClipsDescendants = true
 			TextLabel.Parent = TemplateButton
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(95, 189, 161)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0, 0, 0, 0)
@@ -2202,12 +2202,12 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 15
             TextLabel.Text=Text
 			TextLabel.Font = Enum.Font.SourceSansBold
-			TextLabel.TextColor3 = Color3.fromRGB(84, 84, 84)
+			TextLabel.TextColor3 = Color3.fromRGB(113, 255, 132)
 			TextLabel.TextSize = 17.000
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateButton
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(178, 231, 108)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(0, 0, 0, 0)
@@ -2215,7 +2215,7 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(103, 212, 108)
 			Interactive.TextSize = 18.000
 			--Interactive.ClipsDescendants = true
 			UICorner.CornerRadius = UDim.new(0, 4)
@@ -2224,13 +2224,13 @@ function library:AddWindow(text)
 			local UIStroke = Instance.new('UIStroke');
 
 			UIStroke.Parent= TemplateButton;
-			UIStroke.Color = Color3.fromRGB(52,52,52);
+			UIStroke.Color = Color3.fromRGB(146, 211, 102);
 			UIStroke.LineJoinMode = Enum.LineJoinMode.Round;
 			UIStroke.Thickness = 1;
 			UIStroke.Transparency = 0;
 			UIStroke.Name = 'UIStroke';
 
-			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(180, 180, 180))}
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(93, 169, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(79, 119, 146))}
 			UIGradient.Parent = UIStroke
 
 			Interactive.MouseButton1Click:Connect(function()
