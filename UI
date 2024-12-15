@@ -214,7 +214,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	local RESETALL = Instance.new('ImageButton')
 	RESETALL.Name = "RESETALL"
 	RESETALL.Parent = S13
-	RESETALL.BackgroundColor3 = Color3.fromRGB(129, 218, 107)
+	RESETALL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	RESETALL.BackgroundTransparency = 1.000
 	RESETALL.BorderSizePixel = 0
 	RESETALL.Position = UDim2.new(0.621510208, 0, 0.730036497, 0)
@@ -236,7 +236,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	ANIMATEFRAME01.Name = "ANIMATEFRAME01"
 	ANIMATEFRAME01.Parent = COLORPALLETE
-	ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(102, 204, 102)
+	ANIMATEFRAME01.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ANIMATEFRAME01.Position = UDim2.new(-0.0257352963, 0, -0.00666669384, 0)
 	ANIMATEFRAME01.Size = UDim2.new(0, 285, 0, 159)
 	ANIMATEFRAME01.ZIndex = 99
@@ -244,22 +244,22 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	Holder.Name = "Holder"
 	Holder.Parent = COLORPALLETE
-	Holder.BackgroundColor3 = Color3.fromRGB(102, 204, 102)
+	Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Holder.BackgroundTransparency = 1.000
 	Holder.BorderSizePixel = 0
 	Holder.Size = UDim2.new(0, 283, 0, 157)
 
 	BG.Name = "BG"
 	BG.Parent = Holder
-	BG.BackgroundColor3 = Color3.fromRGB(119, 248, 119)
-	BG.BorderColor3 = Color3.fromRGB(73, 156, 77)
+	BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220)
+	BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
 	BG.BorderSizePixel = 0
 	BG.Position = UDim2.new(0, 0, 0.157927245, 0)
 	BG.Size = UDim2.new(0, 272, 0, 125)
 
 	S12.Name = "S12"
 	S12.Parent = BG
-	S12.BackgroundColor3 = Color3.fromRGB(55, 83, 61)
+	S12.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 	S12.BorderSizePixel = 0
 	S12.Position = UDim2.new(0, 16, 0, 7)
 	S12.Size = UDim2.new(0, 156, 0, 107)
@@ -269,7 +269,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	ColourWheel.Parent = S12
 	ColourWheel.Active = false
 	ColourWheel.AnchorPoint = Vector2.new(0.5, 0.5)
-	ColourWheel.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	ColourWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ColourWheel.BackgroundTransparency = 1.000
 	ColourWheel.BorderSizePixel = 0
 	ColourWheel.Position = UDim2.new(0.418737918, 0, 0.491852999, 0)
@@ -284,7 +284,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	Picker.Name = "Picker"
 	Picker.Parent = ColourWheel
 	Picker.AnchorPoint = Vector2.new(0.5, 0.5)
-	Picker.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	Picker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Picker.BackgroundTransparency = 1.000
 	Picker.BorderSizePixel = 0
 	Picker.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -298,7 +298,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	DarknessPicker.Parent = S12
 	DarknessPicker.Active = false
 	DarknessPicker.AnchorPoint = Vector2.new(0.5, 0.5)
-	DarknessPicker.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	DarknessPicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	DarknessPicker.BackgroundTransparency = 1.000
 	DarknessPicker.BorderSizePixel = 0
 	DarknessPicker.Position = UDim2.new(0.854536772, 0, 0.554580271, 0)
@@ -310,14 +310,14 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	DarknessPicker.SliceCenter = Rect.new(100, 100, 100, 100)
 	DarknessPicker.SliceScale = 0.120
 
-	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 128, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(58, 77, 65))}
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 	UIGradient.Rotation = 90
 	UIGradient.Parent = DarknessPicker
 
 	Slider.Name = "Slider"
 	Slider.Parent = DarknessPicker
 	Slider.AnchorPoint = Vector2.new(0.5, 0.5)
-	Slider.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Slider.BackgroundTransparency = 1.000
 	Slider.BorderSizePixel = 0
 	Slider.Position = UDim2.new(0.491197795, 0, 0.0733607039, 0)
@@ -345,7 +345,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	ColourDisplayBIG.Name = "ColourDisplayBIG"
 	ColourDisplayBIG.Parent = S13
-	ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	ColourDisplayBIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ColourDisplayBIG.BackgroundTransparency = 1.000
 	ColourDisplayBIG.BorderSizePixel = 0
 	ColourDisplayBIG.Position = UDim2.new(0.255401969, 0, 0.159329623, 0)
@@ -361,7 +361,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	SETCOLOR.Name = "SETCOLOR"
 	SETCOLOR.Parent = S13
-	SETCOLOR.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	SETCOLOR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	SETCOLOR.BackgroundTransparency = 1.000
 	SETCOLOR.BorderSizePixel = 0
 	SETCOLOR.Position = UDim2.new(0.231911927, 0, 0.730036736, 0)
@@ -371,9 +371,9 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	Upper.Name = "Upper"
 	Upper.Parent = Holder
-	Upper.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
+	Upper.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Upper.BackgroundTransparency = 1.000
-	Upper.BorderColor3 = Color3.fromRGB(91, 197, 105)
+	Upper.BorderColor3 = Color3.fromRGB(91, 133, 197)
 	Upper.BorderSizePixel = 0
 	Upper.Position = UDim2.new(1.07835966e-07, 0, 0, 0)
 	Upper.Size = UDim2.new(0, 271, 0, 23)
