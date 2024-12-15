@@ -598,6 +598,8 @@ linedecoupper.Position = UDim2.new(0, 0, 0.11, 0) -- 調整線條位置
 linedecoupper.Size = UDim2.new(1, 0, 0, 3) -- 加粗線條
 linedecoupper.ZIndex = 3
 
+local RunService = game:GetService("RunService")
+
 -- 底部區域
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
@@ -605,6 +607,31 @@ DOWNER.BackgroundTransparency = 1.000
 DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
 DOWNER.Size = UDim2.new(1, 0, 0, 40) -- 調整高度
 DOWNER.ZIndex = 2
+
+-- 隨機震動邏輯
+local amplitude = 3 -- 震動幅度 (像素)
+local activeShakeConnection
+
+local function shakeFrame(frame)
+    -- 停止舊的震動邏輯，避免重複
+    if activeShakeConnection then
+        activeShakeConnection:Disconnect()
+    end
+
+    local basePosition = frame.Position -- 保存初始位置
+    activeShakeConnection = RunService.Heartbeat:Connect(function()
+        -- 隨機生成 X 和 Y 軸偏移值
+        local randomX = math.random(-amplitude, amplitude)
+        local randomY = math.random(-amplitude, amplitude)
+
+        -- 應用偏移到整個 DOWNER 的位置
+        frame.Position = basePosition + UDim2.new(0, randomX, 0, randomY)
+    end)
+end
+
+-- 啟動 DOWNER 的震動效果
+shakeFrame(DOWNER)
+
 
 
 local RunService = game:GetService("RunService")
@@ -626,7 +653,7 @@ WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 -- 右側標籤
 local LABEL2 = Instance.new("TextLabel")
 LABEL2.Name = "LABEL2"
-LABEL2.Parent = DOWNER -- 設置父級元件
+LABEL2.Parent = Upper -- 設置父級元件
 LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
 LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
