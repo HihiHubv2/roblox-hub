@@ -225,7 +225,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 	COLORPALLETE.Name = "COLORPALLETE"
 	COLORPALLETE.Parent = PCR_1
 	COLORPALLETE.AnchorPoint = Vector2.new(0.5, 0.5)
-	COLORPALLETE.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	COLORPALLETE.BackgroundColor3 = Color3.fromRGB(34, 139, 34)
 	COLORPALLETE.BackgroundTransparency = 1.000
 	COLORPALLETE.BorderSizePixel = 0
 	COLORPALLETE.ClipsDescendants = true
@@ -251,7 +251,7 @@ function OpenedColor(text,ColourDisplay,Action,def)
 
 	BG.Name = "BG"
 	BG.Parent = Holder
-	BG.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220)
 	BG.BorderColor3 = Color3.fromRGB(91, 133, 197)
 	BG.BorderSizePixel = 0
 	BG.Position = UDim2.new(0, 0, 0.157927245, 0)
@@ -571,7 +571,7 @@ MAIN.ZIndex = 2
 -- 內容區域
 BG.Name = "BG"
 BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(220, 225, 210) -- 柔和灰綠色
+BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220) -- 柔和灰綠色
 BG.BorderSizePixel = 0
 BG.Position = UDim2.new(0, 0, 0.07, 0) -- 調整位置
 BG.Size = UDim2.new(0, 800, 0, 470) -- 放大內容區域
@@ -614,7 +614,7 @@ WEBSITE.BackgroundTransparency = 1.000
 WEBSITE.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤大小
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
-WEBSITE.TextColor3 = Color3.fromRGB(102, 153, 102)
+WEBSITE.TextColor3 = Color3.fromRGB(0, 128, 0)
 WEBSITE.TextSize = 18 -- 放大字體
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1673,7 +1673,7 @@ function library:AddWindow(text)
 
 			TemplateToggle.Name = "TemplateToggle"
 			TemplateToggle.Parent = HOLDER_2
-			TemplateToggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TemplateToggle.BackgroundColor3 = Color3.fromRGB(105, 214, 110)
 			TemplateToggle.BackgroundTransparency = 1.000
 			TemplateToggle.BorderSizePixel = 0
 			TemplateToggle.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1681,7 +1681,7 @@ function library:AddWindow(text)
 			TemplateToggle.ZIndex = 14
 
 			TextLabel.Parent = TemplateToggle
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(102, 196, 99)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.0833906233, 0, 0.0133694736, 0)
@@ -1689,13 +1689,13 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 15
 			TextLabel.Font = Enum.Font.SourceSansBold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(84, 84, 84)
+			TextLabel.TextColor3 = Color3.fromRGB(102, 136, 105)
 			TextLabel.TextSize = 14.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateToggle
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(97, 194, 113)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(-0.0240641702, 0, 0, 0)
@@ -1703,13 +1703,13 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(80, 105, 83)
 			Interactive.TextSize = 20.000
 
 			color.Name = "color"
 			color.Parent = TemplateToggle
 			color.AnchorPoint = Vector2.new(0.5, 0.5)
-			color.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			color.BackgroundColor3 = Color3.fromRGB(88, 109, 88)
 			color.BorderSizePixel = 0
 			color.Position = UDim2.new(0.0192536544, 0, 0.386994779, 0)
 			color.Size = UDim2.new(0, 15, 0, 15)
@@ -1722,7 +1722,7 @@ function library:AddWindow(text)
 			KeyButton.Name = "KeyButton"
 			KeyButton.Parent = TemplateToggle
 			KeyButton.AnchorPoint = Vector2.new(1, 0.5)
-			KeyButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			KeyButton.BackgroundColor3 = Color3.fromRGB(139, 69, 19)
 			KeyButton.BorderSizePixel = 0
 			KeyButton.ClipsDescendants = true
 			KeyButton.Position = UDim2.new(1.00271928, 0, 0.366679788, 0)
@@ -1735,9 +1735,9 @@ function library:AddWindow(text)
 			else
 				KeyButton.Text ='. . .'
 			end
-			KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			KeyButton.TextColor3 = Color3.fromRGB(97, 177, 94)
 			KeyButton.TextSize = 10.000
-			KeyButton.TextStrokeColor3 = Color3.fromRGB(45, 45, 45)
+			KeyButton.TextStrokeColor3 = Color3.fromRGB(80, 100, 91)
 
 			h5.CornerRadius = UDim.new(0, 3)
 			h5.Name = "h5"
@@ -1759,7 +1759,7 @@ function library:AddWindow(text)
 
 				KeyButton.MouseButton1Click:connect(function() 
 					game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+						BackgroundColor3 = Color3.fromRGB(92, 122, 95)
 					}):Play()
 					KeyButton.Text = ". . ."
 					KeyButton:TweenSize(UDim2.new(0,getsize(KeyButton.Text),0,13), "InOut", "Quint", 0.2, true)
@@ -1768,7 +1768,7 @@ function library:AddWindow(text)
 					if v1.KeyCode.Name ~= "Unknown" then
 						ischanging = true
 						game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-							BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+							BackgroundColor3 = Color3.fromRGB(92, 121, 99)
 						}):Play()
 						KeyButton:TweenSize(UDim2.new(0,getsize( v1.KeyCode.Name),0,13), "Out", "Quint", 0.3, true)
 						KeyButton.Text = v1.KeyCode.Name
@@ -1807,7 +1807,7 @@ function library:AddWindow(text)
 		end
 		function inside:AddSeparateBar()
 			local obj1 = Instance.new("Frame")
-			obj1.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+			obj1.BackgroundColor3 = Color3.new(0.447058, 0.580392, 0.517647)
 			obj1.Position = UDim2.new(0.0159928761, 0, 0.491355002, 0)
 			obj1.Size = UDim2.new(0, 258, 0, 3)
 			obj1.ZIndex = 22
@@ -1826,7 +1826,7 @@ function library:AddWindow(text)
 		end
 		function inside:AddColorPallete(Text,Color,Action)
 			Text = Text or 'Not defined'
-			Color = Color or Color3.fromRGB(255,255,255)
+			Color = Color or Color3.fromRGB(105, 175, 91)
 			Action = Action or function() end
 			local SECTIONCOLOUR = Instance.new("Frame")
 			local CCCC3 = Instance.new("UICorner")
@@ -1838,7 +1838,7 @@ function library:AddWindow(text)
 
 			SECTIONCOLOUR.Name = "SECTIONCOLOUR"
 			SECTIONCOLOUR.Parent = HOLDER_2
-			SECTIONCOLOUR.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			SECTIONCOLOUR.BackgroundColor3 = Color3.fromRGB(87, 114, 89)
 			SECTIONCOLOUR.BorderSizePixel = 0
 			SECTIONCOLOUR.ClipsDescendants = true
 			SECTIONCOLOUR.Position = UDim2.new(0.0251945332, 0, 0.517914712, 0)
@@ -1851,7 +1851,7 @@ function library:AddWindow(text)
 
 			OPENCLOSE.Name = "OPENCLOSE"
 			OPENCLOSE.Parent = SECTIONCOLOUR
-			OPENCLOSE.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+			OPENCLOSE.BackgroundColor3 = Color3.fromRGB(70, 92, 83)
 			OPENCLOSE.BackgroundTransparency = 1.000
 			OPENCLOSE.BorderSizePixel = 0
 			OPENCLOSE.ClipsDescendants = true
@@ -1861,7 +1861,7 @@ function library:AddWindow(text)
 			OPENCLOSE.AutoButtonColor = false
 			OPENCLOSE.Font = Enum.Font.SourceSansSemibold
 			OPENCLOSE.Text = Text
-			OPENCLOSE.TextColor3 = Color3.fromRGB(255, 255, 255)
+			OPENCLOSE.TextColor3 = Color3.fromRGB(95, 189, 95)
 			OPENCLOSE.TextSize = 16.000
 			OPENCLOSE.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1907,7 +1907,7 @@ function library:AddWindow(text)
 
 			TemplateKBIND.Name = "TemplateKBIND"
 			TemplateKBIND.Parent = HOLDER_2
-			TemplateKBIND.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TemplateKBIND.BackgroundColor3 = Color3.fromRGB(92, 177, 99)
 			TemplateKBIND.BackgroundTransparency = 1.000
 			TemplateKBIND.BorderSizePixel = 0
 			TemplateKBIND.Position = UDim2.new(0.155858055, 0, 0.392140955, 0)
@@ -1915,7 +1915,7 @@ function library:AddWindow(text)
 			TemplateKBIND.ZIndex = 14
 
 			TextLabel.Parent = TemplateKBIND
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(102, 158, 119)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(-0.0121270986, 0, 0.0133694736, 0)
@@ -1929,7 +1929,7 @@ function library:AddWindow(text)
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateKBIND
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(122, 221, 109)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(-0.0240641963, 0, 0, 0)
@@ -1937,13 +1937,13 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(76, 95, 73)
 			Interactive.TextSize = 20.000
 
 			KeyButton.Name = "KeyButton"
 			KeyButton.Parent = TemplateKBIND
 			KeyButton.AnchorPoint = Vector2.new(1, 0.5)
-			KeyButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			KeyButton.BackgroundColor3 = Color3.fromRGB(139, 69, 19)
 			KeyButton.BorderSizePixel = 0
 			KeyButton.ClipsDescendants = true
 			KeyButton.Position = UDim2.new(1.00271928, 0, 0.366679788, 0)
@@ -1952,9 +1952,9 @@ function library:AddWindow(text)
 			KeyButton.AutoButtonColor = false
 			KeyButton.Font = Enum.Font.ArialBold
 			KeyButton.Text = KeyCode.Name
-			KeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			KeyButton.TextColor3 = Color3.fromRGB(94, 179, 132)
 			KeyButton.TextSize = 10.000
-			KeyButton.TextStrokeColor3 = Color3.fromRGB(45, 45, 45)
+			KeyButton.TextStrokeColor3 = Color3.fromRGB(57, 75, 64)
 
 			h5.CornerRadius = UDim.new(0, 3)
 			h5.Name = "h5"
@@ -1974,7 +1974,7 @@ function library:AddWindow(text)
 
 			KeyButton.MouseButton1Click:connect(function() 
 				game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-					BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+					BackgroundColor3 = Color3.fromRGB(70, 95, 77)
 				}):Play()
 				KeyButton.Text = ". . ."
 				KeyButton:TweenSize(UDim2.new(0,getsize(KeyButton.Text),0,13), "InOut", "Quint", 0.2, true)
@@ -1983,7 +1983,7 @@ function library:AddWindow(text)
 				if v1.KeyCode.Name ~= "Unknown" then
 					ischanging = true
 					game.TweenService:Create(KeyButton, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+						BackgroundColor3 = Color3.fromRGB(77, 107, 73)
 					}):Play()
 					KeyButton:TweenSize(UDim2.new(0,getsize( v1.KeyCode.Name),0,13), "Out", "Quint", 0.3, true)
 					KeyButton.Text = v1.KeyCode.Name
@@ -2023,7 +2023,7 @@ function library:AddWindow(text)
 
 			DRPDOWN.Name = "DRPDOWN"
 			DRPDOWN.Parent = HOLDER_2
-			DRPDOWN.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+			DRPDOWN.BackgroundColor3 = Color3.fromRGB(91, 109, 80)
 			DRPDOWN.BorderSizePixel = 0
 			DRPDOWN.ClipsDescendants = true
 			DRPDOWN.Position = UDim2.new(0.0362365209, 0, 0.69055295, 0)
@@ -2035,14 +2035,14 @@ function library:AddWindow(text)
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = DRPDOWN
-			Toggle.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Toggle.BackgroundColor3 = Color3.fromRGB(68, 87, 68)
 			Toggle.BorderSizePixel = 0
 			Toggle.ClipsDescendants = true
 			Toggle.Size = UDim2.new(0, 252, 0, 22)
 			Toggle.AutoButtonColor = false
 			Toggle.Font = Enum.Font.SourceSansSemibold
 			Toggle.Text = "  "
-			Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle.TextColor3 = Color3.fromRGB(84, 168, 91)
 			Toggle.TextSize = 16.000
 
 			_456fg.CornerRadius = UDim.new(0, 4)
@@ -2051,7 +2051,7 @@ function library:AddWindow(text)
 
 			TextLabel.Parent = Toggle
 			TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(99, 182, 91)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0.44808808, 0, 0.454545468, 0)
@@ -2059,13 +2059,13 @@ function library:AddWindow(text)
 			TextLabel.ZIndex = 30
 			TextLabel.Font = Enum.Font.SourceSansSemibold
 			TextLabel.Text = Text
-			TextLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+			TextLabel.TextColor3 = Color3.fromRGB(91, 156, 82)
 			TextLabel.TextSize = 16.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 			TextLabel_2.Parent = Toggle
 			TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
-			TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel_2.BackgroundColor3 = Color3.fromRGB(95, 192, 132)
 			TextLabel_2.BackgroundTransparency = 1.000
 			TextLabel_2.BorderSizePixel = 0
 			TextLabel_2.Position = UDim2.new(0.91685158, 0, 0.550000012, 0)
@@ -2073,7 +2073,7 @@ function library:AddWindow(text)
 			TextLabel_2.ZIndex = 30
 			TextLabel_2.Font = Enum.Font.SourceSansSemibold
 			TextLabel_2.Text = "+"
-			TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel_2.TextColor3 = Color3.fromRGB(126, 206, 102)
 			TextLabel_2.TextSize = 16.000
 			TextLabel_2.TextXAlignment = Enum.TextXAlignment.Right
 
@@ -2088,7 +2088,7 @@ function library:AddWindow(text)
 				local TextLabel_3 = Instance.new("TextLabel")
 				OPTION.Name = "OPTION"
 				OPTION.Parent = DRPDOWN
-				OPTION.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+				OPTION.BackgroundColor3 = Color3.fromRGB(75, 95, 77)
 				OPTION.BorderSizePixel = 0
 				OPTION.ClipsDescendants = true
 				OPTION.Position = UDim2.new(0.055555556, 0, 0.378787875, 0)
@@ -2097,7 +2097,7 @@ function library:AddWindow(text)
 				OPTION.AutoButtonColor = false
 				OPTION.Font = Enum.Font.SourceSansSemibold
 				OPTION.Text = ''
-				OPTION.TextColor3 = Color3.fromRGB(255, 255, 255)
+				OPTION.TextColor3 = Color3.fromRGB(104, 199, 100)
 				OPTION.TextSize = 16.000
 
 				_456fg_2.CornerRadius = UDim.new(0, 4)
@@ -2106,14 +2106,14 @@ function library:AddWindow(text)
 
 				TextLabel_3.Parent = OPTION
 				TextLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
-				TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_3.BackgroundColor3 = Color3.fromRGB(97, 189, 128)
 				TextLabel_3.BackgroundTransparency = 1.000
 				TextLabel_3.BorderSizePixel = 0
 				TextLabel_3.Position = UDim2.new(0.501999259, 0, 0.441162109, 0)
 				TextLabel_3.Size = UDim2.new(0, 125, 0, 15)
 				TextLabel_3.Font = Enum.Font.SourceSansSemibold
 				TextLabel_3.Text = v
-				TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_3.TextColor3 = Color3.fromRGB(93, 180, 107)
 				TextLabel_3.TextSize = 15.000
 
 				if sel == v and v ~= Toggle.Text then
@@ -2167,7 +2167,7 @@ function library:AddWindow(text)
 
 
 
-			AddRipple(Toggle,TextLabel_2,Color3.fromRGB(180, 180, 180))
+			AddRipple(Toggle,TextLabel_2,Color3.fromRGB(151, 173, 141))
 			SECTIONHOLDER:TweenSize(UDim2.fromOffset(SECTIONHOLDER.AbsoluteSize.X,  SECTION2UILIB.AbsoluteContentSize.Y + 42),Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0, true) 
 			_PARENT:TweenSize(UDim2.fromOffset(_PARENT.AbsoluteSize.X,  LIST.AbsoluteContentSize.Y + 15),Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0, true) 
 
@@ -2186,14 +2186,14 @@ function library:AddWindow(text)
 
 			TemplateButton.Name = "TemplateButton"
 			TemplateButton.Parent = HOLDER_2
-			TemplateButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			TemplateButton.BackgroundColor3 = Color3.fromRGB(51, 83, 54)
 			TemplateButton.BorderSizePixel = 0
 			TemplateButton.Position = UDim2.new(0.0430313908, 0, 0, 0)
 			TemplateButton.Size = UDim2.new(0, 243, 0, 21)
 			TemplateButton.ZIndex = 14
 			TemplateButton.ClipsDescendants = true
 			TextLabel.Parent = TemplateButton
-			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextLabel.BackgroundColor3 = Color3.fromRGB(113, 255, 120)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.BorderSizePixel = 0
 			TextLabel.Position = UDim2.new(0, 0, 0, 0)
@@ -2206,7 +2206,7 @@ function library:AddWindow(text)
 
 			Interactive.Name = "Interactive"
 			Interactive.Parent = TemplateButton
-			Interactive.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Interactive.BackgroundColor3 = Color3.fromRGB(111, 255, 111)
 			Interactive.BackgroundTransparency = 1.000
 			Interactive.BorderSizePixel = 0
 			Interactive.Position = UDim2.new(0, 0, 0, 0)
@@ -2214,7 +2214,7 @@ function library:AddWindow(text)
 			Interactive.ZIndex = 20
 			Interactive.Font = Enum.Font.SourceSans
 			Interactive.Text = ""
-			Interactive.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Interactive.TextColor3 = Color3.fromRGB(65, 117, 74)
 			Interactive.TextSize = 18.000
 			--Interactive.ClipsDescendants = true
 			UICorner.CornerRadius = UDim.new(0, 4)
@@ -2223,13 +2223,13 @@ function library:AddWindow(text)
 			local UIStroke = Instance.new('UIStroke');
 
 			UIStroke.Parent= TemplateButton;
-			UIStroke.Color = Color3.fromRGB(52,52,52);
+			UIStroke.Color = Color3.fromRGB(138, 175, 152);
 			UIStroke.LineJoinMode = Enum.LineJoinMode.Round;
 			UIStroke.Thickness = 1;
 			UIStroke.Transparency = 0;
 			UIStroke.Name = 'UIStroke';
 
-			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(180, 180, 180))}
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(129, 255, 112)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(132, 168, 130))}
 			UIGradient.Parent = UIStroke
 
 			Interactive.MouseButton1Click:Connect(function()
