@@ -565,7 +565,7 @@ MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
 MAIN.BackgroundColor3 = Color3.fromRGB(45, 64, 55) -- 柔和深綠色
 MAIN.BorderSizePixel = 0
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
-MAIN.Size = UDim2.new(0, 588, 0, 415)
+MAIN.Size = UDim2.new(0, 800, 0, 550) -- 放大主框架
 MAIN.ZIndex = 2
 
 -- 內容區域
@@ -573,38 +573,37 @@ BG.Name = "BG"
 BG.Parent = MAIN
 BG.BackgroundColor3 = Color3.fromRGB(220, 225, 210) -- 柔和灰綠色
 BG.BorderSizePixel = 0
-BG.Position = UDim2.new(0, 0, 0.0615, 0)
-BG.Size = UDim2.new(0, 588, 0, 365)
+BG.Position = UDim2.new(0, 0, 0.07, 0) -- 調整位置
+BG.Size = UDim2.new(0, 800, 0, 470) -- 放大內容區域
 BG.ClipsDescendants = true
 
 -- 頂部區域
 Upper.Name = "Upper"
 Upper.Parent = MAIN
 Upper.BackgroundTransparency = 1.000
-Upper.Size = UDim2.new(1, 0, 0, 23)
+Upper.Size = UDim2.new(1, 0, 0, 30) -- 放大高度
 Upper.ZIndex = 2
 
--- 使用 UIListLayout 防止元素重疊
 local UIListLayout_Upper = Instance.new("UIListLayout", Upper)
 UIListLayout_Upper.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout_Upper.HorizontalAlignment = Enum.HorizontalAlignment.Left
-UIListLayout_Upper.Padding = UDim.new(0, 5) -- 每個元素間隔 5px
+UIListLayout_Upper.Padding = UDim.new(0, 10) -- 間隔加大
 
 -- 上方裝飾線
 linedecoupper.Name = "linedecoupper"
 linedecoupper.Parent = MAIN
-linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 128, 105) -- 柔和青綠色
+linedecoupper.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
 linedecoupper.BorderSizePixel = 0
-linedecoupper.Position = UDim2.new(0, 0, 0.059, 0)
-linedecoupper.Size = UDim2.new(1, 0, 0, 1)
+linedecoupper.Position = UDim2.new(0, 0, 0.065, 0)
+linedecoupper.Size = UDim2.new(1, 0, 0, 2) -- 加粗線條
 linedecoupper.ZIndex = 3
 
 -- 底部區域
 DOWNER.Name = "DOWNER"
 DOWNER.Parent = MAIN
 DOWNER.BackgroundTransparency = 1.000
-DOWNER.Position = UDim2.new(0, 0, 0.943, 0)
-DOWNER.Size = UDim2.new(0, 600, 0, 23)
+DOWNER.Position = UDim2.new(0, 0, 0.9, 0)
+DOWNER.Size = UDim2.new(1, 0, 0, 30) -- 放大高度
 DOWNER.ZIndex = 2
 
 -- 左側標籤
@@ -612,11 +611,11 @@ WEBSITE.Name = "WEBSITE"
 WEBSITE.Parent = Upper
 WEBSITE.AnchorPoint = Vector2.new(0, 0.5)
 WEBSITE.BackgroundTransparency = 1.000
-WEBSITE.Size = UDim2.new(0, 197, 0, 23)
+WEBSITE.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤大小
 WEBSITE.Font = Enum.Font.ArialBold
 WEBSITE.Text = "NerdsInc.gq"
 WEBSITE.TextColor3 = Color3.fromRGB(102, 153, 102)
-WEBSITE.TextSize = 14
+WEBSITE.TextSize = 18 -- 放大字體
 WEBSITE.TextXAlignment = Enum.TextXAlignment.Left
 
 -- 右側標籤
@@ -625,20 +624,20 @@ LABEL2.Parent = DOWNER
 LABEL2.AnchorPoint = Vector2.new(0.5, 0.5)
 LABEL2.BackgroundTransparency = 1.000
 LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
-LABEL2.Size = UDim2.new(0, 197, 0, 23)
+LABEL2.Size = UDim2.new(0, 250, 0, 30) -- 放大標籤
 LABEL2.Font = Enum.Font.ArialBold
 LABEL2.Text = "Alpha build / ∞ days left"
-LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80) -- 柔和棕色
-LABEL2.TextSize = 14
+LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
+LABEL2.TextSize = 18 -- 放大字體
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 底部裝飾線
 linedecoDOWNER.Name = "linedecoDOWNER"
 linedecoDOWNER.Parent = MAIN
-linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105) -- 柔和青綠色
+linedecoDOWNER.BackgroundColor3 = Color3.fromRGB(85, 128, 105)
 linedecoDOWNER.BorderSizePixel = 0
-linedecoDOWNER.Position = UDim2.new(0, 0, 0.94, 0)
-linedecoDOWNER.Size = UDim2.new(1, 0, 0, 1)
+linedecoDOWNER.Position = UDim2.new(0, 0, 0.98, 0)
+linedecoDOWNER.Size = UDim2.new(1, 0, 0, 2) -- 加粗線條
 linedecoDOWNER.ZIndex = 10
 
 -- 右側標籤 (FPS)
@@ -646,20 +645,21 @@ UPPERLABEL.Name = "UPPERLABEL"
 UPPERLABEL.Parent = Upper
 UPPERLABEL.AnchorPoint = Vector2.new(1, 0.5)
 UPPERLABEL.BackgroundTransparency = 1.000
-UPPERLABEL.Size = UDim2.new(0, 84, 0, 23)
+UPPERLABEL.Size = UDim2.new(0, 120, 0, 30) -- 放大
 UPPERLABEL.Font = Enum.Font.SourceSansSemibold
 UPPERLABEL.Text = "FPS: 60"
 UPPERLABEL.TextColor3 = Color3.fromRGB(190, 183, 165)
-UPPERLABEL.TextSize = 17
+UPPERLABEL.TextSize = 18
 UPPERLABEL.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 內容限制框
 limit1.Name = "limit1"
 limit1.Parent = MAIN
 limit1.BackgroundTransparency = 1.000
-limit1.Position = UDim2.new(0, 0, 0.0615, 0)
-limit1.Size = UDim2.new(0, 588, 0, 364)
+limit1.Position = UDim2.new(0, 0, 0.07, 0)
+limit1.Size = UDim2.new(0, 800, 0, 470) -- 放大
 limit1.ZIndex = 5
+
 
 
 
