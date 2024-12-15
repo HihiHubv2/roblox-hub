@@ -688,7 +688,7 @@ local tweenInfo = TweenInfo.new(
 
 
 function AddRipple(button,ael,ayo)
-	ayo = ayo or Color3.fromRGB(56, 56, 56)
+	ayo = ayo or Color3.fromRGB(127, 190, 98)
 	button.ClipsDescendants = true
 	local obj = button
 	local function Ripple()
@@ -698,11 +698,11 @@ function AddRipple(button,ael,ayo)
 				local Circle = Instance.new("ImageLabel")
 				Circle.Name = "Circle"
 				Circle.Parent = obj
-				Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Circle.BackgroundColor3 = Color3.fromRGB(159, 255, 103)
 				Circle.BackgroundTransparency = 1.000
 				Circle.ZIndex = 10
 				Circle.Image = "rbxassetid://266543268"
-				Circle.ImageColor3 = Color3.fromRGB(211, 211, 211)
+				Circle.ImageColor3 = Color3.fromRGB(104, 255, 197)
 				Circle.ImageTransparency = 0.6
 				local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
 				Circle.Position = UDim2.new(0, NewX, 0, NewY)
@@ -735,7 +735,7 @@ function AddRipple(button,ael,ayo)
 	Background.Name = "Background"
 	Background.Parent = button
 	Background.AnchorPoint = Vector2.new(0.5, 0.5)
-	Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Background.BackgroundColor3 = Color3.fromRGB(168, 80, 80)
 	Background.BackgroundTransparency = 1.000
 	Background.ClipsDescendants = true
 	Background.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -757,20 +757,20 @@ function AddRipple(button,ael,ayo)
 	end
 
 	local function OnMouseButton1Up()
-		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(89, 165, 89) })
 		backgroundFadeIn:Play()
 	end
 
 	local function OnMouseEnter()
 		hovering = true
 
-		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(152, 152, 152) })
+		local backgroundFadeIn = TweenService:Create(ael, tweenInfo, { TextColor3 = Color3.fromRGB(113, 196, 97) })
 
 		backgroundFadeIn:Play()
 
 		backgroundFadeIn.Completed:Wait()
 
-		local backgroundFadeOut = TweenService:Create(ael, tweenInfo, {TextColor3 = Color3.fromRGB(197, 197, 197)})
+		local backgroundFadeOut = TweenService:Create(ael, tweenInfo, {TextColor3 = Color3.fromRGB(125, 255, 107)})
 
 		repeat wait() until not hovering
 
@@ -836,7 +836,7 @@ function library:AddWatermark(Text)
 	--[MAIN]--
 	local obj1 = Instance.new("Frame")
 	obj1.AnchorPoint = Vector2.new(0, 0.5)
-	obj1.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+	obj1.BackgroundColor3 = Color3.new(0.403921, 1, 0.580392)
 	obj1.BorderSizePixel = 0
 	obj1.Position = UDim2.new(0.0109301507, 0, 0.973039031, 0)
 	obj1.Size = UDim2.new(0, size, 0, 28)
@@ -847,12 +847,12 @@ function library:AddWatermark(Text)
 	obj1.Parent = PCR_1
 	--[UIStroke]--
 	local obj2 = Instance.new("UIStroke", obj1)
-	obj2.Color = Color3.new(0.309804, 0.458824, 0.67451)
+	obj2.Color = Color3.new(0.443137, 0.501960, 1)
 
 	--[MAIN]--
 	local obj3 = Instance.new("Frame", obj1)
 	obj3.AnchorPoint = Vector2.new(0.5, 0.5)
-	obj3.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+	obj3.BackgroundColor3 = Color3.new(0.431372, 1, 0.780392)
 	obj3.BorderSizePixel = 0
 	obj3.Position = UDim2.new(0.5, 0, 0.5, 0)
 	obj3.Size = UDim2.new(1, -6, 1, -6)
@@ -861,14 +861,14 @@ function library:AddWatermark(Text)
 
 	--[TextLabel]--
 	local obj4 = Instance.new("TextLabel", obj3)
-	obj4.BackgroundColor3 = Color3.new(1, 1, 1)
+	obj4.BackgroundColor3 = Color3.new(0.42745098039215684, 0.6549019607843137, 1)
 	obj4.BackgroundTransparency = 1
 	obj4.BorderSizePixel = 0
 	obj4.Position = UDim2.new(0.0215827357, 0, 0, 0)
 	obj4.Size = UDim2.new(0, 325, 0, 22)
 	obj4.Font = Enum.Font.SourceSansSemibold
 	obj4.Text = Text
-	obj4.TextColor3 = Color3.new(0.772549, 0.772549, 0.772549)
+	obj4.TextColor3 = Color3.new(0.4, 0.772549, 0.647058)
 	obj4.TextSize = 16
 	obj4.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -907,9 +907,9 @@ function library:Init(name)
     for i,v in pairs(Upper:GetChildren()) do
         if v:IsA('TextButton') then
             if v.Name == name then
-                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(210, 210, 210)}):Play()	
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(86, 143, 98)}):Play()	
             else
-                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(138, 138, 138)}):Play()	
+                TweenService:Create(v , TweenInfo.new(0.26, Enum.EasingStyle.Quad , Enum.EasingDirection.InOut), {TextColor3 = Color3.fromRGB(100, 255, 164)}):Play()	
             end
         end
     end
