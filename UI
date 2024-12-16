@@ -571,7 +571,7 @@ MAIN.ZIndex = 2
 -- 內容區域
 BG.Name = "BG"
 BG.Parent = MAIN
-BG.BackgroundColor3 = Color3.fromRGB(245, 245, 220) -- 柔和灰綠色
+BG.BackgroundColor3 = Color3.fromRGB(71, 124, 66) -- 柔和灰綠色
 BG.BorderSizePixel = 0
 BG.Position = UDim2.new(0, 0, 0.12, 0) -- 調整內容區域的位置
 BG.Size = UDim2.new(1, 0, 0.75, 0) -- 更合適的內容區域大小
@@ -669,7 +669,7 @@ LABEL2.Position = UDim2.new(0.8, 0, 0.5, 0)
 LABEL2.Size = UDim2.new(0, 250, 0, 30)
 LABEL2.Font = Enum.Font.ArialBold
 LABEL2.Text = "HihiHub"
-LABEL2.TextColor3 = Color3.fromRGB(140, 115, 80)
+LABEL2.TextColor3 = Color3.fromRGB(153, 125, 231)
 LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
@@ -718,7 +718,7 @@ LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 隨機震動邏輯
-local amplitude = 7 -- 震動的幅度 (像素)
+local amplitude = 21 -- 震動的幅度 (像素)
 local activeShakeConnection -- 儲存當前的 Heartbeat 連接
 
 local function shakeLabel(label)
