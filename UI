@@ -718,7 +718,7 @@ LABEL2.TextSize = 20
 LABEL2.TextXAlignment = Enum.TextXAlignment.Right
 
 -- 隨機震動邏輯
-local amplitude = 3 -- 震動的幅度 (像素)
+local amplitude = 7 -- 震動的幅度 (像素)
 local activeShakeConnection -- 儲存當前的 Heartbeat 連接
 
 local function shakeLabel(label)
