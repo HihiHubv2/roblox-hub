@@ -10,14 +10,7 @@ local CheckRadius = 100
 local ClosestPlayerTemp = nil
 local LastDisplayedInventory = nil
 
--- 創建圓角函數
-local function addUICorner(instance, radius)
-    local corner = Instance.new("UICorner", instance)
-    corner.CornerRadius = UDim.new(0, radius)
-    return corner
-end
-
--- 界面初始化
+-- 創建 UI
 local ScreenGui = Instance.new("ScreenGui")
 syn.protect_gui(ScreenGui)
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -25,26 +18,18 @@ ScreenGui.Parent = CoreGui
 
 -- 顯示框架
 local inventoryDisplayFrame = Instance.new("Frame")
-inventoryDisplayFrame.Size = UDim2.new(0.6, 0, 0.2, 0) -- 寬度60%，高度20%
+inventoryDisplayFrame.Size = UDim2.new(0.6, 0, 0.2, 0)
 inventoryDisplayFrame.Position = UDim2.new(0.2, 0, 0.05, 0)
 inventoryDisplayFrame.BackgroundTransparency = 0.2
 inventoryDisplayFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-inventoryDisplayFrame.BorderSizePixel = 0
+inventoryDisplayFrame.BorderSizePixel = 1
+inventoryDisplayFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
 inventoryDisplayFrame.Visible = false
 inventoryDisplayFrame.Parent = ScreenGui
 
--- 添加圓角
-addUICorner(inventoryDisplayFrame, 10)
-
--- 添加陰影
-local shadow = Instance.new("Frame", inventoryDisplayFrame)
-shadow.Size = UDim2.new(1, 10, 1, 10)
-shadow.Position = UDim2.new(0, -5, 0, -5)
-shadow.BackgroundTransparency = 0.5
-shadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-shadow.ZIndex = 0
-shadow.BorderSizePixel = 0
-addUICorner(shadow, 12)
+-- 圓角
+local UICorner = Instance.new("UICorner", inventoryDisplayFrame)
+UICorner.CornerRadius = UDim.new(0, 10)
 
 -- 玩家名稱
 local playerNameLabel = Instance.new("TextLabel", inventoryDisplayFrame)
@@ -63,7 +48,7 @@ inventoryContainer.Position = UDim2.new(0, 0, 0.2, 0)
 inventoryContainer.BackgroundTransparency = 1
 
 local inventoryGridLayout = Instance.new("UIGridLayout", inventoryContainer)
-inventoryGridLayout.CellSize = UDim2.new(0.1, 0, 0.5, 0) -- 調整物品圖片尺寸
+inventoryGridLayout.CellSize = UDim2.new(0.12, 0, 0.5, 0)
 inventoryGridLayout.CellPadding = UDim2.new(0.02, 0, 0.02, 0)
 
 -- 顯示玩家物品邏輯
@@ -164,4 +149,4 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
-print("物品檢查器功能已成功初始化")
+print("物品檢查器已加載，支持顯示物品圖片與數量")
