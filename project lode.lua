@@ -1,3 +1,4 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/oShyyyyy/Plaguecheat.cc-Roblox-Ui-library/main/Source.lua", true))()
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -149,4 +150,36 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
+-- 創建控制介面
+local visual = library:AddWindow('物品檢查器') -- UI 窗口
+local controls = visual:AddSection('控制項') -- UI 分區
+
+-- 添加開關功能
+controls:AddToggle('啟用物品檢查器', false, nil, function(state)
+    InventoryCheckerEnabled = state
+    if state then
+        print("物品檢查器已啟用")
+    else
+        print("物品檢查器已禁用")
+    end
+end)
+
+-- 添加滑動條
+controls:AddSlider('檢查半徑', 100, 50, 500, function(value)
+    CheckRadius = value
+    print("檢查半徑設置為: ", CheckRadius)
+end)
+
+-- 檢查邏輯 (每 0.2 秒執行一次)
+local lastCheck = 0
+RunService.RenderStepped:Connect(function()
+    if InventoryCheckerEnabled and (tick() - lastCheck >= 0.2) then
+        lastCheck = tick()
+        -- 調用模組的方法來更新邏輯
+        customModule.setCheckRadius(CheckRadius)
+    end
+end)
+
+print("物品檢查器已加載，支持顯示物品圖片與數量")
+
 print("物品檢查器已加載，支持顯示物品圖片與數量")
