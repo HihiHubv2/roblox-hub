@@ -1,6 +1,6 @@
 -- 加載 UI Library
 local success, library = pcall(function()
-    return loadstring(game:HttpGet("", true))()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/HihiHubv2/roblox-hub/refs/heads/main/UI", true))()
 end)
 
 if not success or not library then
