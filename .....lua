@@ -1,3 +1,15 @@
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- 初始化變數
+local InventoryCheckerEnabled = false
+local CheckRadius = 100
+local ClosestPlayerTemp = nil
+local LastDisplayedInventory = nil
+
 -- 創建圓角函數
 local function addUICorner(instance, radius)
     local corner = Instance.new("UICorner", instance)
