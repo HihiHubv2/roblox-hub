@@ -4,53 +4,75 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UIS = game:GetService("UserInputService") -- 引入按鍵監聽
 
 -- 初始化變數
 local InventoryCheckerEnabled = false
 local CheckRadius = 100
 local ClosestPlayerTemp = nil
 local LastDisplayedInventory = nil
+local customKeyBind = Enum.KeyCode.Insert -- 默認按鍵綁定
+
+-- 隱藏和顯示主界面邏輯
+local function toggleGUI()
+    if library.GUI:FindFirstChild("MAIN") then
+        local mainFrame = library.GUI:FindFirstChild("MAIN")
+        mainFrame.Visible = not mainFrame.Visible
+        print("Toggled GUI visibility:", mainFrame.Visible)
+    else
+        warn("Library Main Frame not found!")
+    end
+end
+
+-- 監聽玩家自定義按鍵事件
+UIS.InputBegan:Connect(function(input, isProcessed)
+    if not isProcessed and input.KeyCode == customKeyBind then
+        toggleGUI()
+    end
+end)
 
 -- 創建 UI
-local ScreenGui = Instance.new("ScreenGui")
-syn.protect_gui(ScreenGui)
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
-ScreenGui.Parent = CoreGui
+local function createUI()
+    local ScreenGui = Instance.new("ScreenGui")
+    syn.protect_gui(ScreenGui)
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    ScreenGui.Parent = CoreGui
 
--- 顯示框架
-local inventoryDisplayFrame = Instance.new("Frame")
-inventoryDisplayFrame.Size = UDim2.new(0.6, 0, 0.2, 0)
-inventoryDisplayFrame.Position = UDim2.new(0.2, 0, 0.05, 0)
-inventoryDisplayFrame.BackgroundTransparency = 0.2
-inventoryDisplayFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-inventoryDisplayFrame.BorderSizePixel = 1
-inventoryDisplayFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-inventoryDisplayFrame.Visible = false
-inventoryDisplayFrame.Parent = ScreenGui
+    local inventoryDisplayFrame = Instance.new("Frame")
+    inventoryDisplayFrame.Size = UDim2.new(0.6, 0, 0.2, 0)
+    inventoryDisplayFrame.Position = UDim2.new(0.2, 0, 0.05, 0)
+    inventoryDisplayFrame.BackgroundTransparency = 0.2
+    inventoryDisplayFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    inventoryDisplayFrame.BorderSizePixel = 1
+    inventoryDisplayFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    inventoryDisplayFrame.Visible = false
+    inventoryDisplayFrame.Parent = ScreenGui
 
--- 圓角
-local UICorner = Instance.new("UICorner", inventoryDisplayFrame)
-UICorner.CornerRadius = UDim.new(0, 10)
+    local UICorner = Instance.new("UICorner", inventoryDisplayFrame)
+    UICorner.CornerRadius = UDim.new(0, 10)
 
--- 玩家名稱
-local playerNameLabel = Instance.new("TextLabel", inventoryDisplayFrame)
-playerNameLabel.Size = UDim2.new(1, 0, 0.2, 0)
-playerNameLabel.Position = UDim2.new(0, 0, 0, 0)
-playerNameLabel.BackgroundTransparency = 1
-playerNameLabel.Text = "玩家名稱"
-playerNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-playerNameLabel.Font = Enum.Font.GothamBold
-playerNameLabel.TextScaled = true
+    local playerNameLabel = Instance.new("TextLabel", inventoryDisplayFrame)
+    playerNameLabel.Size = UDim2.new(1, 0, 0.2, 0)
+    playerNameLabel.Position = UDim2.new(0, 0, 0, 0)
+    playerNameLabel.BackgroundTransparency = 1
+    playerNameLabel.Text = "PlayName"
+    playerNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    playerNameLabel.Font = Enum.Font.GothamBold
+    playerNameLabel.TextScaled = true
 
--- 物品容器
-local inventoryContainer = Instance.new("Frame", inventoryDisplayFrame)
-inventoryContainer.Size = UDim2.new(1, 0, 0.8, 0)
-inventoryContainer.Position = UDim2.new(0, 0, 0.2, 0)
-inventoryContainer.BackgroundTransparency = 1
+    local inventoryContainer = Instance.new("Frame", inventoryDisplayFrame)
+    inventoryContainer.Size = UDim2.new(1, 0, 0.8, 0)
+    inventoryContainer.Position = UDim2.new(0, 0, 0.2, 0)
+    inventoryContainer.BackgroundTransparency = 1
 
-local inventoryGridLayout = Instance.new("UIGridLayout", inventoryContainer)
-inventoryGridLayout.CellSize = UDim2.new(0.12, 0, 0.5, 0)
-inventoryGridLayout.CellPadding = UDim2.new(0.02, 0, 0.02, 0)
+    local inventoryGridLayout = Instance.new("UIGridLayout", inventoryContainer)
+    inventoryGridLayout.CellSize = UDim2.new(0.12, 0, 0.5, 0)
+    inventoryGridLayout.CellPadding = UDim2.new(0.02, 0, 0.02, 0)
+
+    return inventoryDisplayFrame, playerNameLabel, inventoryContainer
+end
+
+local inventoryDisplayFrame, playerNameLabel, inventoryContainer = createUI()
 
 -- 顯示玩家物品邏輯
 local function displayInventory(player)
@@ -81,7 +103,7 @@ local function displayInventory(player)
     LastDisplayedInventory = currentInventory
 
     inventoryDisplayFrame.Visible = true
-    playerNameLabel.Text = "玩家: " .. player.Name
+    playerNameLabel.Text = "Play: " .. player.Name
 
     for _, child in pairs(inventoryContainer:GetChildren()) do
         if child:IsA("ImageLabel") or child:IsA("TextLabel") then
@@ -121,6 +143,7 @@ local function displayInventory(player)
     end
 end
 
+-- 遊戲邏輯
 RunService.RenderStepped:Connect(function()
     if InventoryCheckerEnabled then
         local camera = Workspace.CurrentCamera
@@ -150,12 +173,13 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
+
 -- 創建控制介面
-local visual = library:AddWindow('物品檢查器') -- UI 窗口
-local controls = visual:AddSection('控制項') -- UI 分區
+local visual = library:AddWindow('inv checker') -- UI 窗口
+local controls = visual:AddSection('inv checker') -- UI 分區
 
 -- 添加開關功能
-controls:AddToggle('啟用物品檢查器', false, nil, function(state)
+controls:AddToggle('inv checker', false, nil, function(state)
     InventoryCheckerEnabled = state
     if state then
         print("物品檢查器已啟用")
@@ -164,22 +188,8 @@ controls:AddToggle('啟用物品檢查器', false, nil, function(state)
     end
 end)
 
--- 添加滑動條
-controls:AddSlider('檢查半徑', 100, 50, 500, function(value)
-    CheckRadius = value
-    print("檢查半徑設置為: ", CheckRadius)
+-- 添加按鍵綁定
+controls:AddKeyBind('KeyBind', Enum.KeyCode.Home, function(key)
+    customKeyBind = key -- 更新自定義按鍵
+    print("Custom KeyBind updated to:", customKeyBind.Name)
 end)
-
--- 檢查邏輯 (每 0.2 秒執行一次)
-local lastCheck = 0
-RunService.RenderStepped:Connect(function()
-    if InventoryCheckerEnabled and (tick() - lastCheck >= 0.2) then
-        lastCheck = tick()
-        -- 調用模組的方法來更新邏輯
-        customModule.setCheckRadius(CheckRadius)
-    end
-end)
-
-print("物品檢查器已加載，支持顯示物品圖片與數量")
-
-print("物品檢查器已加載，支持顯示物品圖片與數量")
