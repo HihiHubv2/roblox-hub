@@ -164,20 +164,4 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
--- 添加開關功能
-wh:AddToggle('啟用物品檢查器', true, nil, function(v)
-    InventoryCheckerEnabled = v
-    if inventoryDisplayFrame then
-        inventoryDisplayFrame.Visible = v
-    else
-        warn("未找到 inventoryDisplayFrame，請檢查代碼初始化")
-    end
-end)
-
--- 添加滑桿功能
-wh:AddSlider('檢查半徑 (Meters)', 100, 50, 500, function(c)
-    CheckRadius = c
-    print("檢查半徑設置為: " .. c)
-end)
-
 print("物品檢查器功能已成功初始化")
