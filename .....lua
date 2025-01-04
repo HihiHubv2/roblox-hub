@@ -1,3 +1,12 @@
+-- 加載 UI Library
+local success, library = pcall(function()
+    return loadstring(game:HttpGet("", true))()
+end)
+
+if not success or not library then
+    warn("無法加載 UI Library，請檢查 URL 或網路狀態。")
+    return
+end
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
