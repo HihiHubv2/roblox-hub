@@ -1,12 +1,3 @@
--- 加載 UI Library
-local success, library = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/HihiHubv2/roblox-hub/refs/heads/main/UI", true))()
-end)
-
-if not success or not library then
-    warn("無法加載 UI Library，請檢查 URL 或網路狀態。")
-    return
-end
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -173,12 +164,8 @@ RunService.RenderStepped:Connect(function()
         end
     end
 end)
--- 創建 ESP 界面
-local wh = library:AddWindow('物品檢查器') -- 主窗口
-local InventorySection = wh:AddSection('物品檢查功能') -- 分區
-
 -- 添加開關功能
-InventorySection:AddToggle('啟用物品檢查器', true, nil, function(v)
+wh:AddToggle('啟用物品檢查器', true, nil, function(v)
     InventoryCheckerEnabled = v
     if inventoryDisplayFrame then
         inventoryDisplayFrame.Visible = v
@@ -188,7 +175,7 @@ InventorySection:AddToggle('啟用物品檢查器', true, nil, function(v)
 end)
 
 -- 添加滑桿功能
-InventorySection:AddSlider('檢查半徑 (Meters)', 100, 50, 500, function(c)
+wh:AddSlider('檢查半徑 (Meters)', 100, 50, 500, function(c)
     CheckRadius = c
     print("檢查半徑設置為: " .. c)
 end)
